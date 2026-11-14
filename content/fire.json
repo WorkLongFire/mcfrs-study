@@ -1,0 +1,758 @@
+[
+ {
+  "id": "fire-01",
+  "topic": "fire",
+  "title": "The Fire Tetrahedron",
+  "creator": "@HoseDaddyHank",
+  "hashtags": [
+   "#firefighter",
+   "#firetetrahedron",
+   "#firescience"
+  ],
+  "likes": 48200,
+  "scenes": [
+   {
+    "emoji": "🔺",
+    "heading": "Old triangle, new shape",
+    "text": "The fire triangle had three sides. The fire tetrahedron adds a fourth: the chemical chain reaction."
+   },
+   {
+    "emoji": "⛽",
+    "heading": "Fuel",
+    "text": "Fuel is anything that burns. Solid, liquid or gas. Remove it, like shutting a gas valve, and the fire starves."
+   },
+   {
+    "emoji": "🔥",
+    "heading": "Heat",
+    "text": "Heat raises fuel to ignition temperature. Water absorbs heat. Cooling is why a fog or straight stream works."
+   },
+   {
+    "emoji": "💨",
+    "heading": "Oxygen and chain reaction",
+    "text": "Fire needs oxygen, about 16 percent or more to flame. Break the chain reaction with dry chemical or clean agents."
+   },
+   {
+    "emoji": "🧠",
+    "heading": "Memory hook",
+    "text": "F-H-O-C: Fuel, Heat, Oxygen, Chain reaction. Pull ANY one leg of the tetrahedron and the fire goes out."
+   }
+  ],
+  "quiz": [
+   {
+    "q": "What is the fourth side of the fire tetrahedron?",
+    "choices": [
+     "Pressure",
+     "Chemical chain reaction",
+     "Smoke",
+     "Wind"
+    ],
+    "answer": 1,
+    "explain": "The tetrahedron adds an uninhibited chemical chain reaction to fuel, heat and oxygen."
+   },
+   {
+    "q": "Which method extinguishes fire by removing heat?",
+    "choices": [
+     "Applying water",
+     "Shutting a fuel valve",
+     "Smothering with foam blanket only",
+     "Dry chemical agent"
+    ],
+    "answer": 0,
+    "explain": "Water absorbs heat, cooling fuel below ignition temperature."
+   }
+  ]
+ },
+ {
+  "id": "fire-02",
+  "topic": "fire",
+  "title": "Four Stages Before Flashover",
+  "creator": "@FlashoverFran",
+  "hashtags": [
+   "#firefighter",
+   "#flashover",
+   "#firebehavior"
+  ],
+  "likes": 63100,
+  "scenes": [
+   {
+    "emoji": "🕯️",
+    "heading": "Incipient",
+    "text": "Stage one: small fire, limited to the first fuel. Best time for an extinguisher or a quick attack."
+   },
+   {
+    "emoji": "📈",
+    "heading": "Growth",
+    "text": "Fire grows, plume rises, hot gas layer banks down from the ceiling. Temperatures climb fast."
+   },
+   {
+    "emoji": "⚡",
+    "heading": "Flashover",
+    "text": "Transition where everything in the room ignites at once. Rollover, heat banking down and rapid temp rise warn you."
+   },
+   {
+    "emoji": "🌡️",
+    "heading": "Fully developed, then decay",
+    "text": "Flashover leads to fully developed burning. Later, fuel or oxygen runs low and the fire decays."
+   },
+   {
+    "emoji": "🧠",
+    "heading": "Memory hook",
+    "text": "I-G-F-D: Incipient, Growth, Fully developed, Decay. Flashover is the bridge from growth to fully developed."
+   }
+  ],
+  "quiz": [
+   {
+    "q": "Which is a flashover warning sign?",
+    "choices": [
+     "Rollover in the hot gas layer",
+     "Cool walls",
+     "Clear air at the floor only",
+     "Dropping temperatures"
+    ],
+    "answer": 0,
+    "explain": "Rollover, heat banking down and rapidly rising temperatures warn of flashover."
+   },
+   {
+    "q": "Flashover happens between which stages?",
+    "choices": [
+     "Decay and out",
+     "Incipient and growth",
+     "Growth and fully developed",
+     "Fully developed and decay"
+    ],
+    "answer": 2,
+    "explain": "Flashover is the transition from growth to fully developed burning."
+   }
+  ]
+ },
+ {
+  "id": "fire-03",
+  "topic": "fire",
+  "title": "Backdraft: Don't Open That Door",
+  "creator": "@SmokeSignalSam",
+  "hashtags": [
+   "#firefighter",
+   "#backdraft",
+   "#ventilation"
+  ],
+  "likes": 54700,
+  "scenes": [
+   {
+    "emoji": "🚪",
+    "heading": "What it is",
+    "text": "Backdraft is an explosive ignition when oxygen suddenly enters a hot, oxygen-starved space full of unburned gases."
+   },
+   {
+    "emoji": "👀",
+    "heading": "Look outside first",
+    "text": "Signs: smoke-stained windows, little visible flame, hot doors and glass. Smoke pushing out then pulling back in."
+   },
+   {
+    "emoji": "🌬️",
+    "heading": "Pulsing smoke",
+    "text": "Puffing, pulsing smoke at gaps and a whistling sound as air is drawn in are classic indicators."
+   },
+   {
+    "emoji": "🧯",
+    "heading": "Cool before you open",
+    "text": "Vent vertically at the top first so gases escape. Coordinate with the crew and stay low and out of the door line."
+   },
+   {
+    "emoji": "🧠",
+    "heading": "Memory hook",
+    "text": "Hot glass, pulsing smoke, little flame, whistle in. If the building is breathing, do NOT swing open the door."
+   }
+  ],
+  "quiz": [
+   {
+    "q": "What triggers a backdraft?",
+    "choices": [
+     "Adding oxygen to a starved, superheated space",
+     "Removing fuel",
+     "Cooling the room",
+     "Shutting off power"
+    ],
+    "answer": 0,
+    "explain": "Sudden oxygen entry to hot unburned gases causes explosive ignition."
+   },
+   {
+    "q": "Which is a backdraft sign?",
+    "choices": [
+     "Roaring flames at windows",
+     "Pulsing smoke with air drawn in",
+     "Cold doorknobs",
+     "Clear glass"
+    ],
+    "answer": 1,
+    "explain": "Pulsing smoke and air being pulled in indicate a possible backdraft."
+   }
+  ]
+ },
+ {
+  "id": "fire-04",
+  "topic": "fire",
+  "title": "Fire Classes and PASS",
+  "creator": "@ExtinguishErin",
+  "hashtags": [
+   "#firefighter",
+   "#fireclasses",
+   "#extinguisher"
+  ],
+  "likes": 39800,
+  "scenes": [
+   {
+    "emoji": "🪵",
+    "heading": "A and B",
+    "text": "Class A: ordinary combustibles like wood and paper. Class B: flammable liquids and gases like gasoline."
+   },
+   {
+    "emoji": "🔌",
+    "heading": "C and D",
+    "text": "Class C: energized electrical equipment. Class D: combustible metals like magnesium and titanium."
+   },
+   {
+    "emoji": "🍳",
+    "heading": "Class K",
+    "text": "Class K: cooking oils and fats in commercial kitchens. Wet chemical agents are used for these fires."
+   },
+   {
+    "emoji": "🧯",
+    "heading": "PASS it",
+    "text": "Pull the pin, Aim at the base, Squeeze the handle, Sweep side to side. Stay a safe distance."
+   },
+   {
+    "emoji": "🧠",
+    "heading": "Memory hook",
+    "text": "A=Ash, B=Barrel (liquids), C=Current, D=Dangerous metals (magnesium, sodium), K=Kitchen. Then PASS: Pull, Aim, Squeeze, Sweep."
+   }
+  ],
+  "quiz": [
+   {
+    "q": "Which class covers cooking oils and fats?",
+    "choices": [
+     "Class B",
+     "Class K",
+     "Class D",
+     "Class C"
+    ],
+    "answer": 1,
+    "explain": "Class K fires involve cooking oils and fats."
+   },
+   {
+    "q": "In PASS, what does the A stand for?",
+    "choices": [
+     "Aim at the base",
+     "Attack the flames",
+     "Activate alarm",
+     "Approach closely"
+    ],
+    "answer": 0,
+    "explain": "Aim the extinguisher at the base of the fire."
+   }
+  ]
+ },
+ {
+  "id": "fire-05",
+  "topic": "fire",
+  "title": "SCBA: Own Your Air",
+  "creator": "@AirBossAmir",
+  "hashtags": [
+   "#firefighter",
+   "#SCBA",
+   "#airmanagement"
+  ],
+  "likes": 44300,
+  "scenes": [
+   {
+    "emoji": "🎒",
+    "heading": "Check before you go",
+    "text": "Inspect cylinder pressure, regulator, harness and facepiece seal. Do it at shift start, every time."
+   },
+   {
+    "emoji": "👕",
+    "heading": "Donning methods",
+    "text": "Over-the-head, coat method, seat-mounted. Tighten straps, seal facepiece and check for leaks before entering."
+   },
+   {
+    "emoji": "⏰",
+    "heading": "Low-air alarm",
+    "text": "The low-air alarm activates at 25 percent of cylinder capacity. Leave when it sounds, not after."
+   },
+   {
+    "emoji": "⚖️",
+    "heading": "Rule of thirds",
+    "text": "Plan air use: one third to go in, one third to get out, one third reserve. Know your consumption."
+   },
+   {
+    "emoji": "🧠",
+    "heading": "Memory hook",
+    "text": "Alarm at a quarter, exit at a third. Your air is your lifeline, and nobody else is going to watch your gauge."
+   }
+  ],
+  "quiz": [
+   {
+    "q": "At what cylinder level does the low-air alarm activate?",
+    "choices": [
+     "10 percent",
+     "25 percent",
+     "50 percent",
+     "75 percent"
+    ],
+    "answer": 1,
+    "explain": "The low-air alarm activates at 25 percent of cylinder capacity."
+   },
+   {
+    "q": "Under the rule of thirds, one third of air is used for what?",
+    "choices": [
+     "Reserve",
+     "Resting",
+     "Overhaul only",
+     "Ventilation"
+    ],
+    "answer": 0,
+    "explain": "One third is going in, one third out, one third reserve."
+   }
+  ]
+ },
+ {
+  "id": "fire-06",
+  "topic": "fire",
+  "title": "Mayday LUNAR",
+  "creator": "@MaydayMaya",
+  "hashtags": [
+   "#firefighter",
+   "#mayday",
+   "#LUNAR"
+  ],
+  "likes": 71500,
+  "scenes": [
+   {
+    "emoji": "🆘",
+    "heading": "Call it early",
+    "text": "Lost, trapped, out of air or injured? Call Mayday immediately. Delay kills. Say it three times."
+   },
+   {
+    "emoji": "📻",
+    "heading": "Say it clearly",
+    "text": "Key the radio and say, Mayday, Mayday, Mayday. Command will clear the channel and ask for your info."
+   },
+   {
+    "emoji": "📍",
+    "heading": "LUNAR report",
+    "text": "Give Location, Unit, Name, Assignment, Resources needed. Short and clear."
+   },
+   {
+    "emoji": "🔊",
+    "heading": "Make noise",
+    "text": "Activate your PASS device and use a flashlight, tool tapping and voice so rescuers can find you."
+   },
+   {
+    "emoji": "🧠",
+    "heading": "Memory hook",
+    "text": "LUNAR: Location, Unit, Name, Assignment, Resources. A mayday is no time to be embarrassed, make the call."
+   }
+  ],
+  "quiz": [
+   {
+    "q": "What does the R in LUNAR stand for?",
+    "choices": [
+     "Rescue plan",
+     "Resources needed",
+     "Radio channel",
+     "Rank"
+    ],
+    "answer": 1,
+    "explain": "LUNAR: Location, Unit, Name, Assignment, Resources needed."
+   },
+   {
+    "q": "How many times do you say Mayday at first call?",
+    "choices": [
+     "Once",
+     "Twice",
+     "Three times",
+     "Four times"
+    ],
+    "answer": 2,
+    "explain": "Say Mayday three times to get priority attention."
+   }
+  ]
+ },
+ {
+  "id": "fire-07",
+  "topic": "fire",
+  "title": "Gear Up: NFPA 1971",
+  "creator": "@TurnoutTerry",
+  "hashtags": [
+   "#firefighter",
+   "#PPE",
+   "#NFPA1971"
+  ],
+  "likes": 36900,
+  "scenes": [
+   {
+    "emoji": "🧥",
+    "heading": "The standard",
+    "text": "NFPA 1971 covers structural firefighting protective ensembles: coat, pants, helmet, gloves, boots and hood."
+   },
+   {
+    "emoji": "🧅",
+    "heading": "Three layers",
+    "text": "Coat and pants have an outer shell, a moisture barrier and a thermal liner. Layers trap insulating air."
+   },
+   {
+    "emoji": "🧢",
+    "heading": "No skin showing",
+    "text": "Hood closes the gap between helmet, collar and facepiece. Gloves overlap coat sleeves. Cover everything."
+   },
+   {
+    "emoji": "🧼",
+    "heading": "Care counts",
+    "text": "Dirty or damaged gear loses protection. NFPA 1851 covers inspection, cleaning and repair. Clean after fires."
+   },
+   {
+    "emoji": "🧠",
+    "heading": "Memory hook",
+    "text": "1971 is for the gear, 1981 is for SCBA. Three layers: shell, barrier, liner. Wear all of it, all the time."
+   }
+  ],
+  "quiz": [
+   {
+    "q": "Which NFPA standard covers structural firefighting protective ensembles?",
+    "choices": [
+     "NFPA 1981",
+     "NFPA 1971",
+     "NFPA 1001",
+     "NFPA 704"
+    ],
+    "answer": 1,
+    "explain": "NFPA 1971 sets requirements for structural firefighting ensembles."
+   },
+   {
+    "q": "Which is a layer of turnout coats?",
+    "choices": [
+     "Moisture barrier",
+     "Rubber core",
+     "Steel mesh",
+     "Foam liner"
+    ],
+    "answer": 0,
+    "explain": "Turnout gear has an outer shell, moisture barrier and thermal liner."
+   }
+  ]
+ },
+ {
+  "id": "fire-08",
+  "topic": "fire",
+  "title": "Ladder Angle 75 Degrees",
+  "creator": "@RungsRay",
+  "hashtags": [
+   "#firefighter",
+   "#ladders",
+   "#fireground"
+  ],
+  "likes": 28400,
+  "scenes": [
+   {
+    "emoji": "📐",
+    "heading": "The magic angle",
+    "text": "A properly placed ground ladder sits at about 75 degrees. Strong, stable and good for climbing."
+   },
+   {
+    "emoji": "📏",
+    "heading": "The 4:1 rule",
+    "text": "Place the base one foot away from the wall for every four feet of working height."
+   },
+   {
+    "emoji": "🏠",
+    "heading": "Roof access",
+    "text": "For roof access, extend the ladder tip at least three rungs above the roofline so you can step on and off."
+   },
+   {
+    "emoji": "🦺",
+    "heading": "Safe footing",
+    "text": "Lock halyard or pawls, level the base, check for wires, and always have a firefighter foot the ladder."
+   },
+   {
+    "emoji": "🧠",
+    "heading": "Memory hook",
+    "text": "75 and 4:1. One foot out per four feet up, and three rungs above the roof. Easy."
+   }
+  ],
+  "quiz": [
+   {
+    "q": "What is the proper placement angle for a ground ladder?",
+    "choices": [
+     "45 degrees",
+     "60 degrees",
+     "75 degrees",
+     "90 degrees"
+    ],
+    "answer": 2,
+    "explain": "Ground ladders are placed at about 75 degrees."
+   },
+   {
+    "q": "Under the 4:1 rule, how far out for 20 feet of working height?",
+    "choices": [
+     "5 feet",
+     "4 feet",
+     "10 feet",
+     "20 feet"
+    ],
+    "answer": 0,
+    "explain": "20 divided by 4 is 5 feet from the wall."
+   }
+  ]
+ },
+ {
+  "id": "fire-09",
+  "topic": "fire",
+  "title": "Hose, Nozzles and GPM",
+  "creator": "@NozzleNate",
+  "hashtags": [
+   "#firefighter",
+   "#hose",
+   "#nozzles"
+  ],
+  "likes": 41200,
+  "scenes": [
+   {
+    "emoji": "🧵",
+    "heading": "Hose sizes",
+    "text": "Attack lines are often 1 3/4 inch. Larger handlines are 2 1/2 inch. Large-diameter hose supplies water."
+   },
+   {
+    "emoji": "💧",
+    "heading": "GPM matters",
+    "text": "Flow is measured in gallons per minute. A 1 3/4 inch line commonly flows roughly 150 to 200 GPM."
+   },
+   {
+    "emoji": "🎯",
+    "heading": "Smooth bore",
+    "text": "Smooth bore nozzles run around 50 psi at the nozzle for handlines. Reach is solid and penetrating."
+   },
+   {
+    "emoji": "🌫️",
+    "heading": "Fog nozzle",
+    "text": "Fog nozzles often operate at 100 psi and can adjust pattern from straight stream to wide fog."
+   },
+   {
+    "emoji": "🧠",
+    "heading": "Memory hook",
+    "text": "Smooth bore: 50 psi. Fog: 100 psi. Big pipe, big GPM, big nozzle reaction. Brace and bleed air first."
+   }
+  ],
+  "quiz": [
+   {
+    "q": "What nozzle pressure is typical for a handline smooth bore nozzle?",
+    "choices": [
+     "25 psi",
+     "50 psi",
+     "100 psi",
+     "150 psi"
+    ],
+    "answer": 1,
+    "explain": "Handline smooth bore nozzles are commonly operated at 50 psi."
+   },
+   {
+    "q": "What does GPM measure?",
+    "choices": [
+     "Gallons per minute",
+     "Gauge pressure marker",
+     "Gas pressure meter",
+     "Ground pump mode"
+    ],
+    "answer": 0,
+    "explain": "GPM is gallons per minute, the flow rate."
+   }
+  ]
+ },
+ {
+  "id": "fire-10",
+  "topic": "fire",
+  "title": "Building Construction I to V",
+  "creator": "@BlueprintBea",
+  "hashtags": [
+   "#firefighter",
+   "#construction",
+   "#buildings"
+  ],
+  "likes": 33500,
+  "scenes": [
+   {
+    "emoji": "🏢",
+    "heading": "Type I",
+    "text": "Type I is fire resistive: concrete and protected steel. Highest resistance to collapse."
+   },
+   {
+    "emoji": "🏭",
+    "heading": "Type II",
+    "text": "Type II is noncombustible: unprotected metal and masonry. Steel can fail fast in fire."
+   },
+   {
+    "emoji": "🧱",
+    "heading": "Type III",
+    "text": "Type III is ordinary construction: masonry exterior walls with wood floors and roof. Watch for hidden voids."
+   },
+   {
+    "emoji": "🪵",
+    "heading": "Type IV and V",
+    "text": "Type IV is heavy timber with large wood members. Type V is wood frame, like most houses."
+   },
+   {
+    "emoji": "🧠",
+    "heading": "Memory hook",
+    "text": "I Fire-resistive, II Noncombustible, III Ordinary, IV Heavy timber, V Wood frame. Fiery Nachos Offer Hot Wings."
+   }
+  ],
+  "quiz": [
+   {
+    "q": "Which type is wood frame construction?",
+    "choices": [
+     "Type II",
+     "Type III",
+     "Type IV",
+     "Type V"
+    ],
+    "answer": 3,
+    "explain": "Type V is wood frame, commonly found in houses."
+   },
+   {
+    "q": "Type III ordinary construction has what feature?",
+    "choices": [
+     "All wood",
+     "Masonry exterior with wood interior",
+     "Reinforced concrete",
+     "Steel only"
+    ],
+    "answer": 1,
+    "explain": "Ordinary construction has masonry exterior walls and wood interior elements."
+   }
+  ]
+ },
+ {
+  "id": "fire-11",
+  "topic": "fire",
+  "title": "Ventilation and Flow Path",
+  "creator": "@VentVince",
+  "hashtags": [
+   "#firefighter",
+   "#ventilation",
+   "#flowpath"
+  ],
+  "likes": 59200,
+  "scenes": [
+   {
+    "emoji": "🌬️",
+    "heading": "Fire follows air",
+    "text": "Fire moves toward fresh air. The flow path runs from inlets to exhaust openings, and the fire follows it."
+   },
+   {
+    "emoji": "🚪",
+    "heading": "Doors are tools",
+    "text": "Closed doors limit air and slow fire growth. Control doors when you can, and close them behind you."
+   },
+   {
+    "emoji": "🪟",
+    "heading": "Coordinate vent",
+    "text": "Ventilation without a hoseline ready can make fire grow. Time vent with attack and stay out of the flow path."
+   },
+   {
+    "emoji": "🌀",
+    "heading": "Vertical or horizontal",
+    "text": "Vertical ventilation uses roof openings. Horizontal uses windows and doors, sometimes with fans like PPV."
+   },
+   {
+    "emoji": "🧠",
+    "heading": "Memory hook",
+    "text": "Fire follows air. Coordinate, cool, then vent. Never vent without a plan and a hoseline."
+   }
+  ],
+  "quiz": [
+   {
+    "q": "What is the flow path?",
+    "choices": [
+     "Route from inlet to exhaust",
+     "Path of the supply hose",
+     "Smoke detector zone",
+     "Ladder route"
+    ],
+    "answer": 0,
+    "explain": "Flow path runs from inlet openings to exhaust openings."
+   },
+   {
+    "q": "Why coordinate ventilation with attack?",
+    "choices": [
+     "Reduce noise",
+     "Vent can feed fire growth",
+     "Save water",
+     "Reduce paperwork"
+    ],
+    "answer": 1,
+    "explain": "Adding air can intensify fire, so vent with a hoseline ready."
+   }
+  ]
+ },
+ {
+  "id": "fire-12",
+  "topic": "fire",
+  "title": "Search Smart and RIT",
+  "creator": "@SearchSusie",
+  "hashtags": [
+   "#firefighter",
+   "#search",
+   "#RIT"
+  ],
+  "likes": 47600,
+  "scenes": [
+   {
+    "emoji": "🔍",
+    "heading": "Primary search",
+    "text": "Primary search is a quick but thorough search for victims, done first, with the fire attack in progress."
+   },
+   {
+    "emoji": "🧭",
+    "heading": "Oriented search",
+    "text": "Teams stay oriented using a wall, hoseline, rope or a thermal imager. Keep contact with each other."
+   },
+   {
+    "emoji": "🪟",
+    "heading": "VES",
+    "text": "Vent, Enter, Search: vent a window from outside, enter, search the room, and close the door behind you."
+   },
+   {
+    "emoji": "🛟",
+    "heading": "RIT ready",
+    "text": "Two-in, two-out applies in IDLH atmospheres. A rapid intervention team stands ready to rescue downed firefighters."
+   },
+   {
+    "emoji": "🧠",
+    "heading": "Memory hook",
+    "text": "VES: Vent, Enter, Search. RIT: Ready Is Required. Stay with your crew and know your way out."
+   }
+  ],
+  "quiz": [
+   {
+    "q": "What does VES stand for?",
+    "choices": [
+     "Vent, Enter, Search",
+     "View, Evaluate, Save",
+     "Verify, Exit, Seal",
+     "Ventilate, Extinguish, Salvage"
+    ],
+    "answer": 0,
+    "explain": "VES is Vent, Enter, Search."
+   },
+   {
+    "q": "What does a RIT do?",
+    "choices": [
+     "Fill the tanks",
+     "Handle media",
+     "Rescue trapped or downed firefighters",
+     "Write reports"
+    ],
+    "answer": 2,
+    "explain": "The rapid intervention team is ready to rescue firefighters in trouble."
+   }
+  ]
+ }
+]

@@ -1,0 +1,940 @@
+[
+  {
+    "name": "NREMT · Airway Anatomy & Assessment",
+    "domain": "Airway",
+    "cards": [
+      {
+        "front": "Upper vs lower airway divider",
+        "back": "Upper: nose/mouth to larynx (vocal cords). Lower: below the larynx - trachea, bronchi, bronchioles, alveoli."
+      },
+      {
+        "front": "Function of the epiglottis",
+        "back": "Leaf-shaped flap that covers the glottis during swallowing to keep food and fluid out of the trachea."
+      },
+      {
+        "front": "Cricoid cartilage",
+        "back": "Firm ring at the lower larynx; the only complete cartilage ring of the airway. Site of cricoid pressure (Sellick), which is no longer routinely recommended."
+      },
+      {
+        "front": "Thyroid cartilage",
+        "back": "Adam's apple; shield-shaped, largest laryngeal cartilage, protects the vocal cords."
+      },
+      {
+        "front": "Carina",
+        "back": "Point where the trachea divides into the right and left mainstem bronchi."
+      },
+      {
+        "front": "Why is the right mainstem bronchus more prone to foreign bodies/intubation errors?",
+        "back": "It is shorter, wider and straighter (less angled) than the left."
+      },
+      {
+        "front": "Alveoli",
+        "back": "Tiny air sacs where O2 and CO2 are exchanged with pulmonary capillary blood by diffusion."
+      },
+      {
+        "front": "Diaphragm",
+        "back": "Main muscle of inspiration. Contracts and flattens, increasing chest volume and lowering pressure so air flows in."
+      },
+      {
+        "front": "Inhalation vs exhalation mechanics",
+        "back": "Inhalation is active: diaphragm and intercostals contract. Exhalation is passive: muscles relax, chest recoils."
+      },
+      {
+        "front": "Normal room air O2 and CO2 composition",
+        "back": "About 21% oxygen, 78% nitrogen, ~0.04% CO2. Exhaled air is ~16% oxygen (enough for rescue breaths)."
+      },
+      {
+        "front": "Primary stimulus to breathe in healthy people",
+        "back": "Rising CO2 in the blood/CSF (hypercarbia), sensed by chemoreceptors in the medulla. Low O2 (hypoxic drive) is the backup stimulus."
+      },
+      {
+        "front": "Hypoxic drive",
+        "back": "In chronic CO2 retainers (some COPD), low O2 becomes the breathing stimulus. Never withhold O2 from a hypoxic patient."
+      },
+      {
+        "front": "Ventilation vs respiration",
+        "back": "Ventilation: movement of air in and out of the lungs. Respiration: gas exchange (O2/CO2) at alveoli and cells."
+      },
+      {
+        "front": "Tidal volume (adult approx)",
+        "back": "Volume of one normal breath, about 500 mL (5-7 mL/kg)."
+      },
+      {
+        "front": "Minute volume",
+        "back": "Tidal volume x respiratory rate; air moved per minute."
+      },
+      {
+        "front": "Dead space",
+        "back": "Airway volume not involved in gas exchange (~150 mL in adults): trachea, bronchi, mouth, nose."
+      },
+      {
+        "front": "Normal adult respiratory rate",
+        "back": "12-20 breaths/min."
+      },
+      {
+        "front": "Normal child respiratory rates by age (approx)",
+        "back": "Toddler 24-40; preschool 22-34; school-age 18-30; adolescent 12-20 breaths/min. Ranges vary slightly by textbook."
+      },
+      {
+        "front": "Normal infant respiratory rate",
+        "back": "About 30-60 breaths/min (newborn 40-60; slows toward 30-50 by 1 year)."
+      },
+      {
+        "front": "Normal SpO2",
+        "back": "About 95-100% on room air. Below 94% suggests hypoxia; treat the patient, not the number alone."
+      },
+      {
+        "front": "Pulse oximetry limitations",
+        "back": "Falsely high with carbon monoxide (reads COHb as oxyHb); unreliable with poor perfusion, cold extremities, nail polish, motion."
+      },
+      {
+        "front": "Adequate breathing signs",
+        "back": "Rate within normal range, regular rhythm, equal chest rise, clear equal breath sounds, good skin color, normal effort."
+      },
+      {
+        "front": "Inadequate breathing signs",
+        "back": "Abnormal rate/rhythm, shallow or unequal rise, cyanosis, retractions, nasal flaring, accessory muscle use, tripod, altered mentation."
+      },
+      {
+        "front": "Signs of respiratory distress (early)",
+        "back": "Anxiety, restlessness, tachypnea, tripod, accessory muscle use, ability to speak only in short phrases."
+      },
+      {
+        "front": "Signs of respiratory failure/arrest",
+        "back": "Slow or irregular rate, fatigue, decreased LOC, weak cry, cyanosis, bradycardia in children. Needs assisted ventilation."
+      },
+      {
+        "front": "Retractions",
+        "back": "Skin pulling in at the ribs, above clavicles or sternum during inhalation; sign of increased work of breathing (esp. children)."
+      },
+      {
+        "front": "Cyanosis",
+        "back": "Blue-gray skin/mucous membranes from low O2 in blood; late sign of hypoxia."
+      },
+      {
+        "front": "Nasal flaring and head bobbing",
+        "back": "Signs of respiratory distress in infants and children; seesaw breathing (abdominal) is also seen."
+      },
+      {
+        "front": "Tripod position",
+        "back": "Sitting upright leaning forward on hands; sign of significant respiratory distress."
+      },
+      {
+        "front": "Capnography normal ETCO2",
+        "back": "35-45 mmHg. Waveform also shows bronchospasm (shark fin) and CPR quality. Monitoring use at EMT level is per local protocol."
+      }
+    ]
+  },
+  {
+    "name": "NREMT · Breath Sounds & Breathing Patterns",
+    "domain": "Airway",
+    "cards": [
+      {
+        "front": "Wheezing",
+        "back": "High-pitched whistling, usually on exhalation; narrowed lower airways (asthma, COPD, anaphylaxis)."
+      },
+      {
+        "front": "Stridor",
+        "back": "Harsh, high-pitched crowing sound on inhalation; upper airway obstruction (croup, epiglottitis, foreign body, swelling)."
+      },
+      {
+        "front": "Rhonchi",
+        "back": "Low-pitched, rattling/snoring sounds; secretions in larger airways (bronchitis, pneumonia)."
+      },
+      {
+        "front": "Rales / crackles",
+        "back": "Fine bubbling or crackling on inspiration; fluid in alveoli (CHF/pulmonary edema, pneumonia)."
+      },
+      {
+        "front": "Gurgling",
+        "back": "Fluid (blood, vomit, secretions) in the upper airway. Suction immediately."
+      },
+      {
+        "front": "Snoring",
+        "back": "Partial obstruction by tongue or soft tissue in an unresponsive patient. Open the airway, consider an adjunct."
+      },
+      {
+        "front": "Diminished or absent breath sounds",
+        "back": "Collapsed lung, pneumothorax, hemothorax, severe asthma 'silent chest', airway obstruction."
+      },
+      {
+        "front": "Where to auscultate (adult)",
+        "back": "Both sides, comparing left to right: apices (below clavicles, midclavicular), midaxillary, and bases (posterior lower back)."
+      },
+      {
+        "front": "Cheyne-Stokes respirations",
+        "back": "Gradual increase then decrease in rate/depth with periods of apnea; seen with brain injury, stroke, CHF, end of life."
+      },
+      {
+        "front": "Kussmaul respirations",
+        "back": "Deep, rapid, labored breathing; blowing off CO2 to compensate for metabolic acidosis (DKA)."
+      },
+      {
+        "front": "Biot (ataxic) respirations",
+        "back": "Irregular pattern with unpredictable pauses; sign of increased ICP / brainstem damage."
+      },
+      {
+        "front": "Agonal respirations",
+        "back": "Occasional gasping, slow and ineffective breaths near death; NOT adequate breathing. Treat as arrest and start CPR."
+      },
+      {
+        "front": "Central neurogenic hyperventilation",
+        "back": "Deep, rapid, regular breathing from brainstem injury."
+      },
+      {
+        "front": "Apneustic breathing",
+        "back": "Prolonged inspiratory gasp with pause; brainstem (pons) damage."
+      },
+      {
+        "front": "Tachypnea / bradypnea / apnea",
+        "back": "Fast rate / slow rate / absent breathing."
+      },
+      {
+        "front": "Hyperventilation vs hypoventilation",
+        "back": "Rate/depth too much, blowing off CO2 / too little, retaining CO2. Hypoventilation needs ventilation assistance."
+      },
+      {
+        "front": "Fruity breath odor suggests",
+        "back": "Ketones: diabetic ketoacidosis (often with Kussmaul breathing)."
+      },
+      {
+        "front": "Paradoxical movement",
+        "back": "Chest segment moves opposite to the rest of the chest; flail chest (2+ adjacent ribs broken in 2+ places)."
+      },
+      {
+        "front": "Hypoxia",
+        "back": "Insufficient oxygen at the tissue level. Signs: restlessness, tachycardia, cyanosis, altered mental status."
+      },
+      {
+        "front": "Hypercapnia",
+        "back": "Too much CO2 in the blood; drowsiness, headache, flushed skin, from hypoventilation."
+      },
+      {
+        "front": "Early vs late signs of hypoxia",
+        "back": "Early: anxiety, restlessness, tachycardia, tachypnea. Late: cyanosis, confusion, decreased LOC, bradycardia (especially in children)."
+      },
+      {
+        "front": "Subcutaneous emphysema",
+        "back": "Air under the skin that crackles like bubble wrap; suggests pneumothorax/airway or chest injury."
+      },
+      {
+        "front": "Jugular vein distention and tracheal deviation",
+        "back": "Tension pneumothorax: JVD and tracheal deviation (a late, often absent sign) with hypotension and absent breath sounds on the affected side."
+      },
+      {
+        "front": "Pulsus paradoxus",
+        "back": "Drop in systolic BP >10 mmHg during inhalation; seen in severe asthma, tamponade."
+      },
+      {
+        "front": "AVPU and airway risk",
+        "back": "Alert, Verbal, Painful, Unresponsive; level of consciousness guides airway risk. Opening airways often needed at P or U."
+      },
+      {
+        "front": "Agonal gasps or brief seizure-like activity in a collapsed patient",
+        "back": "May be the onset of cardiac arrest. Check pulse and breathing together for no more than 10 sec; if no pulse or unsure, start CPR."
+      }
+    ]
+  },
+  {
+    "name": "NREMT · Airway Management & Devices",
+    "domain": "Airway",
+    "cards": [
+      {
+        "front": "Head-tilt chin-lift",
+        "back": "Opens the airway when no spinal injury is suspected: tilt the head back and lift the chin to move the tongue off the posterior pharynx."
+      },
+      {
+        "front": "Jaw-thrust (without head tilt)",
+        "back": "Airway maneuver for suspected spinal injury; push mandible forward from the angles of the jaw."
+      },
+      {
+        "front": "Modified jaw thrust when it fails",
+        "back": "If the jaw thrust fails to open the airway in trauma, use head-tilt chin-lift; airway takes priority over spine."
+      },
+      {
+        "front": "OPA (oropharyngeal airway) indications",
+        "back": "Unresponsive patient with no gag reflex. Keeps the tongue from obstructing the airway; still requires proper head position."
+      },
+      {
+        "front": "OPA contraindication",
+        "back": "Responsive patient or any patient with a gag reflex; may cause vomiting or laryngospasm."
+      },
+      {
+        "front": "OPA sizing",
+        "back": "Measure from the corner of the mouth to the earlobe or angle of the jaw (some texts: center of mouth to angle of jaw)."
+      },
+      {
+        "front": "OPA insertion (adult)",
+        "back": "Insert upside down and rotate 180 degrees at the soft palate, or use a tongue depressor and insert right-side up. Children: tongue depressor, no 180 rotation."
+      },
+      {
+        "front": "NPA (nasopharyngeal airway) indications",
+        "back": "Semiconscious or unresponsive patients who have a gag reflex or clenched jaw and cannot keep their own airway (e.g., seizure, AMS)."
+      },
+      {
+        "front": "NPA contraindications",
+        "back": "Suspected basilar skull fracture or severe facial/nasal trauma, or nasal obstruction. Stop if resistance is met. Per local protocol."
+      },
+      {
+        "front": "NPA sizing",
+        "back": "Measure from the tip of the nose to the earlobe; diameter about the size of the patient's little finger or nostril."
+      },
+      {
+        "front": "NPA insertion technique",
+        "back": "Lubricate (water-soluble), bevel toward the septum, advance along the floor of the nose, usually right nostril; if resistance, try the other side."
+      },
+      {
+        "front": "Recovery position (lateral)",
+        "back": "For unresponsive patients breathing adequately with a pulse and no suspected spinal injury; lets fluids drain to limit aspiration."
+      },
+      {
+        "front": "Suction unit vacuum requirement (adult)",
+        "back": "Unit should generate at least 300 mmHg of vacuum with the tubing clamped. Limit each adult suction attempt to about 15 sec (10 sec per some protocols)."
+      },
+      {
+        "front": "Suction time limits",
+        "back": "Adult up to 15 sec, child up to 10 sec, infant up to 5 sec per attempt (some protocols: 10 sec for all). Oxygenate/ventilate before and after."
+      },
+      {
+        "front": "Suction pressure - child/infant",
+        "back": "Use lower vacuum than adults: commonly about 80-120 mmHg for children and under 100 mmHg for infants. Exact figures per local protocol."
+      },
+      {
+        "front": "Rigid (Yankauer/tonsil tip) suction",
+        "back": "Used for mouth and pharynx to remove large particles, blood, vomit; insert only as far as can be seen."
+      },
+      {
+        "front": "Soft (French/catheter) suction",
+        "back": "Flexible catheter for the nose, a stoma/tracheostomy tube, or liquid secretions when a rigid tip won't fit; measure nose tip to earlobe."
+      },
+      {
+        "front": "Vomiting patient with suspected spinal injury",
+        "back": "Log roll the patient as a unit onto the side while maintaining spinal alignment, then suction the airway."
+      },
+      {
+        "front": "Foreign body airway obstruction (FBAO) - mild",
+        "back": "Good air exchange, able to cough forcefully and speak. Encourage coughing, do not interfere, and monitor for worsening."
+      },
+      {
+        "front": "FBAO - severe adult/child",
+        "back": "Cannot speak, cough or breathe. 2025 AHA: cycles of 5 back blows then 5 abdominal thrusts until cleared. If unresponsive, start CPR."
+      },
+      {
+        "front": "FBAO - infant",
+        "back": "2025 AHA: cycles of 5 back blows then 5 chest thrusts (heel of one hand), head lower than body. No abdominal thrusts. If unresponsive, start CPR."
+      },
+      {
+        "front": "Pregnant or obese choking patient",
+        "back": "Use chest thrusts instead of abdominal thrusts (late pregnancy, or when you cannot encircle the abdomen)."
+      },
+      {
+        "front": "Sniffing position",
+        "back": "Slight neck flexion with head extension to align the airway in adults and older children. Infants: neutral position (pad under shoulders)."
+      },
+      {
+        "front": "Stoma (laryngectomy) ventilation",
+        "back": "Ventilate through the stoma using an infant/child mask sealed around it; no head tilt needed. If air leaks from mouth/nose, seal them. Suction as needed."
+      },
+      {
+        "front": "Tracheostomy patient with distress",
+        "back": "Suction the tube first. If still obstructed, follow protocol (e.g., remove/clean inner cannula); ventilate via the tube or stoma with a BVM."
+      },
+      {
+        "front": "Supraglottic airway (i-gel/King) role",
+        "back": "Not in the national EMT scope of practice (AEMT and above). Some states/agencies allow EMTs to insert them with extra training per local protocol."
+      },
+      {
+        "front": "Cervical collar and airway",
+        "back": "A collar must not impair breathing or airway access; keep manual stabilization and use jaw thrust if the airway needs opening."
+      },
+      {
+        "front": "Foreign body removal in unresponsive patient",
+        "back": "Start CPR. Each time you open the airway to ventilate, look in the mouth and remove an object only if visible. No blind finger sweeps."
+      }
+    ]
+  },
+  {
+    "name": "NREMT · Oxygen, BVM, CPAP & Respiratory Conditions",
+    "domain": "Airway",
+    "cards": [
+      {
+        "front": "Nonrebreather mask flow rate and FiO2",
+        "back": "10-15 L/min, enough to keep the reservoir inflated; delivers up to about 90% oxygen (less in practice with a poor mask seal)."
+      },
+      {
+        "front": "Nasal cannula flow rate and FiO2",
+        "back": "1-6 L/min; delivers about 24-44% oxygen (approx. 4% per liter)."
+      },
+      {
+        "front": "Simple face mask",
+        "back": "6-10 L/min; approximately 35-60% oxygen. Never run below 6 L/min (CO2 rebreathing)."
+      },
+      {
+        "front": "Venturi mask",
+        "back": "Delivers a fixed, precise FiO2 (about 24-50%) set by a color-coded adapter; useful when controlled oxygen is needed (e.g., COPD)."
+      },
+      {
+        "front": "Partial rebreather mask",
+        "back": "6-10 L/min with reservoir, no one-way valves; about 35-60% oxygen. Rarely used in the field."
+      },
+      {
+        "front": "Blow-by oxygen",
+        "back": "For infants/children who won't tolerate a mask: hold tubing, mask or cup near the face at 6 L/min or more (flow per local protocol)."
+      },
+      {
+        "front": "Oxygen cylinder duration formula",
+        "back": "Minutes = (gauge psi - safe residual) x cylinder constant / flow in L/min. Constants: D 0.16, E 0.28, M 1.56, G 2.41, H/K 3.14."
+      },
+      {
+        "front": "Safe residual pressure",
+        "back": "200 psi is the textbook value used in duration calculations; many services change tanks at 500 psi. Follow local policy."
+      },
+      {
+        "front": "Full pressure of an oxygen cylinder",
+        "back": "About 2,000 psi (2,000-2,200 psi) when full."
+      },
+      {
+        "front": "Oxygen safety rules",
+        "back": "Keep away from heat, flame, oil and grease; secure cylinders; open the valve slowly. Oxygen is a drug and supports combustion (it does not burn itself)."
+      },
+      {
+        "front": "Oxygen administration indications",
+        "back": "Hypoxia (SpO2 <94%), respiratory distress, shock, CO poisoning, cardiac arrest. Chest pain/stroke: only if hypoxic or dyspneic. Titrate per protocol."
+      },
+      {
+        "front": "Oxygen contraindications",
+        "back": "No absolute contraindication in a hypoxic patient. Avoid routine high-flow O2 when SpO2 is normal (e.g., uncomplicated MI or stroke)."
+      },
+      {
+        "front": "BVM ventilation rate - adult",
+        "back": "Adult with a pulse but inadequate breathing: 1 breath every 6 seconds (10/min), each over about 1 sec, just enough for chest rise."
+      },
+      {
+        "front": "BVM ventilation rate - child and infant",
+        "back": "With a pulse: 1 breath every 2-3 seconds (20-30/min) per AHA (2020 and 2025). Older texts/some protocols list 12-20/min."
+      },
+      {
+        "front": "BVM volume goal",
+        "back": "Just enough to produce visible chest rise (about 500-600 mL in adults). Avoid excessive rate/volume: gastric distention, reduced cardiac output."
+      },
+      {
+        "front": "BVM two-person technique",
+        "back": "One rescuer holds the mask seal with two hands and opens the airway; the other squeezes the bag. Preferred over one-person BVM."
+      },
+      {
+        "front": "E-C clamp",
+        "back": "Thumb and index finger form a C on the mask; remaining 3 fingers form an E along the jaw."
+      },
+      {
+        "front": "BVM O2 delivery",
+        "back": "With a reservoir and 15 L/min oxygen: about 90-100%. With oxygen but no reservoir: about 40-60%. Room air only: 21%."
+      },
+      {
+        "front": "Gastric distention",
+        "back": "Air in the stomach from too much volume, force or rate; causes vomiting and limits lung expansion. Reposition airway; give slow, gentle breaths."
+      },
+      {
+        "front": "CPAP indications",
+        "back": "Awake patient able to follow commands with moderate-severe respiratory distress (pulmonary edema/CHF, COPD, asthma per protocol) and adequate BP."
+      },
+      {
+        "front": "CPAP contraindications",
+        "back": "Apnea/agonal breathing, unresponsive or unable to protect airway, vomiting/GI bleed, hypotension (SBP <90), pneumothorax or chest trauma, facial trauma."
+      },
+      {
+        "front": "CPAP mechanism",
+        "back": "Continuous positive airway pressure keeps alveoli open, pushes fluid out of lungs, increases oxygenation and reduces work of breathing."
+      },
+      {
+        "front": "Asthma: definition and EMT treatment",
+        "back": "Reversible bronchospasm, swelling and mucus with wheezing. Oxygen if hypoxic, position of comfort, assist prescribed inhaler/albuterol per protocol."
+      },
+      {
+        "front": "COPD (chronic bronchitis/emphysema)",
+        "back": "Chronic airflow limitation; wheezes/rhonchi, barrel chest, pursed lips. Titrate O2 (commonly SpO2 88-92% per protocol); never withhold if hypoxic."
+      },
+      {
+        "front": "Pursed-lip breathing",
+        "back": "Exhaling slowly through pursed lips creates back-pressure that keeps small airways open (self-made PEEP); common in COPD/emphysema."
+      },
+      {
+        "front": "Albuterol (MDI/nebulizer) assist",
+        "back": "Beta-2 agonist bronchodilator. EMTs assist with the patient's prescribed inhaler or give it per protocol. Side effects: tachycardia, tremor, nervousness."
+      },
+      {
+        "front": "MDI use steps",
+        "back": "Check right drug/expiration, shake, exhale, seal lips (use spacer if available), press while inhaling slowly and deeply, hold breath about 10 sec."
+      },
+      {
+        "front": "Pneumonia",
+        "back": "Lung infection: fever, productive cough, crackles/rhonchi, pleuritic pain. O2 if hypoxic, position of comfort, monitor, transport."
+      },
+      {
+        "front": "Pulmonary embolism (PE)",
+        "back": "Clot blocks a pulmonary artery: sudden dyspnea, pleuritic chest pain, tachycardia. Risks: immobility, surgery, estrogen. O2, rapid transport."
+      },
+      {
+        "front": "Spontaneous pneumothorax",
+        "back": "Air in the pleural space without trauma (classically tall, thin young males, smokers, COPD); sudden sharp pain, dyspnea, decreased sounds one side."
+      },
+      {
+        "front": "Tension pneumothorax",
+        "back": "Trapped pleural air collapses the lung and shifts the mediastinum: severe distress, absent sounds, hypotension, JVD. Needs ALS decompression; rapid transport."
+      },
+      {
+        "front": "Open chest wound (sucking)",
+        "back": "Seal with a vented chest seal or occlusive dressing (3-sided taping per local protocol). If tension signs develop, lift/burp the dressing."
+      },
+      {
+        "front": "Pulmonary edema",
+        "back": "Fluid in alveoli (usually left heart failure): crackles, pink frothy sputum, orthopnea. Sit upright, O2, CPAP if indicated per protocol."
+      },
+      {
+        "front": "Croup and epiglottitis",
+        "back": "Croup: viral, barking cough, stridor, age ~6 mo-3 yr. Epiglottitis: high fever, drooling, tripod; keep calm, nothing in the mouth, no throat exam."
+      },
+      {
+        "front": "Anaphylaxis airway signs",
+        "back": "Stridor, wheezing, hoarseness, swelling of lips/tongue/throat. Give epinephrine (auto-injector/IM) per protocol first; O2 and airway support."
+      },
+      {
+        "front": "Hyperventilation syndrome",
+        "back": "Rapid breathing with tingling, carpopedal spasm, dizziness. Calm and coach; no paper bag. Assume a serious cause (PE, DKA, MI) until ruled out."
+      }
+    ]
+  },
+  {
+    "name": "NREMT · Pediatric Airway Differences",
+    "domain": "Airway",
+    "cards": [
+      {
+        "front": "Pediatric tongue size",
+        "back": "Relatively larger tongue in a smaller mouth; more likely to block the airway."
+      },
+      {
+        "front": "Pediatric airway diameter",
+        "back": "Narrower and more easily blocked by swelling, mucus, or blood; small edema causes large resistance."
+      },
+      {
+        "front": "Pediatric trachea",
+        "back": "Softer, shorter and more flexible; hyperextension or flexion can kink it. Keep infants neutral and children in a slight sniffing position."
+      },
+      {
+        "front": "Cricoid in children",
+        "back": "Classically taught as the narrowest part of the airway in children under about 8-10 years (in adults it is the glottis/vocal cords)."
+      },
+      {
+        "front": "Infant obligate nose breathers",
+        "back": "Young infants (first months of life) breathe mainly through the nose; nasal secretions can cause distress. Clear nostrils with a bulb syringe."
+      },
+      {
+        "front": "Occiput size effect",
+        "back": "Large occiput flexes the neck when supine; place a folded towel under the shoulders of an infant/young child to keep the airway neutral."
+      },
+      {
+        "front": "Pediatric chest wall",
+        "back": "Soft and pliable; children rely on the diaphragm (belly breathing). Retractions and seesaw breathing signal increased work of breathing."
+      },
+      {
+        "front": "Pediatric oxygen reserve",
+        "back": "Higher metabolic rate and smaller reserves, so they desaturate quickly. Respiratory failure/hypoxia is the most common cause of pediatric arrest."
+      },
+      {
+        "front": "Pediatric hypoxia sign: bradycardia",
+        "back": "Bradycardia in a hypoxic child signals impending arrest. Ventilate with O2; if HR stays <60 with poor perfusion, start compressions."
+      },
+      {
+        "front": "Pediatric OPA sizing and insertion",
+        "back": "Size corner of mouth to earlobe/angle of jaw. Insert right side up using a tongue depressor; do not rotate 180 degrees (palate injury)."
+      },
+      {
+        "front": "Pediatric NPA caution",
+        "back": "Size carefully (nose tip to earlobe, smaller than the nostril). Small passages bleed and block easily; rarely used in infants. Per local protocol."
+      },
+      {
+        "front": "Pediatric normal heart rate - infant",
+        "back": "About 100-160 bpm (newborns may reach 180). Ranges vary slightly by textbook."
+      },
+      {
+        "front": "Pediatric normal heart rate - child",
+        "back": "Approx: toddler 90-150, preschool 80-140, school age 70-120, adolescent 60-100 bpm. Ranges vary by source."
+      },
+      {
+        "front": "Pediatric hypotension: lowest acceptable systolic BP",
+        "back": "Ages 1-10: below 70 + (2 x age in years) mmHg is hypotension. Over 10 years: <90. Infants 1-12 mo: <70; newborns: <60."
+      },
+      {
+        "front": "Pediatric Assessment Triangle",
+        "back": "Appearance, Work of breathing, Circulation to skin. Quick general impression."
+      },
+      {
+        "front": "Pediatric respiratory arrest vs cardiac arrest",
+        "back": "Most pediatric arrests are respiratory in origin; prioritize airway and ventilation."
+      },
+      {
+        "front": "Pediatric foreign body obstruction",
+        "back": "Severe, responsive: child gets 5 back blows then 5 abdominal thrusts (2025 AHA); infant gets 5 back blows then 5 chest thrusts. Unresponsive: CPR."
+      },
+      {
+        "front": "Pediatric suction durations",
+        "back": "Child up to 10 sec, infant up to 5 sec per attempt, with lower vacuum; avoid deep or prolonged suction (vagal bradycardia, hypoxia)."
+      },
+      {
+        "front": "Pediatric BVM masks",
+        "back": "Mask should cover from the bridge of the nose to the chin cleft without pressing on the eyes; don't compress soft tissue under the chin."
+      },
+      {
+        "front": "CPR age definitions (infant, child, adult)",
+        "back": "Infant: under 1 year. Child: 1 year to puberty. Adult: puberty and older (breast development in females; chest/underarm hair in males)."
+      },
+      {
+        "front": "Gastric distention in children",
+        "back": "Common with excessive force, volume or rate; it pushes up the diaphragm. Give gentle breaths over 1 sec, just enough for chest rise."
+      },
+      {
+        "front": "Febrile child with drooling and tripod",
+        "back": "Suspect epiglottitis: keep calm, position of comfort, nothing in the mouth, no throat exam, blow-by O2 if tolerated, rapid quiet transport."
+      },
+      {
+        "front": "Bronchiolitis (RSV)",
+        "back": "Viral infection of small airways in infants/toddlers: wheezing, nasal flaring, retractions. Suction the nose, give oxygen as needed."
+      },
+      {
+        "front": "Pediatric asthma emphasis",
+        "back": "Wheezing, retractions, and tiring child; silent chest is critical. Assist with prescribed inhaler per protocol."
+      },
+      {
+        "front": "Altered mental status in a child: what to check",
+        "back": "Hypoxia first (airway/breathing), then blood glucose; hypoglycemia is common in sick children and causes lethargy or seizures."
+      },
+      {
+        "front": "Infant airway position",
+        "back": "Neutral position; flexion or hyperextension can kink the soft airway. A thin pad under the shoulders offsets the large occiput."
+      },
+      {
+        "front": "SIDS vs BRUE",
+        "back": "SIDS: sudden unexplained death of an infant <1 yr. BRUE: brief (<1 min), now-resolved episode of color, breathing, tone or responsiveness change; transport."
+      }
+    ]
+  },
+  {
+    "name": "NREMT · CPR, AED & Resuscitation",
+    "domain": "Cardiology",
+    "cards": [
+      {
+        "front": "Chain of survival (2025 AHA)",
+        "back": "One unified 6-link chain for all ages/settings: recognition and emergency activation, high-quality CPR, defibrillation, advanced resuscitation, post-arrest care, recovery and survivorship."
+      },
+      {
+        "front": "Adult compression rate",
+        "back": "100-120 per minute."
+      },
+      {
+        "front": "Adult compression depth",
+        "back": "At least 2 inches (5 cm), no more than 2.4 inches (6 cm)."
+      },
+      {
+        "front": "Child compression depth (1 yr to puberty)",
+        "back": "At least 1/3 the AP chest depth, about 2 inches (5 cm). One or two hands."
+      },
+      {
+        "front": "Infant compression depth",
+        "back": "At least 1/3 the AP chest depth, about 1.5 inches (4 cm)."
+      },
+      {
+        "front": "Compression-to-ventilation ratio: adult",
+        "back": "30:2 for 1 or 2 rescuers (no advanced airway)."
+      },
+      {
+        "front": "Child and infant ratio, 1 rescuer",
+        "back": "30:2."
+      },
+      {
+        "front": "Child and infant ratio, 2 rescuers",
+        "back": "15:2."
+      },
+      {
+        "front": "Infant compression technique, 1 rescuer",
+        "back": "2025 AHA: two thumbs (encircling hands) or heel of one hand on the lower half of the sternum. The 2-finger technique is no longer recommended."
+      },
+      {
+        "front": "Infant compression technique, 2 rescuers",
+        "back": "Two thumb-encircling hands technique on the lower half of the sternum (preferred); heel of one hand if hands cannot encircle the chest."
+      },
+      {
+        "front": "Adult compression hand position",
+        "back": "Heel of one hand on the lower half of the sternum (center of chest), other hand on top, arms straight, shoulders over hands."
+      },
+      {
+        "front": "Full chest recoil",
+        "back": "Allow complete recoil between compressions; do not lean. Leaning reduces venous return."
+      },
+      {
+        "front": "Compression fraction goal",
+        "back": "Minimize interruptions; keep pauses under 10 seconds; chest compression fraction at least 60% (ideally higher)."
+      },
+      {
+        "front": "Rescuer switch interval",
+        "back": "Switch compressors about every 2 minutes (5 cycles of 30:2) or sooner if fatigued; make the switch in under 5 sec."
+      },
+      {
+        "front": "Pulse check time",
+        "back": "At least 5 but no more than 10 seconds. Carotid in adults; carotid or femoral in children; brachial in infants."
+      },
+      {
+        "front": "Rescue breathing rate - adult with pulse",
+        "back": "1 breath every 6 seconds (about 10/min), each over 1 sec."
+      },
+      {
+        "front": "Rescue breathing - child/infant with pulse",
+        "back": "1 breath every 2-3 seconds (20-30/min). If heart rate is <60 with poor perfusion despite oxygen and ventilation, start CPR."
+      },
+      {
+        "front": "Ventilation with advanced airway during CPR",
+        "back": "Continuous compressions without pausing for breaths. Adult: 1 breath every 6 sec (10/min). Infant/child: 1 every 2-3 sec (20-30/min)."
+      },
+      {
+        "front": "Where to place patient for CPR",
+        "back": "Supine on a firm, flat surface; expose the chest."
+      },
+      {
+        "front": "Hands-only CPR",
+        "back": "For untrained lay rescuers of adults: call 911, push hard and fast in the center of the chest at 100-120/min. Children need breaths too."
+      },
+      {
+        "front": "Cardiac arrest recognition",
+        "back": "Unresponsive, no normal breathing (absent or only gasping), and no definite pulse felt within 10 seconds."
+      },
+      {
+        "front": "AED steps (4)",
+        "back": "1) Power on 2) Attach pads 3) Analyze (everyone clear, no touching) 4) Shock if advised, then resume CPR immediately."
+      },
+      {
+        "front": "AED pad placement - adult",
+        "back": "Anterolateral: right upper chest below the clavicle and left side below the armpit (lateral to the nipple). Alternative: anterior-posterior."
+      },
+      {
+        "front": "AED pad placement - child/infant",
+        "back": "Under 8 yr (about <25 kg): pediatric pads/attenuator if available; if not, use adult pads. Pads must not touch; use front-back if needed."
+      },
+      {
+        "front": "Shockable rhythms",
+        "back": "Ventricular fibrillation (VF) and pulseless ventricular tachycardia (pVT)."
+      },
+      {
+        "front": "Non-shockable rhythms",
+        "back": "Asystole and PEA (pulseless electrical activity). AED says no shock advised: resume CPR immediately; ALS for further care."
+      },
+      {
+        "front": "AED safety",
+        "back": "Everyone clear before analysis and shock; move free-flowing oxygen away from the chest; dry the chest; remove medication patches and wipe."
+      },
+      {
+        "front": "AED: implanted pacemaker/ICD",
+        "back": "Do not place a pad directly over the device (place it to the side, about 1 inch away); do not delay the shock."
+      },
+      {
+        "front": "AED: wet patient",
+        "back": "Remove from standing water and quickly wipe the chest dry; do not delay the shock. AED use is OK on snow or a wet surface."
+      },
+      {
+        "front": "After AED shock",
+        "back": "Resume CPR immediately, starting with compressions, for about 2 minutes (5 cycles) before the AED re-analyzes. No pulse check right after the shock."
+      },
+      {
+        "front": "When to stop CPR",
+        "back": "ROSC, care transferred to ALS/equal or higher level, rescuer exhaustion, unsafe scene, valid DNR/POLST presented, or termination order from medical direction."
+      },
+      {
+        "front": "Obvious death criteria",
+        "back": "Injuries incompatible with life (decapitation, transection, incineration), rigor mortis, dependent lividity, decomposition. Withhold CPR per local protocol."
+      },
+      {
+        "front": "ROSC",
+        "back": "Return of spontaneous circulation: a palpable pulse returns (breathing may not). Support ventilation, recheck often, transport."
+      },
+      {
+        "front": "Post-ROSC care for EMT",
+        "back": "Support airway/ventilation at normal rate (no hyperventilation); titrate O2 once SpO2 is reliable (2025 AHA 90-98%, per protocol); vitals, transport."
+      },
+      {
+        "front": "Special: opioid overdose cardiac arrest",
+        "back": "No pulse: standard CPR with ventilations and AED take priority; give naloxone per protocol without delaying CPR. Pulse but not breathing: ventilate + naloxone."
+      },
+      {
+        "front": "Drowning cardiac arrest priority",
+        "back": "Hypoxic arrest: ventilation matters. AHA: open the airway, give 2 rescue breaths, then CPR 30:2 with oxygen; attach AED when available."
+      },
+      {
+        "front": "Hypothermic arrest",
+        "back": "Pulse may be slow and weak: check longer than usual (30-60 sec per local protocol). No pulse: CPR and AED, prevent heat loss, transport; shock limits per protocol."
+      },
+      {
+        "front": "Cardiac arrest in pregnancy",
+        "back": "High-quality CPR with continuous manual left uterine displacement if the uterus is at/above the umbilicus; early ALS and rapid transport."
+      }
+    ]
+  },
+  {
+    "name": "NREMT · Cardiac Conditions & Medications",
+    "domain": "Cardiology",
+    "cards": [
+      {
+        "front": "Heart chambers and flow",
+        "back": "Right atrium > tricuspid > right ventricle > pulmonic valve > lungs > left atrium > mitral > left ventricle > aortic valve > body."
+      },
+      {
+        "front": "Coronary arteries",
+        "back": "Supply the heart muscle; fill during diastole. Blockage causes ischemia/infarct."
+      },
+      {
+        "front": "Normal adult heart rate",
+        "back": "60-100 bpm."
+      },
+      {
+        "front": "Tachycardia and bradycardia (adult)",
+        "back": "Tachycardia >100 bpm; bradycardia <60 bpm."
+      },
+      {
+        "front": "Normal adult BP",
+        "back": "Normal is below 120/80 mmHg; hypotension in adults is generally systolic <90 mmHg."
+      },
+      {
+        "front": "Stroke volume, cardiac output",
+        "back": "Stroke volume: blood per beat. CO = HR x SV. BP = CO x peripheral resistance."
+      },
+      {
+        "front": "Preload / afterload",
+        "back": "Preload: volume returning to the heart (filling). Afterload: resistance the ventricle pumps against."
+      },
+      {
+        "front": "Angina pectoris",
+        "back": "Chest pain from temporary myocardial ischemia, usually on exertion; typically lasts under 15 min and is relieved by rest or nitroglycerin."
+      },
+      {
+        "front": "Stable vs unstable angina",
+        "back": "Stable: predictable on exertion, relieved by rest. Unstable: at rest, increasing, lasts longer; treat as possible MI."
+      },
+      {
+        "front": "Acute myocardial infarction (AMI)",
+        "back": "Death of heart muscle from a blocked coronary artery. Pain often lasts >15-30 min and is not relieved by rest or nitroglycerin."
+      },
+      {
+        "front": "ACS (acute coronary syndrome)",
+        "back": "Umbrella term: unstable angina, NSTEMI, STEMI."
+      },
+      {
+        "front": "Classic AMI signs",
+        "back": "Crushing pressure/tightness, radiating to arm/jaw/back, diaphoresis, nausea, dyspnea, anxiety, pale/ashen."
+      },
+      {
+        "front": "Atypical MI presentation",
+        "back": "Women, elderly, diabetics: fatigue, indigestion, shortness of breath, nausea, weakness with little pain."
+      },
+      {
+        "front": "OPQRST",
+        "back": "Onset, Provocation, Quality, Radiation, Severity, Time - pain assessment."
+      },
+      {
+        "front": "SAMPLE history",
+        "back": "Signs/symptoms, Allergies, Medications, Past history, Last oral intake, Events leading up."
+      },
+      {
+        "front": "EMT care for chest pain",
+        "back": "Primary assessment, O2 only if hypoxic/dyspneic, position of comfort, vitals, aspirin, assist nitro per protocol, 12-lead acquisition if allowed, early transport."
+      },
+      {
+        "front": "Aspirin indication (ACS)",
+        "back": "Suspected ACS/cardiac chest pain. Antiplatelet: keeps platelets from clumping so the clot does not grow."
+      },
+      {
+        "front": "Aspirin dose",
+        "back": "162-324 mg non-enteric-coated, chewed (2-4 x 81 mg chewable tablets), per local protocol."
+      },
+      {
+        "front": "Aspirin contraindications",
+        "back": "Aspirin/NSAID allergy, active GI bleeding or ulcer, bleeding disorder, aspirin-sensitive asthma; full dose already taken. Per local protocol."
+      },
+      {
+        "front": "Nitroglycerin indication",
+        "back": "Cardiac-type chest pain in a patient with their own prescribed nitro (and protocol/medical direction). Vasodilator: lowers preload and heart workload."
+      },
+      {
+        "front": "Nitroglycerin dose",
+        "back": "0.4 mg sublingual tablet or spray; may repeat every 3-5 min if pain persists and BP allows, max 3 doses total (including doses already taken)."
+      },
+      {
+        "front": "Nitroglycerin contraindications",
+        "back": "SBP <100 (<90 in some protocols); PDE5 inhibitor use (sildenafil/vardenafil within 24 h, tadalafil within 48 h); head injury; 3 doses already taken."
+      },
+      {
+        "front": "Nitroglycerin side effects",
+        "back": "Headache, hypotension, dizziness, flushing, burning under the tongue. Recheck BP within 5 min after each dose."
+      },
+      {
+        "front": "Nitroglycerin storage and use",
+        "back": "Tablets lose potency with light, heat, air and age (keep in original dark glass bottle); check expiration. Give with patient seated or lying."
+      },
+      {
+        "front": "Checks before assisting with nitroglycerin",
+        "back": "Right patient (their own prescription), right drug/dose/route, not expired, SBP above protocol minimum, no PDE5 use, medical direction as required."
+      },
+      {
+        "front": "Congestive heart failure (CHF)",
+        "back": "Heart cannot pump effectively. Left-sided: pulmonary edema (crackles, dyspnea, orthopnea). Right-sided: JVD, peripheral edema, ascites."
+      },
+      {
+        "front": "Orthopnea / PND",
+        "back": "Difficulty breathing lying flat; paroxysmal nocturnal dyspnea wakes patient at night; signs of CHF."
+      },
+      {
+        "front": "Pedal edema and JVD",
+        "back": "Signs of right-sided heart failure: swollen feet/ankles (dependent edema) and distended neck veins."
+      },
+      {
+        "front": "Cardiogenic shock",
+        "back": "Pump failure (often after MI): hypotension, cool clammy skin, weak rapid pulse, possible pulmonary edema. O2, position of comfort, rapid transport/ALS."
+      },
+      {
+        "front": "Cardiac tamponade (Beck's triad)",
+        "back": "Beck's triad: hypotension (narrowing pulse pressure), JVD, muffled heart sounds, from blood/fluid in the pericardial sac."
+      },
+      {
+        "front": "Hypertensive emergency",
+        "back": "Severely high BP (often >180/120) with organ signs: headache, vision change, chest pain, AMS. Supportive care; do not try to lower BP; transport."
+      },
+      {
+        "front": "Aortic aneurysm",
+        "back": "Weakened aortic wall bulges. Rupture: sudden severe abdominal/back pain, pulsating mass, shock. Do not palpate repeatedly; rapid transport."
+      },
+      {
+        "front": "Aortic dissection",
+        "back": "Sudden tearing/ripping chest or back pain, unequal pulses or BP between arms; time critical, rapid transport."
+      },
+      {
+        "front": "Arrhythmias an EMT should know",
+        "back": "Tachycardia, bradycardia, VF and pulseless VT (shockable), asystole/PEA (not shockable). EMTs do not interpret ECGs; use AED, call ALS."
+      },
+      {
+        "front": "STEMI",
+        "back": "ST-elevation MI: usually complete blockage of a coronary artery. Time critical: early hospital notification, transport to PCI-capable center per protocol."
+      },
+      {
+        "front": "Troponin (hospital test, not EMT skill)",
+        "back": "Protein released by injured heart muscle; rises hours after an MI. Measured by hospital lab to confirm MI."
+      },
+      {
+        "front": "Syncope",
+        "back": "Brief loss of consciousness from reduced brain perfusion with spontaneous recovery. Cardiac causes are serious; assess vitals, glucose; consider ALS."
+      },
+      {
+        "front": "Atherosclerosis",
+        "back": "Plaque build-up in arteries narrowing the lumen; leading cause of MI/stroke."
+      },
+      {
+        "front": "Risk factors for heart disease",
+        "back": "Non-modifiable: age, male sex, family history. Modifiable: smoking, hypertension, diabetes, high cholesterol, obesity, inactivity."
+      }
+    ]
+  }
+]

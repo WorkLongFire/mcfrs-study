@@ -1,0 +1,234 @@
+[
+ {
+  "name": "NREMT · Radio Systems & What to Say",
+  "domain": "Communication",
+  "cards": [
+   {
+    "front": "Simplex radio",
+    "back": "Transmit OR receive, one at a time, on one frequency. Push to talk, release to listen. You can't be interrupted while keyed up."
+   },
+   {
+    "front": "Duplex radio",
+    "back": "Transmit and receive at the same time using two frequencies, like a phone call. Either side can interrupt."
+   },
+   {
+    "front": "Multiplex radio",
+    "back": "Sends two or more signals at once on the same channel, such as voice plus ECG/telemetry data."
+   },
+   {
+    "front": "Trunking system",
+    "back": "A computer assigns the next open frequency from a shared pool to each transmission, so many agencies share few channels."
+   },
+   {
+    "front": "Repeater",
+    "back": "Receives a weak signal (portable or mobile radio) and rebroadcasts it at higher power to extend range."
+   },
+   {
+    "front": "Base station",
+    "back": "Fixed radio at dispatch or a hospital, high power with a tall antenna. Longest range of the three radio types."
+   },
+   {
+    "front": "Mobile radio",
+    "back": "Radio mounted in the ambulance. More power and range than a portable, less than a base station."
+   },
+   {
+    "front": "Portable radio",
+    "back": "Handheld radio you carry on scene. Lowest power and range; may need a repeater to reach dispatch or the hospital."
+   },
+   {
+    "front": "Telemetry",
+    "back": "Sending data such as an ECG tracing electronically to the hospital or medical control for interpretation."
+   },
+   {
+    "front": "MDT / MDC",
+    "back": "Mobile data terminal or computer in the rig: shows dispatch info and status buttons, cuts down voice traffic."
+   },
+   {
+    "front": "Who regulates EMS radio frequencies?",
+    "back": "The FCC (Federal Communications Commission). It licenses frequencies and bans profanity and false info on the air."
+   },
+   {
+    "front": "Online medical control",
+    "back": "Real-time direction from a physician by radio or phone, such as an order for a medication not covered by standing orders."
+   },
+   {
+    "front": "Offline (indirect) medical control",
+    "back": "Protocols, standing orders, training and QA set by the medical director. You act without calling first."
+   },
+   {
+    "front": "Before you speak on the radio",
+    "back": "Listen first to make sure the channel is clear. Press the button, wait about 1 second, then speak."
+   },
+   {
+    "front": "How to hold and use the mic",
+    "back": "About 2 to 3 inches from your mouth, speak across it at a normal volume, slowly and clearly."
+   },
+   {
+    "front": "How long should one transmission be?",
+    "back": "Short. Keep each one under about 30 seconds; break long reports up and let the other side acknowledge."
+   },
+   {
+    "front": "Plain English vs 10-codes",
+    "back": "Use plain English. NIMS recommends plain language, and codes vary between agencies. Avoid slang and jargon."
+   },
+   {
+    "front": "Yes / no on the radio",
+    "back": "Say \"affirmative\" and \"negative\" (easier to hear than yes and no). Say \"copy\" or \"received\" to acknowledge."
+   },
+   {
+    "front": "Patient privacy on the radio",
+    "back": "Never say the patient's name or other identifiers. Scanners can hear you (HIPAA). Use age, sex and condition."
+   },
+   {
+    "front": "What not to say on the radio",
+    "back": "No profanity, no diagnoses you can't confirm, no judgments about the patient, no \"please\" or \"thank you\" chatter."
+   },
+   {
+    "front": "Echo method",
+    "back": "Repeat a physician's order back word for word (drug, dose, route) before giving it. Confirms it was heard right."
+   },
+   {
+    "front": "Order that seems wrong or unclear",
+    "back": "Ask the physician to repeat or clarify it. Never carry out an order you think is inappropriate; document it."
+   },
+   {
+    "front": "Status updates to dispatch",
+    "back": "Call: en route, on scene, patient contact if required, leaving scene/transporting, at hospital, back in service."
+   },
+   {
+    "front": "Calling dispatch: format",
+    "back": "Call them, then identify yourself: \"Dispatch, Medic 12.\" Wait for \"Medic 12, go ahead,\" then give your message."
+   },
+   {
+    "front": "Order of the hospital call-in report",
+    "back": "1 Unit ID and level  2 ETA  3 Age and sex  4 Chief complaint  5 HPI  6 Past history  7 Mental status  8 Vitals  9 Exam  10 Care given  11 Response"
+   },
+   {
+    "front": "Report step 1-2: Unit ID, level, ETA",
+    "back": "\"Mercy General, Medic 12, BLS unit, priority 2, ETA 10 minutes.\""
+   },
+   {
+    "front": "Report step 3-4: Age, sex, chief complaint",
+    "back": "\"We are transporting a 64-year-old male complaining of chest pain.\""
+   },
+   {
+    "front": "Report step 5: History of present illness",
+    "back": "\"Onset 30 minutes ago at rest, pressure radiating to the left arm, rated 8 out of 10, with nausea.\""
+   },
+   {
+    "front": "Report step 6: Pertinent past history",
+    "back": "\"History of hypertension and high cholesterol. Takes lisinopril. No known allergies.\""
+   },
+   {
+    "front": "Report step 7-8: Mental status and vitals",
+    "back": "\"Alert and oriented times 4. BP 158 over 92, pulse 104 regular, respirations 20, SpO2 95 percent.\""
+   },
+   {
+    "front": "Report step 9: Pertinent exam findings",
+    "back": "\"Skin pale, cool, diaphoretic. Lungs clear bilaterally. No JVD or edema.\""
+   },
+   {
+    "front": "Report step 10-11: Care given and response",
+    "back": "\"Gave 324 mg aspirin, assisted with one nitro. Pain now 6 out of 10. Any further orders?\""
+   },
+   {
+    "front": "Ending a radio report",
+    "back": "Wait for the hospital to acknowledge. Echo any orders, then sign off: \"Medic 12, copy, clear.\""
+   },
+   {
+    "front": "Verbal report at the hospital (transfer of care)",
+    "back": "Face to face to the nurse or doctor who takes over: name, age, chief complaint, history, findings, care, response and changes en route."
+   },
+   {
+    "front": "Why give the call-in report?",
+    "back": "It lets the ED prepare the right room, staff and team, such as a stroke or STEMI alert, before you arrive."
+   }
+  ]
+ },
+ {
+  "name": "NREMT · Hospital Types & Destinations",
+  "domain": "Destinations",
+  "cards": [
+   {
+    "front": "Level I trauma center",
+    "back": "Highest level: 24/7 in-house surgeons and all specialists, plus research, teaching and prevention. Handles any injury."
+   },
+   {
+    "front": "Level II trauma center",
+    "back": "24/7 surgeons and comprehensive trauma care, but without the research and teaching requirements of Level I."
+   },
+   {
+    "front": "Level III trauma center",
+    "back": "Prompt assessment, resuscitation and emergency surgery; transfers patients who need more to Level I or II."
+   },
+   {
+    "front": "Level IV trauma center",
+    "back": "Usually rural: advanced trauma life support and stabilization before transfer to a higher-level center."
+   },
+   {
+    "front": "Level V trauma center (some states)",
+    "back": "Basic ED stabilization and transfer in remote areas. Not every state uses Level V."
+   },
+   {
+    "front": "Pediatric trauma center",
+    "back": "Verified to care for injured children, with pediatric surgeons and equipment. Many protocols send seriously injured kids here."
+   },
+   {
+    "front": "Burn center",
+    "back": "Specialized burn care units. Take critical burns, inhalation injury and burns to the face, hands, feet, groin or joints, per protocol."
+   },
+   {
+    "front": "Comprehensive stroke center",
+    "back": "Highest stroke level: thrombectomy, neurosurgery and neuro ICU 24/7. For large-vessel-occlusion strokes, per protocol."
+   },
+   {
+    "front": "Thrombectomy-capable stroke center",
+    "back": "Can remove a clot from a large brain artery (endovascular), but has fewer specialty resources than a comprehensive center."
+   },
+   {
+    "front": "Primary stroke center",
+    "back": "Can diagnose stroke quickly and give clot-busting drugs (thrombolytics); transfers patients needing thrombectomy."
+   },
+   {
+    "front": "Acute stroke-ready hospital",
+    "back": "Smaller hospital that can assess, give thrombolytics and rapidly transfer. Common in rural areas."
+   },
+   {
+    "front": "STEMI / PCI center",
+    "back": "Has a 24/7 cardiac cath lab to open blocked coronary arteries. Many systems send STEMI patients straight here."
+   },
+   {
+    "front": "Perinatal / obstetric center",
+    "back": "Has labor and delivery plus a NICU (levels I to IV). Take high-risk pregnancies or delivering patients here, per protocol."
+   },
+   {
+    "front": "Hyperbaric center",
+    "back": "Has a hyperbaric oxygen chamber: for diving injuries (decompression sickness, air embolism) and severe CO poisoning."
+   },
+   {
+    "front": "Critical access hospital",
+    "back": "Small rural hospital (25 beds or fewer) that stabilizes and transfers. May lack specialty services."
+   },
+   {
+    "front": "Psychiatric / behavioral health facility",
+    "back": "For psychiatric emergencies once the patient is medically cleared. Medical problems usually go to an ED first."
+   },
+   {
+    "front": "Free-standing emergency department",
+    "back": "ED not attached to a hospital. Limited specialty care and no admission, so check your protocol before transporting there."
+   },
+   {
+    "front": "Poison Control Center",
+    "back": "Not a hospital: a hotline (US 1-800-222-1222) giving toxicology advice for overdoses and poisonings."
+   },
+   {
+    "front": "Choosing a destination",
+    "back": "Closest appropriate facility for the patient's condition, using protocol, patient choice, and diversion status."
+   },
+   {
+    "front": "Hospital diversion",
+    "back": "A hospital temporarily asks EMS to go elsewhere because its ED or a service is full. Unstable patients may still go there, per protocol."
+   }
+  ]
+ }
+]

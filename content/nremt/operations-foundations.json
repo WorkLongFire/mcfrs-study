@@ -1,0 +1,1034 @@
+[
+ {
+  "name": "NREMT · Medical Terminology",
+  "domain": "Foundations",
+  "cards": [
+   {
+    "front": "Prefix: hyper-",
+    "back": "Above, excessive (hypertension)"
+   },
+   {
+    "front": "Prefix: hypo-",
+    "back": "Below, deficient (hypoglycemia)"
+   },
+   {
+    "front": "Prefix: brady- / tachy-",
+    "back": "Brady- = slow; tachy- = fast (bradycardia, tachypnea)"
+   },
+   {
+    "front": "Prefix: a- / an-",
+    "back": "Without, absence of (apnea, anemia)"
+   },
+   {
+    "front": "Prefix: dys-",
+    "back": "Difficult, painful, abnormal (dyspnea, dysuria)"
+   },
+   {
+    "front": "Prefix: poly- / oligo-",
+    "back": "Poly- = many, much (polyuria); oligo- = few, scanty (oliguria)"
+   },
+   {
+    "front": "Prefix: hemi- / peri-",
+    "back": "Hemi- = half (hemiplegia); peri- = around (pericardium)"
+   },
+   {
+    "front": "Prefix: endo- / epi- / sub-",
+    "back": "Endo- = within; epi- = upon/above; sub- = below/under (subcutaneous)"
+   },
+   {
+    "front": "Prefix: inter- vs intra-",
+    "back": "Inter- = between; intra- = within (intravenous)"
+   },
+   {
+    "front": "Suffix: -itis",
+    "back": "Inflammation (appendicitis)"
+   },
+   {
+    "front": "Suffix: -ectomy / -otomy / -ostomy",
+    "back": "-ectomy = surgical removal; -otomy = cutting into; -ostomy = creating an opening"
+   },
+   {
+    "front": "Suffix: -emia",
+    "back": "Blood condition (hypoxemia, anemia)"
+   },
+   {
+    "front": "Suffix: -algia",
+    "back": "Pain (neuralgia)"
+   },
+   {
+    "front": "Suffix: -pnea",
+    "back": "Breathing (apnea, dyspnea, tachypnea)"
+   },
+   {
+    "front": "Suffix: -megaly / -oma",
+    "back": "-megaly = enlargement (cardiomegaly); -oma = tumor/mass"
+   },
+   {
+    "front": "Suffix: -osis / -penia",
+    "back": "-osis = abnormal condition (cyanosis); -penia = deficiency (leukopenia)"
+   },
+   {
+    "front": "Suffix: -rrhage / -rrhea",
+    "back": "-rrhage = bursting forth/bleeding (hemorrhage); -rrhea = flow/discharge (diarrhea)"
+   },
+   {
+    "front": "Root: cardi/o, pulmon/o, hepat/o",
+    "back": "Heart, lung, liver"
+   },
+   {
+    "front": "Root: nephr/o, gastr/o, cephal/o",
+    "back": "Kidney, stomach, head"
+   },
+   {
+    "front": "Root: cyan/o, hem/o, derm/o",
+    "back": "Blue, blood, skin"
+   },
+   {
+    "front": "Anterior vs posterior",
+    "back": "Anterior (ventral) = front of body; posterior (dorsal) = back"
+   },
+   {
+    "front": "Superior vs inferior",
+    "back": "Superior = toward the head (above); inferior = toward the feet (below)"
+   },
+   {
+    "front": "Medial vs lateral",
+    "back": "Medial = toward the midline; lateral = away from the midline, toward the side"
+   },
+   {
+    "front": "Proximal vs distal",
+    "back": "Proximal = closer to the trunk/point of attachment; distal = farther from it"
+   },
+   {
+    "front": "Ipsilateral vs contralateral",
+    "back": "Ipsilateral = same side of the body; contralateral = opposite side"
+   },
+   {
+    "front": "Palmar vs plantar",
+    "back": "Palmar = palm of the hand; plantar = sole of the foot"
+   },
+   {
+    "front": "Sagittal (midsagittal) plane",
+    "back": "Vertical plane dividing body into right and left; midsagittal splits it into equal halves"
+   },
+   {
+    "front": "Frontal (coronal) plane",
+    "back": "Vertical plane dividing body into anterior (front) and posterior (back) parts"
+   },
+   {
+    "front": "Transverse (axial) plane",
+    "back": "Horizontal plane dividing body into superior (upper) and inferior (lower) parts"
+   },
+   {
+    "front": "Supine vs prone",
+    "back": "Supine = lying face up on back; prone = lying face down"
+   },
+   {
+    "front": "Fowler's position",
+    "back": "Sitting up, about 45-60 degrees (high Fowler's more upright); semi-Fowler's about 30-45"
+   },
+   {
+    "front": "Trendelenburg position",
+    "back": "Supine on an incline with head lower than feet; modified = flat with legs raised. Rarely used for shock now; follow local protocol"
+   },
+   {
+    "front": "Recovery position",
+    "back": "Lateral recumbent (on side) to protect the airway of an unresponsive, breathing patient without spinal injury"
+   }
+  ]
+ },
+ {
+  "name": "NREMT · Anatomy & Physiology",
+  "domain": "Foundations",
+  "cards": [
+   {
+    "front": "Blood flow through the heart: right side",
+    "back": "Vena cavae > right atrium > tricuspid valve > right ventricle > pulmonic valve > pulmonary artery > lungs"
+   },
+   {
+    "front": "Blood flow: left side",
+    "back": "Lungs > pulmonary veins > left atrium > mitral (bicuspid) valve > left ventricle > aortic valve > aorta > body"
+   },
+   {
+    "front": "Arteries vs veins",
+    "back": "Arteries carry blood away from the heart (usually oxygenated); veins return blood to the heart. Exception: pulmonary vessels"
+   },
+   {
+    "front": "Perfusion",
+    "back": "Delivery of oxygen and nutrients to cells and removal of waste products; inadequate perfusion = shock"
+   },
+   {
+    "front": "Cardiac output formula",
+    "back": "Cardiac output = heart rate x stroke volume"
+   },
+   {
+    "front": "Blood components",
+    "back": "Red cells (carry O2), white cells (immunity), platelets (clotting), plasma (liquid portion)"
+   },
+   {
+    "front": "Skin layers",
+    "back": "Epidermis (outer), dermis (middle: nerves, vessels, glands), subcutaneous tissue (fat, deepest)"
+   },
+   {
+    "front": "Upper airway path",
+    "back": "Nose/mouth > pharynx > larynx (epiglottis, vocal cords) > trachea"
+   },
+   {
+    "front": "Lower airway path",
+    "back": "Trachea > mainstem bronchi > bronchioles > alveoli (site of gas exchange)"
+   },
+   {
+    "front": "Mechanics of inhalation",
+    "back": "Diaphragm contracts and flattens, ribs lift; chest volume rises, pressure falls, air flows in (active); exhalation is passive"
+   },
+   {
+    "front": "Oxygen in room air vs exhaled air",
+    "back": "Room air about 21% O2; exhaled air about 16% O2 (enough for rescue breathing)"
+   },
+   {
+    "front": "Gas exchange",
+    "back": "Oxygen and CO2 diffuse across the alveolar-capillary membrane by concentration gradient"
+   },
+   {
+    "front": "Aerobic vs anaerobic metabolism",
+    "back": "Aerobic uses oxygen and yields much energy; anaerobic (no oxygen) yields little energy and produces lactic acid"
+   },
+   {
+    "front": "Spinal column regions",
+    "back": "7 cervical, 12 thoracic, 5 lumbar, 5 sacral (fused), 4 coccyx (fused) = 33 vertebrae"
+   },
+   {
+    "front": "Three muscle types",
+    "back": "Skeletal (voluntary), smooth (involuntary, in organs/vessels), cardiac (involuntary, heart only)"
+   },
+   {
+    "front": "Central vs peripheral nervous system",
+    "back": "CNS = brain and spinal cord; PNS = nerves outside CNS (sensory and motor)"
+   },
+   {
+    "front": "Sympathetic vs parasympathetic",
+    "back": "Sympathetic = fight or flight (raises HR, BP); parasympathetic = rest and digest (lowers HR)"
+   },
+   {
+    "front": "RUQ organs",
+    "back": "Liver, gallbladder (also part of colon)"
+   },
+   {
+    "front": "LUQ organs",
+    "back": "Stomach, spleen (also pancreas tail)"
+   },
+   {
+    "front": "RLQ organs",
+    "back": "Appendix, cecum (right ovary/fallopian tube in females)"
+   },
+   {
+    "front": "Retroperitoneal organs",
+    "back": "Kidneys, pancreas, aorta, vena cava; behind the peritoneal lining"
+   },
+   {
+    "front": "Hormone that lowers blood glucose",
+    "back": "Insulin, made by beta cells of the pancreas; glucagon raises glucose"
+   },
+   {
+    "front": "Pulse points to know",
+    "back": "Carotid, femoral, radial, brachial (infants), posterior tibial, dorsalis pedis"
+   },
+   {
+    "front": "Cardiac conduction origin",
+    "back": "SA node in the right atrium is the natural pacemaker (60-100 bpm)"
+   },
+   {
+    "front": "Systole vs diastole",
+    "back": "Systole = ventricular contraction (top BP number); diastole = ventricular relaxation/filling (bottom number)"
+   },
+   {
+    "front": "Glasgow Coma Scale components",
+    "back": "Eye opening (1-4), verbal (1-5), motor (1-6); total 3-15, lower = worse"
+   },
+   {
+    "front": "Hypoxic drive",
+    "back": "In some chronic lung disease patients, low O2 is the breathing stimulus; never withhold O2 from a hypoxic patient"
+   },
+   {
+    "front": "Adequate vs inadequate breathing signs",
+    "back": "Adequate: 12-20, regular, clear lungs, good chest rise. Inadequate: rate extremes, shallow, retractions, cyanosis, noisy"
+   },
+   {
+    "front": "Layers covering the brain",
+    "back": "Meninges: dura mater, arachnoid, pia mater; cerebrospinal fluid cushions the brain"
+   }
+  ]
+ },
+ {
+  "name": "NREMT · Patient Assessment",
+  "domain": "Foundations",
+  "cards": [
+   {
+    "front": "Order of patient assessment",
+    "back": "Scene size-up, primary assessment, history taking, secondary assessment, reassessment"
+   },
+   {
+    "front": "Scene size-up components",
+    "back": "Scene safety, PPE/BSI, mechanism of injury/nature of illness, number of patients, additional resources, spinal consideration"
+   },
+   {
+    "front": "Primary assessment steps",
+    "back": "General impression, level of consciousness, airway, breathing, circulation (bleeding, pulse, skin), priority/transport decision"
+   },
+   {
+    "front": "Life threats addressed first in primary",
+    "back": "Life-threatening bleeding, airway, breathing and circulation problems; treat as found"
+   },
+   {
+    "front": "AVPU",
+    "back": "Alert, responds to Verbal stimuli, responds to Painful stimuli, Unresponsive"
+   },
+   {
+    "front": "SAMPLE",
+    "back": "Signs/symptoms, Allergies, Medications, Pertinent past history, Last oral intake, Events leading up"
+   },
+   {
+    "front": "OPQRST",
+    "back": "Onset, Provocation/Palliation, Quality, Region/Radiation, Severity (0-10), Time"
+   },
+   {
+    "front": "DCAP-BTLS",
+    "back": "Deformities, Contusions, Abrasions, Punctures/Penetrations, Burns, Tenderness, Lacerations, Swelling"
+   },
+   {
+    "front": "Pertinent negative",
+    "back": "A relevant sign/symptom the patient does not have (e.g., denies chest pain in dyspnea patient); document it"
+   },
+   {
+    "front": "Reassessment interval: unstable patient",
+    "back": "Every 5 minutes (or more often)"
+   },
+   {
+    "front": "Reassessment interval: stable patient",
+    "back": "Every 15 minutes"
+   },
+   {
+    "front": "Reassessment components",
+    "back": "Repeat primary assessment, reassess vitals, recheck interventions, reconfirm transport priority, recheck chief complaint"
+   },
+   {
+    "front": "Significant MOI examples (trauma)",
+    "back": "Ejection, death in same vehicle, intrusion >12 in at occupant site, fall >10 ft (all ages, ACS 2021), pedestrian/cyclist thrown or run over, motorcycle crash with significant impact"
+   },
+   {
+    "front": "Rapid trauma assessment",
+    "back": "Quick head-to-toe exam for significant MOI/unresponsive trauma patient, looking for DCAP-BTLS"
+   },
+   {
+    "front": "Cincinnati Prehospital Stroke Scale",
+    "back": "Facial droop, arm drift, abnormal speech; any one abnormal suggests stroke"
+   },
+   {
+    "front": "Retractions / accessory muscle use",
+    "back": "Signs of increased work of breathing; tripod positioning and nasal flaring also indicate respiratory distress"
+   },
+   {
+    "front": "Wheezing",
+    "back": "High-pitched whistling, often expiratory; seen with asthma/COPD (lower airway narrowing)"
+   },
+   {
+    "front": "Stridor",
+    "back": "High-pitched sound on inspiration; upper airway obstruction (croup, foreign body, swelling)"
+   },
+   {
+    "front": "Crackles (rales)",
+    "back": "Bubbling/crackling lung sounds suggesting fluid in alveoli (pulmonary edema, pneumonia)"
+   },
+   {
+    "front": "Rhonchi",
+    "back": "Low-pitched, rattling sounds from secretions in larger airways"
+   },
+   {
+    "front": "Paradoxical motion",
+    "back": "Flail segment moves opposite to the rest of the chest (in on inhalation, out on exhalation); 2+ adjacent ribs each broken in 2+ places"
+   },
+   {
+    "front": "Cushing's triad",
+    "back": "Hypertension (widening pulse pressure), bradycardia, irregular respirations; sign of raised intracranial pressure"
+   },
+   {
+    "front": "Battle sign / raccoon eyes",
+    "back": "Bruising behind the ear / around the eyes; signs of basilar skull fracture"
+   },
+   {
+    "front": "Jugular vein distention, tracheal deviation",
+    "back": "Late signs of tension pneumothorax or other obstructive problems"
+   },
+   {
+    "front": "Subcutaneous emphysema",
+    "back": "Crepitus under skin from air in tissue; suggests airway/chest injury"
+   },
+   {
+    "front": "Responsive medical patient approach",
+    "back": "Primary, history (SAMPLE, OPQRST), secondary focused on complaint, vitals, interventions, transport, reassess"
+   },
+   {
+    "front": "Unresponsive medical patient approach",
+    "back": "Primary, rapid head-to-toe exam, vitals, SAMPLE from family/bystanders/records, then interventions and transport"
+   },
+   {
+    "front": "Chief complaint",
+    "back": "Reason EMS was called, in the patient's own words"
+   },
+   {
+    "front": "Medical alert tag value",
+    "back": "Gives conditions/medications/allergies when the patient cannot give history"
+   }
+  ]
+ },
+ {
+  "name": "NREMT · Vital Signs & Normals",
+  "domain": "Foundations",
+  "cards": [
+   {
+    "front": "Normal adult heart rate",
+    "back": "60-100 beats/min"
+   },
+   {
+    "front": "Normal adult respiratory rate",
+    "back": "12-20 breaths/min"
+   },
+   {
+    "front": "Normal adult blood pressure",
+    "back": "Systolic about 90-140, diastolic about 60-90 (ranges vary by source); hypotension is usually systolic <90"
+   },
+   {
+    "front": "Normal SpO2",
+    "back": "About 94-100% on room air (many texts: 95-100%). Below 94%: give O2 and titrate to 94-99% per protocol (COPD targets often 88-92%)"
+   },
+   {
+    "front": "Pulse pressure",
+    "back": "Systolic minus diastolic; narrows in shock, widens with rising intracranial pressure"
+   },
+   {
+    "front": "Normal adult temperature",
+    "back": "About 98.6 F (37 C); roughly 97.8-99.1 F"
+   },
+   {
+    "front": "Normal blood glucose",
+    "back": "About 70-120 mg/dL (ranges vary by source). Hypoglycemia treatment threshold is commonly <60-70 mg/dL with symptoms; per local protocol"
+   },
+   {
+    "front": "Infant normal vitals (1-12 mo)",
+    "back": "HR about 100-160; RR about 25-50 (newborns 30-60); SBP about 70-100. Ranges vary by textbook; learn your course's table"
+   },
+   {
+    "front": "Toddler normal vitals (1-3 yr)",
+    "back": "HR about 90-150; RR about 20-30 (some tables 24-40); SBP about 80-100. Ranges vary by source"
+   },
+   {
+    "front": "Preschool normal vitals (3-5 yr)",
+    "back": "HR about 80-140; RR about 20-30 (some tables 22-34); SBP about 80-110. Ranges vary by source"
+   },
+   {
+    "front": "School-age normal vitals (6-12 yr)",
+    "back": "HR about 70-120; RR about 15-25 (some tables 18-30); SBP about 80-120. Ranges vary by source"
+   },
+   {
+    "front": "Adolescent normal vitals (13-18 yr)",
+    "back": "HR about 60-100; RR about 12-20; SBP about 90-130 (near adult values). Ranges vary by source"
+   },
+   {
+    "front": "Minimum pediatric systolic BP",
+    "back": "70 + (2 x age in years) for ages 1-10; below this = hypotension. Infants under 1 yr: <70; over 10 yr: <90. A falling BP is a late sign in children"
+   },
+   {
+    "front": "Skin: cyanosis",
+    "back": "Blue-gray skin or mucosa from poor oxygenation"
+   },
+   {
+    "front": "Skin: pallor",
+    "back": "Pale skin from poor perfusion/blood loss"
+   },
+   {
+    "front": "Skin: jaundice",
+    "back": "Yellow skin/sclera; liver problems"
+   },
+   {
+    "front": "Skin: flushed (red)",
+    "back": "Fever, heat exposure, allergic reaction, CO poisoning (cherry red; rare)"
+   },
+   {
+    "front": "Skin: mottled",
+    "back": "Blotchy discoloration; poor perfusion/late shock"
+   },
+   {
+    "front": "Normal skin condition",
+    "back": "Warm, dry, pink (check mucosa/nail beds in dark skin); normal capillary refill is 2 seconds or less"
+   },
+   {
+    "front": "Capillary refill reliability",
+    "back": "Most reliable in infants and children under 6; unreliable in cold or elderly adults"
+   },
+   {
+    "front": "Pupils: PERRL",
+    "back": "Pupils Equal, Round, Reactive to Light"
+   },
+   {
+    "front": "Constricted (pinpoint) pupils",
+    "back": "Opioids (narcotics); also organophosphate/nerve agent poisoning and some brainstem strokes"
+   },
+   {
+    "front": "Dilated pupils",
+    "back": "Fear, drugs (stimulants), hypoxia, cardiac arrest, certain brain injury"
+   },
+   {
+    "front": "Unequal pupils",
+    "back": "Possible head injury/stroke (also may be normal variation or prosthesis)"
+   },
+   {
+    "front": "Pulse quality terms",
+    "back": "Rate, rhythm (regular/irregular), quality (strong/weak/thready/bounding)"
+   },
+   {
+    "front": "Respiratory quality terms",
+    "back": "Rate, rhythm, quality (breath sounds, chest expansion), effort"
+   },
+   {
+    "front": "Pulse oximetry limitation",
+    "back": "Unreliable with CO poisoning, cold extremities, shock, nail polish, motion; treat patient, not the number"
+   },
+   {
+    "front": "How to measure respiratory rate",
+    "back": "Count breaths for 30 seconds and multiply by 2 (or 60 seconds if irregular); do it without telling patient"
+   },
+   {
+    "front": "Blood pressure by palpation",
+    "back": "Systolic only; used when auscultation is not possible"
+   },
+   {
+    "front": "Tachycardia vs bradycardia (adult)",
+    "back": "Tachycardia >100/min; bradycardia <60/min"
+   }
+  ]
+ },
+ {
+  "name": "NREMT · Pharmacology",
+  "domain": "Foundations",
+  "cards": [
+   {
+    "front": "Six rights of medication administration",
+    "back": "Right patient, medication, dose, route, time, documentation (many programs add right reason)"
+   },
+   {
+    "front": "Generic vs trade name",
+    "back": "Generic = official nonproprietary name (e.g., albuterol), not capitalized; trade = manufacturer's brand name (e.g., Proventil)"
+   },
+   {
+    "front": "Indication / contraindication",
+    "back": "Indication = reason to give; contraindication = reason NOT to give"
+   },
+   {
+    "front": "Medication forms",
+    "back": "Tablet, capsule, solution, suspension (shake first), gel, inhaler, powder, gas, sublingual, injectable"
+   },
+   {
+    "front": "Enteral vs parenteral",
+    "back": "Enteral = through the GI tract (oral); parenteral = outside the GI tract (injection)"
+   },
+   {
+    "front": "Medication routes: EMT vs beyond EMT scope",
+    "back": "EMT: oral, sublingual, inhaled, intranasal, IM (auto-injector), per protocol. Know but beyond EMT scope in most states: IV, IO, subcutaneous, rectal"
+   },
+   {
+    "front": "Oxygen: indication/dose",
+    "back": "Hypoxia (SpO2 <94%), respiratory distress, shock; titrate to 94-99%. NRB 10-15 L/min; nasal cannula 1-6 L/min. Chest pain alone with normal SpO2 does not require O2"
+   },
+   {
+    "front": "Oxygen: contraindication",
+    "back": "None for a hypoxic or critically ill patient; avoid unnecessary high-flow if SpO2 normal (per protocol)"
+   },
+   {
+    "front": "Oral glucose: indication",
+    "back": "Conscious patient with altered mental status and known/suspected hypoglycemia who can swallow"
+   },
+   {
+    "front": "Oral glucose: contraindication & dose",
+    "back": "Unresponsive or unable to swallow/protect airway; one tube (about 15 g, varies by product) buccal/oral, repeat per protocol"
+   },
+   {
+    "front": "Aspirin: indication",
+    "back": "Chest pain suggestive of heart attack (ACS)"
+   },
+   {
+    "front": "Aspirin: dose",
+    "back": "162-324 mg chewed (2-4 low-dose 81 mg tablets; commonly 324 mg), non-enteric-coated, per protocol"
+   },
+   {
+    "front": "Aspirin: contraindications",
+    "back": "Aspirin/NSAID allergy, active GI bleeding or ulcer, unable to swallow; not for children; per protocol, other bleeding disorders"
+   },
+   {
+    "front": "Nitroglycerin: indication & action",
+    "back": "Chest pain of suspected cardiac origin in a patient with their own prescribed NTG; vasodilator that reduces heart workload"
+   },
+   {
+    "front": "Nitroglycerin: dose",
+    "back": "0.4 mg sublingual (tablet or spray); may repeat every 5 min to a max of 3 doses (including doses the patient took) if BP stays adequate; per medical direction"
+   },
+   {
+    "front": "Nitroglycerin: contraindications",
+    "back": "SBP below 90-100 (cutoff per local protocol); PDE5 inhibitor use: sildenafil/vardenafil within 24 h, tadalafil within 48 h; head injury; already took max dose"
+   },
+   {
+    "front": "Nitroglycerin: side effects",
+    "back": "Headache, hypotension, dizziness, burning under tongue"
+   },
+   {
+    "front": "Epinephrine auto-injector: indication",
+    "back": "Anaphylaxis / severe allergic reaction (respiratory distress or shock signs)"
+   },
+   {
+    "front": "Epinephrine auto-injector: dose",
+    "back": "Adult 0.3 mg (about 30 kg and up); pediatric 0.15 mg (about 15-30 kg); infant 0.1 mg device where available; IM into anterolateral thigh; repeat per protocol"
+   },
+   {
+    "front": "Epinephrine: side effects",
+    "back": "Tachycardia, anxiety, pallor, tremor, hypertension, palpitations"
+   },
+   {
+    "front": "Albuterol MDI: indication",
+    "back": "Wheezing/bronchospasm in asthma or COPD (bronchodilator)"
+   },
+   {
+    "front": "Albuterol MDI: dose",
+    "back": "90 mcg per puff, usually 1-2 puffs, per protocol (patient-prescribed MDI)"
+   },
+   {
+    "front": "Albuterol: side effects",
+    "back": "Tachycardia, tremor, nervousness"
+   },
+   {
+    "front": "Naloxone: indication",
+    "back": "Suspected opioid overdose with respiratory depression/altered mentation"
+   },
+   {
+    "front": "Naloxone: dose/route",
+    "back": "Intranasal: 4 mg spray in one nostril, or 2 mg by atomizer (1 mg per nostril); IM auto-injector per protocol. Goal is adequate breathing; repeat in 2-3 min as needed"
+   },
+   {
+    "front": "Activated charcoal (only where protocol allows)",
+    "back": "Adsorbs (binds) some ingested poisons. Removed from many EMT protocols. Not for altered mental status, unable to swallow, acids/alkalis, or hydrocarbons"
+   },
+   {
+    "front": "Activated charcoal dose (only where protocol allows)",
+    "back": "About 1 g/kg (adult 25-50 g; child 12.5-25 g); shake well. Only where local protocol and medical direction/poison control still allow it"
+   },
+   {
+    "front": "Pediatric medication dosing principle",
+    "back": "Doses are weight-based; use a length-based tape or known weight, never guess; use only protocol-approved pediatric doses and devices"
+   },
+   {
+    "front": "Medications EMTs may assist a patient with",
+    "back": "Patient-prescribed epinephrine auto-injector, nitroglycerin, and metered-dose inhaler (albuterol); others per local protocol and medical direction"
+   },
+   {
+    "front": "Side effect vs adverse reaction",
+    "back": "Side effect = unintended, often predictable effect; adverse reaction = harmful unintended response"
+   }
+  ]
+ },
+ {
+  "name": "NREMT · Legal & Ethical",
+  "domain": "Foundations",
+  "cards": [
+   {
+    "front": "Expressed consent",
+    "back": "Patient verbally or in writing agrees to care (competent adult, informed)"
+   },
+   {
+    "front": "Implied consent",
+    "back": "Presumed consent for life-threatening emergency when patient unresponsive or unable to decide"
+   },
+   {
+    "front": "Informed consent",
+    "back": "Patient understands risks, benefits, and alternatives before agreeing"
+   },
+   {
+    "front": "Minor consent",
+    "back": "Parent/guardian consents; emergency treatment proceeds under implied consent if none available"
+   },
+   {
+    "front": "Emancipated minor",
+    "back": "Minor legally treated as an adult (e.g., married, in the military, court order; in some states pregnant or a parent); can consent. Criteria vary by state"
+   },
+   {
+    "front": "Involuntary consent",
+    "back": "Court- or law-enforcement-ordered treatment, e.g., for prisoners or dangerous patients"
+   },
+   {
+    "front": "Right to refuse care",
+    "back": "Competent adult can refuse; ensure informed refusal, document thoroughly, get signature, witness, advise, per protocol"
+   },
+   {
+    "front": "Abandonment",
+    "back": "Ending care without the patient's consent and without ensuring continued care by a provider of equal or higher level"
+   },
+   {
+    "front": "Negligence: four elements",
+    "back": "Duty to act, breach of duty, harm/injury, causation (proximate cause)"
+   },
+   {
+    "front": "Duty to act",
+    "back": "Obligation to respond when on duty or called; may arise from policy, contract, or statute"
+   },
+   {
+    "front": "Standard of care",
+    "back": "How a reasonably prudent, similarly trained provider would act under similar circumstances"
+   },
+   {
+    "front": "Scope of practice",
+    "back": "Care an EMT is legally allowed to provide, defined by state law and medical direction"
+   },
+   {
+    "front": "Assault vs battery",
+    "back": "Assault = threat of unwanted contact; battery = actual unlawful touching without consent"
+   },
+   {
+    "front": "False imprisonment",
+    "back": "Unlawfully restraining a person without consent or legal authority"
+   },
+   {
+    "front": "Libel vs slander",
+    "back": "Libel = false written statement; slander = false spoken statement"
+   },
+   {
+    "front": "Good Samaritan law",
+    "back": "Protects those who give care in good faith without compensation, outside duty; not for gross negligence"
+   },
+   {
+    "front": "HIPAA purpose",
+    "back": "Protects the privacy of patient health information; PHI may be released for treatment, payment, operations, or as required by law"
+   },
+   {
+    "front": "Protected health information (PHI)",
+    "back": "Any identifiable info about a patient's health, care, or payment"
+   },
+   {
+    "front": "Mandatory reporting: common categories",
+    "back": "Child abuse/neglect; elder or vulnerable adult abuse; in many states gunshot/stab wounds, sexual assault, animal bites, some communicable diseases. Varies by state"
+   },
+   {
+    "front": "DNR order",
+    "back": "Written order to withhold CPR/resuscitation; must be valid per state law and local protocol. DNR does not mean do not treat: still give comfort care"
+   },
+   {
+    "front": "POLST / MOLST",
+    "back": "Portable medical orders for seriously ill patients detailing limits of treatment; follow per protocol"
+   },
+   {
+    "front": "Advance directive / living will",
+    "back": "Patient's written wishes about future care if incapacitated"
+   },
+   {
+    "front": "Durable power of attorney for health care",
+    "back": "Person authorized to make medical decisions when the patient cannot"
+   },
+   {
+    "front": "Medical direction: online vs off-line",
+    "back": "Online = real-time contact with a physician; off-line = standing orders and protocols"
+   },
+   {
+    "front": "Crime scene responsibilities",
+    "back": "Ensure scene safety, treat the patient, avoid disturbing evidence, document and report observations"
+   },
+   {
+    "front": "Signs of obvious death",
+    "back": "Decapitation, rigor mortis, dependent lividity, decomposition, incineration (per protocol)"
+   },
+   {
+    "front": "Documentation rule for refusals",
+    "back": "Record capacity assessment, risks explained, patient statements, witness, and signature"
+   },
+   {
+    "front": "Organ donor consideration",
+    "back": "Provide care; do not delay resuscitation; follow local protocol, notify hospital of donor status"
+   },
+   {
+    "front": "Patient restraint",
+    "back": "Use only reasonable force, per protocol and with law enforcement as needed; document why"
+   },
+   {
+    "front": "Res ipsa loquitur",
+    "back": "Latin: 'the thing speaks for itself'; negligence apparent from the circumstances"
+   }
+  ]
+ },
+ {
+  "name": "NREMT · EMS Operations: Safety & Moving",
+  "domain": "Operations",
+  "cards": [
+   {
+    "front": "Phases of an ambulance call",
+    "back": "Preparation, dispatch, en route, arrival at scene, patient contact, transport, transfer of care at hospital, post-run"
+   },
+   {
+    "front": "Information dispatch should provide",
+    "back": "Nature of call, location, patient count, name/callback number, safety concerns"
+   },
+   {
+    "front": "Lights and sirens use",
+    "back": "Only when appropriate per local protocol and state law; drive with due regard for safety of others"
+   },
+   {
+    "front": "Safe following distance for ambulance",
+    "back": "Commonly taught as at least 4 seconds (some sources 3); more in bad weather, at speed, or with a heavy vehicle. Follow agency policy and state law"
+   },
+   {
+    "front": "Types of ambulance",
+    "back": "Type I (truck chassis), Type II (van), Type III (cutaway van chassis)"
+   },
+   {
+    "front": "Standard precautions",
+    "back": "Treat all body fluids as potentially infectious; PPE includes gloves, eye protection, mask, gown"
+   },
+   {
+    "front": "PPE for airborne diseases",
+    "back": "Fit-tested N95 (or higher) respirator for the provider when TB or other airborne illness is suspected; surgical mask on the patient if tolerated"
+   },
+   {
+    "front": "Hand hygiene",
+    "back": "Wash after every patient contact; alcohol-based rub if soap unavailable and hands not visibly soiled"
+   },
+   {
+    "front": "Sharps safety",
+    "back": "Never recap needles; dispose in puncture-resistant sharps container immediately"
+   },
+   {
+    "front": "Exposure to infectious disease",
+    "back": "Report immediately, wash exposed area, document, follow agency exposure control plan"
+   },
+   {
+    "front": "Cleaning vs disinfection vs sterilization",
+    "back": "Cleaning removes dirt; disinfection kills most organisms; sterilization kills all microorganisms"
+   },
+   {
+    "front": "Body mechanics: power lift",
+    "back": "Feet shoulder-width apart, back straight, lift with legs, weight close to body, no twisting"
+   },
+   {
+    "front": "Power grip",
+    "back": "Palms up, hands at least 10 inches apart, fully contact the object with all fingers"
+   },
+   {
+    "front": "Emergency move: when used",
+    "back": "Immediate danger (fire, hazmat, explosives), cannot protect patient, or cannot access others needing care"
+   },
+   {
+    "front": "Emergency move examples",
+    "back": "Blanket drag, clothing drag, shoulder drag, firefighter's drag"
+   },
+   {
+    "front": "Urgent move: when used",
+    "back": "Immediate life threat needing rapid transport: altered mental status, inadequate ABCs, shock"
+   },
+   {
+    "front": "Non-urgent move",
+    "back": "No immediate life threat; take time to stabilize and use proper equipment"
+   },
+   {
+    "front": "Rapid extrication technique",
+    "back": "Urgent move of a seated patient from a vehicle onto a long board with manual spinal stabilization; for unstable patients, unsafe scenes, or to reach a critical patient"
+   },
+   {
+    "front": "Stair chair",
+    "back": "Used for carrying a seated patient down stairs; not for spinal injuries"
+   },
+   {
+    "front": "Scoop stretcher",
+    "back": "Splits and rejoins around patient; minimal movement; helpful for pelvic/spinal precautions"
+   },
+   {
+    "front": "Long backboard",
+    "back": "Rigid device for moving spinal-risk patients; not a long-term transport surface"
+   },
+   {
+    "front": "Vehicle extrication steps",
+    "back": "Size-up, hazard control and vehicle stabilization, gain access, emergency care, disentanglement (remove vehicle from around patient), removal and transfer"
+   },
+   {
+    "front": "Extrication hazards",
+    "back": "Undeployed airbags, leaking fuel, battery/electrical, traffic, broken glass and sharp metal, hybrid/EV high voltage, unstable vehicle"
+   },
+   {
+    "front": "Air medical landing zone size",
+    "back": "Commonly 100 x 100 ft (some services accept 60 x 60 ft by day); flat, firm, clear of wires, obstacles and loose debris. Follow the flight service/local protocol"
+   },
+   {
+    "front": "Approaching a helicopter",
+    "back": "Only when signaled by the crew; from the front in the pilot's view, crouched; never near the tail rotor; on a slope approach from the downhill side"
+   },
+   {
+    "front": "Scene safety for violence",
+    "back": "Stage away until police secure the scene; consider hidden weapons"
+   },
+   {
+    "front": "Reasons for PCR documentation",
+    "back": "Continuity of care, legal record, billing/administrative, education, research, quality improvement"
+   },
+   {
+    "front": "PCR correction rule",
+    "back": "Draw one line through the error, initial it, and add correct info; never obliterate"
+   },
+   {
+    "front": "Radio communication rules",
+    "back": "Clear, brief, plain language, hold mic 2-3 inches away, push key and wait 1 second, no profanity, repeat orders"
+   },
+   {
+    "front": "Verbal hospital report contents",
+    "back": "Age/sex, chief complaint, history, vitals, assessment findings, treatments given, ETA"
+   },
+   {
+    "front": "Critical incident stress management",
+    "back": "Peer support and debriefing after traumatic calls; recognize signs of stress, burnout, PTSD"
+   }
+  ]
+ },
+ {
+  "name": "NREMT · Operations: MCI, ICS & Hazmat",
+  "domain": "Operations",
+  "cards": [
+   {
+    "front": "Multiple-casualty incident (MCI)",
+    "back": "Incident whose number or severity of patients strains or exceeds available resources. Some textbooks say 3 or more patients; the threshold is set by the local plan"
+   },
+   {
+    "front": "NIMS / ICS purpose",
+    "back": "Standardized, scalable command structure and common terminology for managing incidents"
+   },
+   {
+    "front": "Incident Commander",
+    "back": "Overall responsibility for incident; sets objectives, priorities, and strategy"
+   },
+   {
+    "front": "Command staff positions",
+    "back": "Public Information Officer, Safety Officer, Liaison Officer"
+   },
+   {
+    "front": "General staff sections",
+    "back": "Operations, Planning, Logistics, Finance/Administration (NIMS also allows an optional Intelligence/Investigations function)"
+   },
+   {
+    "front": "Unified command",
+    "back": "Multiple agencies share command with agreed-upon objectives"
+   },
+   {
+    "front": "Span of control",
+    "back": "Number of people one supervisor can manage: NIMS optimum is 1 supervisor to 5 subordinates; textbooks commonly give a range of 3-7"
+   },
+   {
+    "front": "Staging area",
+    "back": "Location where resources wait until assigned"
+   },
+   {
+    "front": "MCI functional areas (EMS branch)",
+    "back": "Triage, treatment, transport, staging; also extrication/rescue, morgue, rehab and supply as needed (ICS calls these groups, divisions or units)"
+   },
+   {
+    "front": "Triage purpose",
+    "back": "Sort patients by urgency to do the greatest good for the most; reassess continually"
+   },
+   {
+    "front": "START: first step",
+    "back": "Direct walking wounded to a safe area; they are tagged green (minor)"
+   },
+   {
+    "front": "START: respirations",
+    "back": "Not breathing after airway opened = black; starts breathing after airway opened = red; rate over 30/min = red; under 30 = go on to check perfusion"
+   },
+   {
+    "front": "START: perfusion",
+    "back": "No radial pulse or capillary refill >2 seconds = red; control severe bleeding; if pulse present/refill normal, check mental status"
+   },
+   {
+    "front": "START: mental status",
+    "back": "Cannot follow simple commands = red; can follow commands = yellow"
+   },
+   {
+    "front": "START tag colors",
+    "back": "Red = immediate; yellow = delayed; green = minor; black = deceased/expectant"
+   },
+   {
+    "front": "JumpSTART age range",
+    "back": "Pediatric MCI triage for about ages 1-8 (if the patient looks like a child use JumpSTART; like a young adult use START). Infants are assessed with the non-ambulatory steps"
+   },
+   {
+    "front": "JumpSTART: ambulatory",
+    "back": "Children able to walk are tagged green (minor) and sent for secondary triage; infants and children who cannot normally walk are assessed with the full algorithm"
+   },
+   {
+    "front": "JumpSTART: apnea",
+    "back": "Open airway. Breathing starts = red. Still apneic: check pulse. No pulse = black. Pulse present: give 5 rescue breaths; breathing = red, still apneic = black"
+   },
+   {
+    "front": "JumpSTART: respirations",
+    "back": "Rate under 15 or over 45/min, or irregular = red; rate 15-45 = go on to assess perfusion"
+   },
+   {
+    "front": "JumpSTART: perfusion & mental status",
+    "back": "No palpable pulse = red. AVPU: P with inappropriate response (posturing) or U = red; A, V, or P with appropriate response (localizes pain) = yellow"
+   },
+   {
+    "front": "JumpSTART: black criteria",
+    "back": "Apneic with no palpable pulse after airway opening, OR pulse present but still apneic after 5 rescue breaths = black (deceased/expectant)"
+   },
+   {
+    "front": "Hot zone",
+    "back": "Contaminated area; only trained hazmat personnel in proper PPE enter; also called exclusion (red) zone"
+   },
+   {
+    "front": "Warm zone",
+    "back": "Contamination reduction zone between hot and cold; decontamination corridor is here; entry needs proper PPE and training"
+   },
+   {
+    "front": "Cold zone",
+    "back": "Safe support zone (uphill/upwind): command post, staging, and EMS triage/treatment of decontaminated patients"
+   },
+   {
+    "front": "ERG: yellow pages",
+    "back": "Index of materials in order of 4-digit UN/NA ID number; gives the guide number. Highlighted entries: go to green pages"
+   },
+   {
+    "front": "ERG: blue pages",
+    "back": "Index of materials alphabetically by name; gives ID number and guide number. Highlighted entries: go to green pages"
+   },
+   {
+    "front": "ERG: orange pages",
+    "back": "The numbered guides: potential hazards, public safety (isolation, PPE, evacuation), and emergency response (fire, spill, first aid)"
+   },
+   {
+    "front": "ERG: green pages",
+    "back": "Tables of initial isolation and protective action distances for toxic-inhalation-hazard and water-reactive materials (highlighted in yellow/blue pages)"
+   },
+   {
+    "front": "Hazmat placard color: red / orange",
+    "back": "Red = flammable; orange = explosive"
+   },
+   {
+    "front": "Hazmat placard color: green / yellow / blue",
+    "back": "Green = nonflammable gas; yellow = oxidizer; blue = dangerous when wet. (Yellow over white = radioactive)"
+   },
+   {
+    "front": "Hazmat placard color: white",
+    "back": "White = poison/toxic or infectious substance; white top with black bottom = corrosive; red and white stripes = flammable solid"
+   },
+   {
+    "front": "NFPA 704 diamond colors",
+    "back": "Blue = health, red = flammability, yellow = instability (reactivity), white = special hazards (e.g., W = no water, OX); each rated 0-4, 4 = worst"
+   },
+   {
+    "front": "Approach to hazmat scene",
+    "back": "Approach from uphill and upwind (upstream); stay at a safe distance; identify with binoculars; isolate and deny entry; do not enter without training/PPE"
+   },
+   {
+    "front": "Resources for hazmat identification",
+    "back": "Placards, shipping papers, safety data sheets, ERG, CHEMTREC, poison control"
+   }
+  ]
+ }
+]

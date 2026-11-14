@@ -1,0 +1,771 @@
+[
+ {
+  "id": "emt-01",
+  "topic": "emt",
+  "title": "Perfect CPR in 30 Seconds",
+  "creator": "@compressionqueen_emt",
+  "hashtags": [
+   "#emt",
+   "#cpr",
+   "#aha",
+   "#lifesaver"
+  ],
+  "likes": 48210,
+  "scenes": [
+   {
+    "emoji": "🫀",
+    "heading": "Push Hard, Push Fast",
+    "text": "Adult CPR rate is 100 to 120 compressions per minute. Think of the beat of 'Stayin' Alive'. Yes, really."
+   },
+   {
+    "emoji": "📏",
+    "heading": "Depth Matters",
+    "text": "Go at least 2 inches (5 cm) deep, but not past 2.4 inches (6 cm). Lower half of the sternum."
+   },
+   {
+    "emoji": "🔄",
+    "heading": "Let It Recoil",
+    "text": "Full chest recoil every push. No leaning! Leaning stops the heart from refilling."
+   },
+   {
+    "emoji": "⚡",
+    "heading": "Ratio and Pauses",
+    "text": "Without an advanced airway, 30 compressions to 2 breaths. Keep pauses under 10 seconds. Swap compressors every 2 minutes."
+   },
+   {
+    "emoji": "🧠",
+    "heading": "Memory Hook",
+    "text": "100-120, 2 inches, 30:2, swap at 2 minutes. 'Hard, fast, full recoil, few pauses.'"
+   }
+  ],
+  "quiz": [
+   {
+    "q": "What is the adult compression rate?",
+    "choices": [
+     "60-80/min",
+     "100-120/min",
+     "140-160/min",
+     "Any fast rate"
+    ],
+    "answer": 1,
+    "explain": "AHA recommends 100 to 120 compressions per minute."
+   },
+   {
+    "q": "Adult compression depth should be?",
+    "choices": [
+     "1 inch",
+     "At least 2 inches, not over 2.4",
+     "3 inches",
+     "Until ribs stop cracking"
+    ],
+    "answer": 1,
+    "explain": "At least 2 in (5 cm) and no more than 2.4 in (6 cm)."
+   }
+  ]
+ },
+ {
+  "id": "emt-02",
+  "topic": "emt",
+  "title": "AED: Plug and Play",
+  "creator": "@shockandawe",
+  "hashtags": [
+   "#emt",
+   "#aed",
+   "#cardiacarrest",
+   "#nremt"
+  ],
+  "likes": 31870,
+  "scenes": [
+   {
+    "emoji": "🔌",
+    "heading": "Power On First",
+    "text": "Arrive, turn the AED on, and follow the voice prompts. It is literally built to coach you."
+   },
+   {
+    "emoji": "🩹",
+    "heading": "Pads on Bare Chest",
+    "text": "Dry the chest, remove medication patches, and place pads firmly on bare skin. Upper right, lower left."
+   },
+   {
+    "emoji": "🙌",
+    "heading": "Everybody Clear",
+    "text": "Stop CPR while it analyzes. Nobody touches the patient. Then shout clear and press shock if advised."
+   },
+   {
+    "emoji": "🔁",
+    "heading": "Straight Back to CPR",
+    "text": "Resume compressions immediately after the shock. Do not wait to check a pulse. Re-analyze after 2 minutes."
+   },
+   {
+    "emoji": "🧠",
+    "heading": "Memory Hook",
+    "text": "Power, Pads, Analyze, Clear, Shock, CPR. Say it: 'Please Put Another Charge, Stat, CPR.'"
+   }
+  ],
+  "quiz": [
+   {
+    "q": "What do you do right after delivering a shock?",
+    "choices": [
+     "Check pulse for 30 seconds",
+     "Remove the pads",
+     "Resume CPR immediately",
+     "Wait for ALS"
+    ],
+    "answer": 2,
+    "explain": "Resume compressions right away and re-analyze after 2 minutes."
+   },
+   {
+    "q": "Where do adult pads go?",
+    "choices": [
+     "Both on the back",
+     "Upper right chest and lower left side",
+     "Over medication patches",
+     "On clothing"
+    ],
+    "answer": 1,
+    "explain": "Place on bare skin, upper right chest and lower left side."
+   }
+  ]
+ },
+ {
+  "id": "emt-03",
+  "topic": "emt",
+  "title": "OPA vs NPA Sizing Hack",
+  "creator": "@airwayalex",
+  "hashtags": [
+   "#emt",
+   "#airway",
+   "#opa",
+   "#npa"
+  ],
+  "likes": 22540,
+  "scenes": [
+   {
+    "emoji": "👄",
+    "heading": "OPA: Unresponsive Only",
+    "text": "Oral airway is for unresponsive patients with no gag reflex. Gagging means it is the wrong tool."
+   },
+   {
+    "emoji": "📐",
+    "heading": "Measure the OPA",
+    "text": "Hold it beside the face. Corner of the mouth to the earlobe, or the angle of the jaw."
+   },
+   {
+    "emoji": "👃",
+    "heading": "NPA Is Gag-Friendly",
+    "text": "Nasal airway works on responsive patients with a gag reflex. Lubricate it with water-soluble jelly."
+   },
+   {
+    "emoji": "📏",
+    "heading": "Measure the NPA",
+    "text": "Tip of the nose to the earlobe. Bevel toward the septum. Use caution with suspected severe facial trauma."
+   },
+   {
+    "emoji": "🧠",
+    "heading": "Memory Hook",
+    "text": "Oral = Out cold, mouth corner to ear. Nasal = No-gag okay, nose tip to ear."
+   }
+  ],
+  "quiz": [
+   {
+    "q": "Which patient can receive an OPA?",
+    "choices": [
+     "Awake and gagging",
+     "Unresponsive with no gag reflex",
+     "Talking but anxious",
+     "Any child"
+    ],
+    "answer": 1,
+    "explain": "OPAs are only for unresponsive patients without a gag reflex."
+   },
+   {
+    "q": "How do you size an NPA?",
+    "choices": [
+     "Chin to chest",
+     "Mouth corner to earlobe",
+     "Nose tip to earlobe",
+     "Nose to navel"
+    ],
+    "answer": 2,
+    "explain": "Measure from the tip of the nose to the earlobe."
+   }
+  ]
+ },
+ {
+  "id": "emt-04",
+  "topic": "emt",
+  "title": "Primary Assessment Speedrun",
+  "creator": "@abcsandchill",
+  "hashtags": [
+   "#emt",
+   "#primaryassessment",
+   "#abc",
+   "#avpu"
+  ],
+  "likes": 27650,
+  "scenes": [
+   {
+    "emoji": "🚧",
+    "heading": "Scene Safety First",
+    "text": "Dead heroes save nobody. Check hazards, use BSI, count patients, and call for more help early."
+   },
+   {
+    "emoji": "👀",
+    "heading": "General Impression",
+    "text": "Sick or not sick? Age, position, color, effort. Decide your priority in seconds."
+   },
+   {
+    "emoji": "🗣️",
+    "heading": "AVPU Check",
+    "text": "Alert, responds to Verbal, responds to Painful, Unresponsive. It is a fast level of consciousness read."
+   },
+   {
+    "emoji": "🫁",
+    "heading": "Then ABCs",
+    "text": "Airway, Breathing, Circulation. Fix life threats as you find them, including major bleeding and pulse quality."
+   },
+   {
+    "emoji": "🧠",
+    "heading": "Memory Hook",
+    "text": "Scene, Impression, AVPU, ABC, Priority. Treat what kills first, then decide: stay or go?"
+   }
+  ],
+  "quiz": [
+   {
+    "q": "What does the P in AVPU stand for?",
+    "choices": [
+     "Pulse",
+     "Pain",
+     "Pupils",
+     "Position"
+    ],
+    "answer": 1,
+    "explain": "P means responds to painful stimuli."
+   },
+   {
+    "q": "What comes first in a call?",
+    "choices": [
+     "Scene safety",
+     "Vital signs",
+     "SAMPLE history",
+     "Transport"
+    ],
+    "answer": 0,
+    "explain": "Scene size-up and safety come before patient care."
+   }
+  ]
+ },
+ {
+  "id": "emt-05",
+  "topic": "emt",
+  "title": "Vitals Norms Cheat Sheet",
+  "creator": "@pulsecheckpaige",
+  "hashtags": [
+   "#emt",
+   "#vitals",
+   "#nremt",
+   "#studytok"
+  ],
+  "likes": 19320,
+  "scenes": [
+   {
+    "emoji": "💓",
+    "heading": "Adult Pulse",
+    "text": "Normal adult heart rate is 60 to 100 beats per minute. Check rate, rhythm, and quality."
+   },
+   {
+    "emoji": "🌬️",
+    "heading": "Adult Breathing",
+    "text": "Normal adult respiratory rate is 12 to 20 breaths per minute. Under 12 or over 20 deserves attention."
+   },
+   {
+    "emoji": "🩺",
+    "heading": "Blood Pressure",
+    "text": "Around 120/80 is a typical adult reading. Below about 90 systolic in a sick patient is a red flag."
+   },
+   {
+    "emoji": "🫧",
+    "heading": "SpO2 and Skin",
+    "text": "SpO2 of 95 percent or higher is typical. Also note skin color, temperature, and moisture."
+   },
+   {
+    "emoji": "🧠",
+    "heading": "Memory Hook",
+    "text": "60-100 pulse, 12-20 breathing, 120/80 pressure, 95-plus oxygen. 'Sixty, twelve, one-twenty, ninety-five.'"
+   }
+  ],
+  "quiz": [
+   {
+    "q": "Normal adult respiratory rate?",
+    "choices": [
+     "8-10",
+     "12-20",
+     "24-30",
+     "30-40"
+    ],
+    "answer": 1,
+    "explain": "Adults typically breathe 12 to 20 times per minute."
+   },
+   {
+    "q": "Typical normal SpO2 is?",
+    "choices": [
+     "95% or higher",
+     "80%",
+     "88%",
+     "70%"
+    ],
+    "answer": 0,
+    "explain": "A healthy SpO2 is usually 95 percent or above."
+   }
+  ]
+ },
+ {
+  "id": "emt-06",
+  "topic": "emt",
+  "title": "BE-FAST Stroke Check",
+  "creator": "@strokesquadsam",
+  "hashtags": [
+   "#emt",
+   "#stroke",
+   "#befast",
+   "#timeisbrain"
+  ],
+  "likes": 41200,
+  "scenes": [
+   {
+    "emoji": "⚖️",
+    "heading": "B and E",
+    "text": "Balance: sudden loss of balance or dizziness. Eyes: sudden vision loss or double vision."
+   },
+   {
+    "emoji": "🙂",
+    "heading": "Face Droop",
+    "text": "Ask them to smile. One side sagging is a classic stroke sign."
+   },
+   {
+    "emoji": "💪",
+    "heading": "Arm Drift",
+    "text": "Eyes closed, arms out. One arm drifting down or weak? Suspect stroke."
+   },
+   {
+    "emoji": "🗣️",
+    "heading": "Speech and Time",
+    "text": "Slurred or strange speech. Note the last known well time and call it in. Time is brain."
+   },
+   {
+    "emoji": "🧠",
+    "heading": "Memory Hook",
+    "text": "BE-FAST: Balance, Eyes, Face, Arm, Speech, Time. Check glucose too, since low sugar can mimic stroke."
+   }
+  ],
+  "quiz": [
+   {
+    "q": "What does the T in BE-FAST stand for?",
+    "choices": [
+     "Temperature",
+     "Time to call, note last known well",
+     "Tremor",
+     "Trauma"
+    ],
+    "answer": 1,
+    "explain": "T is Time: note last known well and activate EMS and the stroke center."
+   },
+   {
+    "q": "Which condition can mimic a stroke?",
+    "choices": [
+     "Hypoglycemia",
+     "Sunburn",
+     "Sprained ankle",
+     "Blisters"
+    ],
+    "answer": 0,
+    "explain": "Low blood sugar can cause stroke-like signs, so check glucose."
+   }
+  ]
+ },
+ {
+  "id": "emt-07",
+  "topic": "emt",
+  "title": "Chest Pain: Aspirin and Nitro",
+  "creator": "@heartbeatharry",
+  "hashtags": [
+   "#emt",
+   "#mi",
+   "#aspirin",
+   "#nitro"
+  ],
+  "likes": 36780,
+  "scenes": [
+   {
+    "emoji": "🫀",
+    "heading": "Suspect an MI",
+    "text": "Chest pressure, sweating, nausea, arm or jaw pain. Get oxygen only if SpO2 is low, and keep them calm and resting."
+   },
+   {
+    "emoji": "💊",
+    "heading": "Aspirin Time",
+    "text": "If no allergy or active bleeding, give aspirin to chew. Typical adult dose is 160 to 325 mg. Follow local protocol."
+   },
+   {
+    "emoji": "🧪",
+    "heading": "Nitro Assist",
+    "text": "Help with the patient's own prescribed nitroglycerin under medical direction. Usually need systolic BP above 100."
+   },
+   {
+    "emoji": "🚫",
+    "heading": "Nitro Red Flags",
+    "text": "Hold it with low BP, recent erectile dysfunction meds, or if medical control says no. Reassess vitals after each dose."
+   },
+   {
+    "emoji": "🧠",
+    "heading": "Memory Hook",
+    "text": "Chew the aspirin, check the pressure, patient's own nitro only. 'Chew, check, own.'"
+   }
+  ],
+  "quiz": [
+   {
+    "q": "How is aspirin given for suspected MI?",
+    "choices": [
+     "Swallowed whole with water only",
+     "Chewed",
+     "Injected",
+     "Rubbed on skin"
+    ],
+    "answer": 1,
+    "explain": "Chewed aspirin absorbs faster, which is why it is given that way."
+   },
+   {
+    "q": "Before assisting with nitro, check that?",
+    "choices": [
+     "Pupils are equal",
+     "Systolic BP is above 100",
+     "Temperature is normal",
+     "Patient is lying flat only"
+    ],
+    "answer": 1,
+    "explain": "Nitro can drop blood pressure, so confirm systolic is above 100 per protocol."
+   }
+  ]
+ },
+ {
+  "id": "emt-08",
+  "topic": "emt",
+  "title": "Anaphylaxis: Epi Fast",
+  "creator": "@epipenelope",
+  "hashtags": [
+   "#emt",
+   "#anaphylaxis",
+   "#epi",
+   "#allergy"
+  ],
+  "likes": 52490,
+  "scenes": [
+   {
+    "emoji": "🐝",
+    "heading": "Know the Signs",
+    "text": "Hives, swelling of face or tongue, wheezing, trouble breathing, vomiting, low blood pressure after an exposure."
+   },
+   {
+    "emoji": "💉",
+    "heading": "Epi Auto-Injector",
+    "text": "EMTs can use the epinephrine auto-injector. Typical doses are 0.3 mg for adults and 0.15 mg for small children."
+   },
+   {
+    "emoji": "📍",
+    "heading": "Where to Inject",
+    "text": "Outer middle thigh, through clothing if needed. Hold in place for the time on the device label."
+   },
+   {
+    "emoji": "🔁",
+    "heading": "After the Shot",
+    "text": "Give oxygen, keep them supine if hypotensive, monitor airway, and call ALS. Symptoms can return."
+   },
+   {
+    "emoji": "🧠",
+    "heading": "Memory Hook",
+    "text": "Epi in the Eh-thigh. 'Hives plus hard breathing equals epi, don't delay.'"
+   }
+  ],
+  "quiz": [
+   {
+    "q": "Where is an epi auto-injector given?",
+    "choices": [
+     "Upper arm fat",
+     "Outer mid-thigh",
+     "Abdomen",
+     "Buttock"
+    ],
+    "answer": 1,
+    "explain": "The lateral mid-thigh is the standard injection site."
+   },
+   {
+    "q": "Typical adult auto-injector dose?",
+    "choices": [
+     "0.03 mg",
+     "0.15 mg",
+     "0.3 mg",
+     "3 mg"
+    ],
+    "answer": 2,
+    "explain": "Adult auto-injectors deliver 0.3 mg; children's deliver 0.15 mg."
+   }
+  ]
+ },
+ {
+  "id": "emt-09",
+  "topic": "emt",
+  "title": "Low Sugar Rescue",
+  "creator": "@glucosegoblin",
+  "hashtags": [
+   "#emt",
+   "#diabetes",
+   "#hypoglycemia",
+   "#glucose"
+  ],
+  "likes": 17450,
+  "scenes": [
+   {
+    "emoji": "🍬",
+    "heading": "Spot Hypoglycemia",
+    "text": "Confused, sweaty, shaky, pale, or acting drunk in a diabetic patient. Check blood glucose if your protocol allows."
+   },
+   {
+    "emoji": "✅",
+    "heading": "Oral Glucose Rules",
+    "text": "Give oral glucose only if the patient is awake, can swallow, and can protect their own airway."
+   },
+   {
+    "emoji": "🚫",
+    "heading": "When Not To",
+    "text": "Unresponsive, seizing, or unable to swallow means no oral glucose. Support the airway and call ALS."
+   },
+   {
+    "emoji": "🔍",
+    "heading": "Reassess",
+    "text": "Recheck mental status and glucose. Always transport, since insulin can outlast the sugar you gave."
+   },
+   {
+    "emoji": "🧠",
+    "heading": "Memory Hook",
+    "text": "Awake and Able to swallow gets glucose. 'If they can't chew, don't do.'"
+   }
+  ],
+  "quiz": [
+   {
+    "q": "When is oral glucose appropriate?",
+    "choices": [
+     "Unresponsive patient",
+     "Seizing patient",
+     "Awake patient who can swallow",
+     "Vomiting and choking"
+    ],
+    "answer": 2,
+    "explain": "Only give it to patients who are alert enough to swallow and protect the airway."
+   },
+   {
+    "q": "Which sign suggests hypoglycemia?",
+    "choices": [
+     "Pink warm dry skin",
+     "Sweating and confusion",
+     "Slow regular pulse",
+     "Itchy rash"
+    ],
+    "answer": 1,
+    "explain": "Sweaty, shaky, confused patients may have low blood sugar."
+   }
+  ]
+ },
+ {
+  "id": "emt-10",
+  "topic": "emt",
+  "title": "Stop the Bleed + Shock",
+  "creator": "@tourniquettina",
+  "hashtags": [
+   "#emt",
+   "#trauma",
+   "#tourniquet",
+   "#shock"
+  ],
+  "likes": 63340,
+  "scenes": [
+   {
+    "emoji": "🩸",
+    "heading": "Direct Pressure",
+    "text": "Life-threatening bleeding first. Apply firm, direct pressure with a dressing, then a pressure bandage."
+   },
+   {
+    "emoji": "🎗️",
+    "heading": "Tourniquet Time",
+    "text": "Pressure failing on a limb? Tourniquet 2 to 3 inches above the wound, never on a joint. Tighten until bleeding stops."
+   },
+   {
+    "emoji": "⏱️",
+    "heading": "Write the Time",
+    "text": "Mark the time applied. Do not loosen it in the field. Expect it to hurt, that is normal."
+   },
+   {
+    "emoji": "😰",
+    "heading": "Shock Signs",
+    "text": "Fast pulse, pale cool clammy skin, anxiety, fast breathing, altered mental status. Low blood pressure comes late."
+   },
+   {
+    "emoji": "🧠",
+    "heading": "Memory Hook",
+    "text": "Press, Tourniquet, Time it. Treat shock: lay flat, keep warm, oxygen if needed, rapid transport."
+   }
+  ],
+  "quiz": [
+   {
+    "q": "Where does a limb tourniquet go?",
+    "choices": [
+     "On the joint",
+     "2-3 inches above the wound",
+     "Below the wound",
+     "Over the clothing wrinkle at the foot"
+    ],
+    "answer": 1,
+    "explain": "Place it about 2 to 3 inches above the wound, not over a joint."
+   },
+   {
+    "q": "Which is a LATE sign of shock?",
+    "choices": [
+     "Low blood pressure",
+     "Fast pulse",
+     "Pale skin",
+     "Anxiety"
+    ],
+    "answer": 0,
+    "explain": "Hypotension appears late, after the body's compensation fails."
+   }
+  ]
+ },
+ {
+  "id": "emt-11",
+  "topic": "emt",
+  "title": "START Triage in 60 Seconds",
+  "creator": "@triagetony",
+  "hashtags": [
+   "#emt",
+   "#triage",
+   "#start",
+   "#mci"
+  ],
+  "likes": 25910,
+  "scenes": [
+   {
+    "emoji": "🚶",
+    "heading": "Walkers Are Green",
+    "text": "Shout for everyone who can walk to move. Those patients are minor, green. Now assess the rest."
+   },
+   {
+    "emoji": "🫁",
+    "heading": "Check Breathing",
+    "text": "Not breathing? Reposition the airway once. Still apneic means black. Breathing after repositioning is red. Over 30 per minute is red."
+   },
+   {
+    "emoji": "🩸",
+    "heading": "Perfusion Check",
+    "text": "No radial pulse or capillary refill over 2 seconds means red. Control major bleeding as you go."
+   },
+   {
+    "emoji": "🧩",
+    "heading": "Mental Status",
+    "text": "Cannot follow simple commands means red. Otherwise, the patient is yellow, delayed."
+   },
+   {
+    "emoji": "🧠",
+    "heading": "Memory Hook",
+    "text": "30, 2, Can do: breaths under 30, refill under 2, can follow commands. Any fail means red."
+   }
+  ],
+  "quiz": [
+   {
+    "q": "Respiratory rate that makes a START patient red?",
+    "choices": [
+     "Over 30",
+     "Over 20",
+     "Under 12",
+     "Exactly 24"
+    ],
+    "answer": 0,
+    "explain": "More than 30 breaths per minute is immediate (red)."
+   },
+   {
+    "q": "What color are walking wounded?",
+    "choices": [
+     "Red",
+     "Yellow",
+     "Green",
+     "Black"
+    ],
+    "answer": 2,
+    "explain": "Patients who can walk are minor, tagged green."
+   }
+  ]
+ },
+ {
+  "id": "emt-12",
+  "topic": "emt",
+  "title": "Baby Time: Birth, Burns, Histories",
+  "creator": "@stork_and_stretcher",
+  "hashtags": [
+   "#emt",
+   "#childbirth",
+   "#apgar",
+   "#burns",
+   "#sample"
+  ],
+  "likes": 38760,
+  "scenes": [
+   {
+    "emoji": "👶",
+    "heading": "Crowning? Prep!",
+    "text": "Head crowning means delivery is imminent. Gently support the head, check for cord around the neck, then dry and warm the newborn."
+   },
+   {
+    "emoji": "📊",
+    "heading": "APGAR Score",
+    "text": "At 1 and 5 minutes score Appearance, Pulse, Grimace, Activity, Respiration, 0 to 2 each. Seven to 10 is reassuring."
+   },
+   {
+    "emoji": "🔥",
+    "heading": "Rule of Nines",
+    "text": "Adult: head 9, each arm 9, chest 18, back 18, each leg 18, groin 1. Kids have a bigger head, smaller legs."
+   },
+   {
+    "emoji": "📝",
+    "heading": "SAMPLE and OPQRST",
+    "text": "SAMPLE: Signs, Allergies, Medications, Past history, Last oral intake, Events. OPQRST: Onset, Provocation, Quality, Radiation, Severity, Time."
+   },
+   {
+    "emoji": "🧠",
+    "heading": "Memory Hook",
+    "text": "APGAR is Appearance, Pulse, Grimace, Activity, Respiration. Nines: 9, 9, 18, 18, 18, 18, 1."
+   }
+  ],
+  "quiz": [
+   {
+    "q": "In an adult, each leg (front and back) is about what percent BSA?",
+    "choices": [
+     "9%",
+     "18%",
+     "27%",
+     "36%"
+    ],
+    "answer": 1,
+    "explain": "Each adult leg is 18 percent in the rule of nines."
+   },
+   {
+    "q": "What does the G in APGAR stand for?",
+    "choices": [
+     "Glucose",
+     "Grimace",
+     "Gestation",
+     "Grip"
+    ],
+    "answer": 1,
+    "explain": "G is Grimace, the reflex irritability response."
+   }
+  ]
+ }
+]

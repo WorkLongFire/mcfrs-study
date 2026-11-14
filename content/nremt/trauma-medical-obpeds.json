@@ -1,0 +1,1038 @@
+[
+ {
+  "name": "NREMT · Trauma Assessment, Bleeding & Shock",
+  "domain": "Trauma",
+  "cards": [
+   {
+    "front": "MOI",
+    "back": "Mechanism of injury: the forces and way an injury occurred (e.g., rollover, fall height, penetrating object). Guides index of suspicion and trauma center decisions."
+   },
+   {
+    "front": "Kinematics",
+    "back": "Study of how motion and energy transfer cause injury. Kinetic energy = 1/2 x mass x velocity squared, so speed matters more than mass."
+   },
+   {
+    "front": "Golden Period / Golden Hour",
+    "back": "Goal of definitive surgical care within about 60 minutes of injury. Platinum 10 minutes: limit scene time for critical trauma to 10 min or less."
+   },
+   {
+    "front": "Newton's first law in trauma",
+    "back": "Body in motion stays in motion until acted on by an outside force (e.g., a stopped car, then the occupant hits the dash)."
+   },
+   {
+    "front": "Three collisions in a vehicle crash",
+    "back": "1) Vehicle hits object. 2) Occupant hits the vehicle interior. 3) Internal organs hit the body wall/skeleton."
+   },
+   {
+    "front": "Index of suspicion",
+    "back": "Your anticipation of possible injuries based on MOI, even without obvious signs."
+   },
+   {
+    "front": "Penetrating trauma: low vs high energy",
+    "back": "Knife = low energy (damage along path). Handgun = medium. Rifle = high energy with cavitation and wide tissue damage."
+   },
+   {
+    "front": "Trauma primary assessment order",
+    "back": "Scene size-up, spinal motion restriction as needed, general impression, then control life-threatening hemorrhage first, then airway, breathing, circulation, disability, expose."
+   },
+   {
+    "front": "Rapid trauma assessment (head-to-toe) looks for",
+    "back": "DCAP-BTLS: Deformities, Contusions, Abrasions, Punctures/Penetrations, Burns, Tenderness, Lacerations, Swelling."
+   },
+   {
+    "front": "Which trauma patients get a rapid trauma assessment?",
+    "back": "Significant MOI or unresponsive/altered patients get a full-body rapid exam. Isolated injury with minor MOI gets a focused exam."
+   },
+   {
+    "front": "Adult blood volume",
+    "back": "About 5 to 6 liters (approx. 70 mL/kg). Child about 80 mL/kg; infants lose volume quickly, so small losses matter."
+   },
+   {
+    "front": "Order of bleeding control",
+    "back": "Direct pressure, then pressure dressing, then tourniquet (or hemostatic gauze packing) for life-threatening limb bleeding not controlled. Per local protocol."
+   },
+   {
+    "front": "Tourniquet placement rules",
+    "back": "Place 2-3 inches above the wound (proximal), not over a joint. Tighten until bleeding stops and distal pulse is gone. Write time applied. Do not loosen."
+   },
+   {
+    "front": "Hemostatic gauze use",
+    "back": "Pack firmly into wound (junctional areas such as groin/axilla/neck) and hold direct pressure at least 3 minutes (follow product directions)."
+   },
+   {
+    "front": "Epistaxis care",
+    "back": "Sit patient leaning forward, pinch the soft part of the nose 10 minutes. Suspect head injury if after trauma; avoid pinching with skull fracture/CSF."
+   },
+   {
+    "front": "Hypoperfusion / shock",
+    "back": "Inadequate delivery of oxygen and nutrients to tissues because of poor perfusion. Cells shift to anaerobic metabolism."
+   },
+   {
+    "front": "Three components of perfusion",
+    "back": "Pump (heart), fluid (blood volume), and container (blood vessels)."
+   },
+   {
+    "front": "Hypovolemic shock",
+    "back": "Loss of blood or fluid volume (hemorrhage, burns, dehydration, vomiting/diarrhea). Most common shock in trauma."
+   },
+   {
+    "front": "Cardiogenic shock",
+    "back": "Pump failure (heart attack, CHF). Often has pulmonary edema, JVD, and crackles."
+   },
+   {
+    "front": "Distributive shock types",
+    "back": "Neurogenic, septic, anaphylactic: dilated vessels make the container too big."
+   },
+   {
+    "front": "Obstructive shock causes",
+    "back": "Tension pneumothorax, cardiac tamponade, pulmonary embolism: blood flow physically blocked."
+   },
+   {
+    "front": "Neurogenic shock signs",
+    "back": "Spinal cord injury with loss of sympathetic tone: low BP, bradycardia, warm dry skin (below injury), and priapism possible."
+   },
+   {
+    "front": "Compensated shock signs",
+    "back": "Anxiety/restlessness, tachycardia, pale cool clammy skin, delayed cap refill, normal BP, tachypnea."
+   },
+   {
+    "front": "Decompensated shock signs",
+    "back": "Falling blood pressure, altered mental status, weak/absent peripheral pulses, labored breathing, cyanosis, ashen skin."
+   },
+   {
+    "front": "Irreversible shock",
+    "back": "Organ damage is permanent and death follows even if BP is restored."
+   },
+   {
+    "front": "Early sign of shock in children",
+    "back": "Tachycardia, delayed capillary refill, and altered mental status. Hypotension is a LATE sign (they compensate well, then crash)."
+   },
+   {
+    "front": "Shock care basics",
+    "back": "Control bleeding, high-flow oxygen if hypoxic (maintain SpO2 94% or above), keep warm, supine, rapid transport. Avoid food/drink."
+   },
+   {
+    "front": "Hemorrhage classification by vessel",
+    "back": "Arterial: bright red, spurting. Venous: dark red, steady flow. Capillary: slow oozing."
+   },
+   {
+    "front": "Serious blood loss amounts",
+    "back": "Adult about 1 liter, child about 500 mL, infant about 100-200 mL."
+   }
+  ]
+ },
+ {
+  "name": "NREMT · Head, Spine, Chest & Abdomen",
+  "domain": "Trauma",
+  "cards": [
+   {
+    "front": "Cushing's triad",
+    "back": "Signs of rising intracranial pressure: HYPERtension (widening pulse pressure), BRADYcardia, irregular respirations."
+   },
+   {
+    "front": "Battle's sign",
+    "back": "Bruising behind the ear over the mastoid; indicates basilar skull fracture (late sign)."
+   },
+   {
+    "front": "Raccoon eyes",
+    "back": "Periorbital ecchymosis; indicates basilar skull fracture (can appear hours later)."
+   },
+   {
+    "front": "CSF leak sign",
+    "back": "Clear or pink fluid from ears or nose after head trauma; suggests skull fracture. Do not stop the flow; cover loosely."
+   },
+   {
+    "front": "GCS: eye opening scores",
+    "back": "4 spontaneous, 3 to voice, 2 to pain, 1 none."
+   },
+   {
+    "front": "GCS: verbal scores",
+    "back": "5 oriented, 4 confused, 3 inappropriate words, 2 incomprehensible sounds, 1 none."
+   },
+   {
+    "front": "GCS: motor scores",
+    "back": "6 obeys commands, 5 localizes pain, 4 withdraws from pain, 3 flexion (decorticate), 2 extension (decerebrate), 1 none."
+   },
+   {
+    "front": "GCS range and severity",
+    "back": "Range 3-15. Severe 8 or less, moderate 9-12, mild 13-15. 15 is normal. GCS 8 or less: airway at risk; BLS airway/BVM and request ALS (advanced airway is not EMT scope)."
+   },
+   {
+    "front": "Decorticate vs decerebrate posturing",
+    "back": "Decorticate: arms flexed toward core. Decerebrate: arms and legs extended (worse prognosis)."
+   },
+   {
+    "front": "Signs of increased ICP",
+    "back": "Declining mental status, vomiting, headache, unequal or sluggish pupils, posturing, Cushing's triad."
+   },
+   {
+    "front": "Head injury care",
+    "back": "Maintain airway, oxygen to avoid hypoxia, avoid hyperventilation unless herniation signs (per local protocol), SMR, rapid transport."
+   },
+   {
+    "front": "Concussion",
+    "back": "Temporary altered brain function after a blow; may include confusion, amnesia, headache. No structural damage on CT."
+   },
+   {
+    "front": "When to use spinal motion restriction",
+    "back": "MOI with altered mental status, neuro deficit, spine pain/tenderness, distracting injury or intoxication, per local protocol/selective criteria."
+   },
+   {
+    "front": "Cervical collar sizing/purpose",
+    "back": "Collar limits neck movement; measure per manufacturer. Does not replace manual in-line stabilization until patient is secured."
+   },
+   {
+    "front": "Airway-opening maneuver for a patient with suspected spinal injury",
+    "back": "Jaw-thrust maneuver without head tilt. If it does not open the airway, use head tilt-chin lift: a patent airway takes priority."
+   },
+   {
+    "front": "Flail chest",
+    "back": "2 or more adjacent ribs fractured in 2 or more places, creating a free-floating segment."
+   },
+   {
+    "front": "Paradoxical motion",
+    "back": "Flail segment moves in on inhalation and out on exhalation. Give oxygen; assist with BVM if breathing is inadequate. Bulky-dressing stabilization only per local protocol."
+   },
+   {
+    "front": "Open (sucking) chest wound care",
+    "back": "Seal with occlusive dressing taped on 3 sides (or vented chest seal); watch for tension pneumothorax and burp dressing if worsening."
+   },
+   {
+    "front": "Simple pneumothorax signs",
+    "back": "Pleuritic chest pain, dyspnea, diminished or absent breath sounds on the affected side."
+   },
+   {
+    "front": "Tension pneumothorax signs",
+    "back": "Severe dyspnea, absent breath sounds, JVD, tracheal deviation (late), hypotension. Needle decompression is beyond EMT scope; rapid transport/ALS."
+   },
+   {
+    "front": "Hemothorax",
+    "back": "Blood in the pleural space; dull percussion, shock signs, decreased breath sounds. Rapid transport."
+   },
+   {
+    "front": "Cardiac tamponade",
+    "back": "Blood in the pericardial sac compressing the heart; usually from penetrating trauma."
+   },
+   {
+    "front": "Beck's triad",
+    "back": "Hypotension, JVD, muffled (distant) heart tones. Signs of cardiac tamponade."
+   },
+   {
+    "front": "Traumatic asphyxia",
+    "back": "Severe chest compression: head/neck cyanosis, JVD, bulging eyes, petechiae. Treat ABCs, rapid transport."
+   },
+   {
+    "front": "Pulmonary contusion",
+    "back": "Bruised lung tissue; delayed respiratory distress, hemoptysis."
+   },
+   {
+    "front": "Subcutaneous emphysema",
+    "back": "Crepitus under skin from air leakage; sign of pneumothorax or airway injury."
+   },
+   {
+    "front": "Evisceration care",
+    "back": "Do not push organs back; cover with moist sterile saline dressing then occlusive covering. Keep warm, legs flexed if no contraindication."
+   },
+   {
+    "front": "Abdominal organs: solid vs hollow",
+    "back": "Solid (liver, spleen, kidneys) bleed heavily. Hollow (stomach, intestines) leak contents causing peritonitis."
+   },
+   {
+    "front": "Signs of internal abdominal bleeding",
+    "back": "Rigid or distended abdomen, guarding, tenderness, Kehr's sign (left shoulder pain from spleen), bruising (Cullen/Grey Turner late)."
+   },
+   {
+    "front": "Impaled object care",
+    "back": "Do not remove (except in cheek obstructing airway or interfering with CPR); stabilize with bulky dressings."
+   },
+   {
+    "front": "Pelvic fracture care",
+    "back": "Suspect with MOI and pelvic pain; do not rock pelvis or compress repeatedly. Bind with pelvic binder/sheet per protocol; treat for shock."
+   }
+  ]
+ },
+ {
+  "name": "NREMT · Musculoskeletal, Burns & Triage",
+  "domain": "Trauma",
+  "cards": [
+   {
+    "front": "PMS check",
+    "back": "Pulse, Motor function, Sensation: check distal to injury before AND after splinting."
+   },
+   {
+    "front": "Splinting rule: joints",
+    "back": "Immobilize the joint above and below a long bone injury; the bone above and below a joint injury."
+   },
+   {
+    "front": "Why splint",
+    "back": "Reduce pain, prevent further tissue/vessel/nerve damage, limit bleeding."
+   },
+   {
+    "front": "Realign a deformed limb when",
+    "back": "Pulseless extremity or severely angulated; one gentle attempt, stop if resistance or pain increases (per local protocol). Do not realign joints."
+   },
+   {
+    "front": "Traction splint indication",
+    "back": "Isolated mid-shaft femur fracture without pelvis, hip, knee, ankle injury (pain relief, bleeding control)."
+   },
+   {
+    "front": "Open vs closed fracture",
+    "back": "Open: bone ends or wound through skin; control bleeding, sterile dressing. Closed: skin intact."
+   },
+   {
+    "front": "Dislocation vs sprain vs strain",
+    "back": "Dislocation: bone out of joint. Sprain: ligament injury. Strain: muscle/tendon injury."
+   },
+   {
+    "front": "Compartment syndrome signs",
+    "back": "Pain out of proportion, tense swelling, pain with passive stretch, paresthesia, late: pulselessness (the 6 P's)."
+   },
+   {
+    "front": "RICE for soft tissue injury",
+    "back": "Rest, Ice, Compression, Elevation. Wrap the cold pack in cloth; apply up to about 20 minutes at a time."
+   },
+   {
+    "front": "Amputation care",
+    "back": "Control bleeding (tourniquet if needed); wrap part in moist sterile gauze, place in plastic bag, keep cool on ice; do not freeze or soak in water."
+   },
+   {
+    "front": "Superficial (1st degree) burn",
+    "back": "Epidermis only: red, dry, painful (sunburn). No blisters."
+   },
+   {
+    "front": "Partial-thickness (2nd degree) burn",
+    "back": "Epidermis + dermis: blisters, moist, red, very painful. Do not break blisters."
+   },
+   {
+    "front": "Full-thickness (3rd degree) burn",
+    "back": "All skin layers: white, brown or charred, leathery, painless (nerve damage)."
+   },
+   {
+    "front": "Rule of nines: adult",
+    "back": "Head 9, each arm 9, chest 9 + abdomen 9 (front trunk 18), back 18, each leg 18, groin 1."
+   },
+   {
+    "front": "Rule of nines: infant/child",
+    "back": "Infant: head 18, front trunk 18, back 18, each arm 9, each leg 13.5 (often rounded to 14), groin 1. Older child: head about 12, each leg about 16.5. Charts vary by text."
+   },
+   {
+    "front": "Rule of palms",
+    "back": "Patient's palm with fingers is about 1% of body surface area. Use for scattered/small burns."
+   },
+   {
+    "front": "Critical (severe) burn criteria: adult",
+    "back": "Full-thickness over 10% or partial over 30% BSA (typical text); burns of face/airway, hands, feet, genitalia; circumferential; inhalation, electrical; with trauma; under 5 or over 55."
+   },
+   {
+    "front": "Signs of inhalation injury",
+    "back": "Singed nasal hair, soot in mouth/nose, hoarseness, stridor, burns of face, carbonaceous sputum. Consider early airway support."
+   },
+   {
+    "front": "Thermal burn care",
+    "back": "Stop the burning, remove jewelry/clothing not stuck, cool briefly with room-temp water (not ice), cover dry sterile, prevent hypothermia."
+   },
+   {
+    "front": "Chemical burn care",
+    "back": "Brush off dry powder first, then flush with copious water at least 20 min. Protect yourself (PPE). Remove contaminated clothing."
+   },
+   {
+    "front": "Electrical burn caution",
+    "back": "Ensure power is off/scene safe; entrance and exit wounds; internal damage is worse than it looks; expect dysrhythmias/cardiac arrest, so have the AED ready. ECG monitoring is ALS."
+   },
+   {
+    "front": "Carbon monoxide poisoning",
+    "back": "Headache, dizziness, nausea, confusion; SpO2 may read falsely normal. Treat with 100% oxygen."
+   },
+   {
+    "front": "ACS field triage 2021: Red criteria, mental status and vitals",
+    "back": "Motor GCS under 6 (can't follow commands); RR under 10 or over 29; SpO2 under 90%; SBP under 90 or HR over SBP (age 10-64); SBP under 110 (65+); SBP under 70 + 2 x age (0-9)."
+   },
+   {
+    "front": "ACS field triage 2021: Red criteria, injury patterns",
+    "back": "Penetrating head/neck/torso/proximal limb; skull deformity; spine injury with new deficit; flail chest; pelvic fx; 2+ proximal long-bone fx; mangled/pulseless limb; tourniquet-needed bleed."
+   },
+   {
+    "front": "ACS field triage 2021: Yellow criteria, mechanism of injury",
+    "back": "Ejection; intrusion over 12 in at occupant site or 18 in anywhere; death in same compartment; unrestrained child 0-9; fall over 10 ft (all ages); pedestrian/cyclist/rider thrown or run over."
+   },
+   {
+    "front": "ACS field triage 2021: Yellow criteria, EMS judgment",
+    "back": "Low-level fall with head impact (age 5 or under, or 65+); anticoagulant use; suspected child abuse; pregnancy over 20 weeks; burns with trauma; special needs. Follow local destination plan."
+   },
+   {
+    "front": "START triage colors",
+    "back": "Red immediate, yellow delayed, green minor (walking wounded), black deceased/expectant."
+   },
+   {
+    "front": "START triage cutoffs (adult)",
+    "back": "RR over 30 = red. Radial pulse absent or cap refill over 2 s = red. Cannot follow simple commands = red. Not breathing after opening the airway = black."
+   },
+   {
+    "front": "JumpSTART pediatric triage (ages about 1-8)",
+    "back": "Apneic after airway opened: pulse present = 5 rescue breaths (still apneic = black, breathing = red); no pulse = black. RR under 15 or over 45, no pulse, or P/U on AVPU = red."
+   }
+  ]
+ },
+ {
+  "name": "NREMT · Environmental Emergencies",
+  "domain": "Trauma",
+  "cards": [
+   {
+    "front": "Heat cramps",
+    "back": "Painful muscle spasms after exertion in heat; skin moist. Treat: rest in cool, oral fluids/electrolytes if alert."
+   },
+   {
+    "front": "Heat exhaustion",
+    "back": "Heavy sweating, pale cool clammy skin, weakness, dizziness, nausea, normal or slightly high temp. Cool, fluids if alert, may need IV by ALS."
+   },
+   {
+    "front": "Heat stroke",
+    "back": "Core temp over 104 F (40 C), hot skin (may be dry or sweaty), altered mental status or seizures. Life threat: rapid cooling, transport."
+   },
+   {
+    "front": "Heat stroke vs exhaustion key difference",
+    "back": "Altered mental status and very high temperature = heat stroke. Cool aggressively (ice packs groin/axilla/neck, cold water immersion if possible)."
+   },
+   {
+    "front": "Mild hypothermia",
+    "back": "Core 90-95 F (32-35 C): shivering, cold skin, pale, goosebumps, some confusion."
+   },
+   {
+    "front": "Moderate hypothermia",
+    "back": "Core 82-90 F (28-32 C): shivering stops, confusion, slow pulse and respirations, stumbling, slurred speech."
+   },
+   {
+    "front": "Severe hypothermia",
+    "back": "Core under 82 F (28 C): unresponsive, rigid, very slow pulse; may appear dead. Check pulse longer than usual: 30-60 s in many texts (per local protocol). Not dead until warm and dead."
+   },
+   {
+    "front": "Hypothermia handling",
+    "back": "Handle gently (VF risk), remove wet clothes, insulate, passive warming, active warming per protocol, avoid rubbing limbs, no alcohol."
+   },
+   {
+    "front": "Frostbite superficial vs deep",
+    "back": "Superficial: white waxy skin, numbness, soft. Deep: hard, cold, blotchy white/gray/blue, blisters."
+   },
+   {
+    "front": "Frostbite care",
+    "back": "Remove wet clothing and jewelry, loosely cover with dry dressings, do not rub or break blisters, do not rewarm if refreezing is possible."
+   },
+   {
+    "front": "Immersion foot (trench foot)",
+    "back": "Cold, wet, nonfreezing exposure; swollen, pale, painful. Dry and rewarm gently."
+   },
+   {
+    "front": "Drowning: priority",
+    "back": "Hypoxia is the problem: open airway and give rescue breaths first once safe, then CPR with ventilations if no pulse. Spinal precautions only if diving/trauma is suspected."
+   },
+   {
+    "front": "Cold-water immersion factor",
+    "back": "Cold water may preserve survival; continue resuscitation per protocol."
+   },
+   {
+    "front": "Drowning aftermath",
+    "back": "Transport even if the patient seems fine: lung problems (pulmonary edema, hypoxia) can develop hours later. 'Secondary' and 'dry' drowning are outdated terms."
+   },
+   {
+    "front": "Snake bite care (pit viper)",
+    "back": "Keep calm and still, limb about heart level (per local protocol), remove rings, mark swelling edge and time, rapid transport. No tourniquet, ice, cutting or suction."
+   },
+   {
+    "front": "Pit viper signs",
+    "back": "Fang marks, pain, swelling, ecchymosis, weakness, metallic taste, bleeding."
+   },
+   {
+    "front": "Coral snake",
+    "back": "Neurotoxin: minimal local signs; delayed weakness, drooping eyelids, respiratory failure. Remember 'red on yellow kills a fellow'."
+   },
+   {
+    "front": "Bee sting care",
+    "back": "Scrape out stinger (don't squeeze venom sac), wash, cold pack. Watch for anaphylaxis."
+   },
+   {
+    "front": "Black widow spider",
+    "back": "Muscle cramps/rigidity (abdominal), severe pain, sweating. Antivenom at hospital."
+   },
+   {
+    "front": "Brown recluse spider",
+    "back": "Painless bite then necrotic ulcer over hours/days; fever, chills."
+   },
+   {
+    "front": "Tick-borne illness",
+    "back": "Remove with tweezers close to skin; Lyme disease: bull's-eye rash, fever. Rocky Mountain spotted fever: rash wrists/ankles."
+   },
+   {
+    "front": "Dive emergencies: AGE",
+    "back": "Arterial gas embolism: rapid ascent with breath-holding; sudden stroke-like signs, chest pain within minutes. Recompression needed."
+   },
+   {
+    "front": "Decompression sickness (the bends)",
+    "back": "Nitrogen bubbles after rapid ascent: joint pain, rash, fatigue, onset hours later. Transport to hyperbaric chamber."
+   },
+   {
+    "front": "Dive patient care",
+    "back": "High-concentration oxygen, position supine (left-side/head-down is no longer routine; per local protocol), keep warm, transport toward hyperbaric care. If flown: low cabin altitude."
+   },
+   {
+    "front": "Altitude illness (AMS)",
+    "back": "Headache, nausea, fatigue above 8,000 ft; severe forms HAPE (lungs) and HACE (brain). Descend, oxygen."
+   },
+   {
+    "front": "Lightning strike care",
+    "back": "Make scene safe, triage reverse: treat those in apparent arrest first. Look for burns, cardiac arrest, spinal and eardrum injury."
+   },
+   {
+    "front": "Heat stroke: field cooling methods and when to stop",
+    "back": "Remove clothing; cold-water immersion is fastest if available. Otherwise wet the skin and fan, with ice packs at neck, armpits, groin. Stop near 102 F (39 C), per local protocol."
+   },
+   {
+    "front": "Mechanisms of body heat loss",
+    "back": "Conduction (direct contact), convection (moving air/water), radiation, evaporation (sweat/wet skin), and respiration."
+   },
+   {
+    "front": "Risk groups for temperature illness",
+    "back": "Infants, elderly, chronic illness, alcohol/drug use, medications, prolonged exposure."
+   }
+  ]
+ },
+ {
+  "name": "NREMT · Neuro, Endocrine, Allergy & Toxicology",
+  "domain": "Medical",
+  "cards": [
+   {
+    "front": "BE-FAST stroke screen",
+    "back": "Balance, Eyes (vision loss), Face droop, Arm drift, Speech difficulty, Time to call 911."
+   },
+   {
+    "front": "Cincinnati Prehospital Stroke Scale",
+    "back": "Facial droop, arm drift, abnormal speech. One abnormal finding = high stroke probability."
+   },
+   {
+    "front": "Ischemic vs hemorrhagic stroke",
+    "back": "Ischemic: clot blocks vessel (about 87%). Hemorrhagic: vessel bursts, bleed. Both need rapid transport to stroke center."
+   },
+   {
+    "front": "Stroke priority actions",
+    "back": "Last known well time, glucose check (rule out hypoglycemia), oxygen if hypoxic, pre-alert stroke center."
+   },
+   {
+    "front": "TIA",
+    "back": "Transient ischemic attack: stroke symptoms resolving within minutes to 24 hours. Warning sign; still transport."
+   },
+   {
+    "front": "Tonic-clonic (grand mal) seizure",
+    "back": "Phases: aura, tonic (stiff), clonic (jerking), postictal state. Lasts few minutes."
+   },
+   {
+    "front": "Postictal state",
+    "back": "Period after seizure: confusion, drowsiness, headache, can last 5-30 minutes or longer."
+   },
+   {
+    "front": "Status epilepticus",
+    "back": "Seizure lasting 5 minutes or longer, or repeated seizures without regaining consciousness. Life threat: support airway, rapid transport."
+   },
+   {
+    "front": "Seizure care",
+    "back": "Protect from injury, nothing in the mouth, do not restrain, suction/airway after, oxygen, check glucose, note duration."
+   },
+   {
+    "front": "Febrile seizure",
+    "back": "Seizure with fever in child about 6 months to 5 years; usually brief and generalized. Transport; cool without ice."
+   },
+   {
+    "front": "Common seizure causes",
+    "back": "Epilepsy, hypoglycemia, head trauma, fever, drugs/alcohol withdrawal, stroke, eclampsia, hypoxia."
+   },
+   {
+    "front": "Syncope",
+    "back": "Brief loss of consciousness due to decreased brain blood flow. Look for cardiac or other causes."
+   },
+   {
+    "front": "Altered mental status mnemonic",
+    "back": "AEIOU-TIPS: Alcohol, Epilepsy/Electrolytes, Insulin, Overdose/Oxygen, Uremia, Trauma, Infection, Psychosis, Stroke."
+   },
+   {
+    "front": "Hypoglycemia signs",
+    "back": "Rapid onset: anxious, diaphoretic, pale cool skin, tremors, tachycardia, hunger, confusion, seizures. Glucose under about 70 mg/dL."
+   },
+   {
+    "front": "Hyperglycemia / DKA signs",
+    "back": "Slow onset: warm dry skin, polyuria, polydipsia, fruity (acetone) breath, Kussmaul respirations, nausea, abdominal pain, dehydration."
+   },
+   {
+    "front": "Which glucose level is hypoglycemia",
+    "back": "Commonly under 70 mg/dL with symptoms (protocols vary, about 60-70). Give oral glucose only if the patient is awake and can swallow; otherwise airway support and ALS."
+   },
+   {
+    "front": "Oral glucose administration",
+    "back": "Only if awake, able to swallow and protect the airway. Typical dose 15 g (one tube) between cheek and gum; repeat per local protocol. Contraindicated if unresponsive."
+   },
+   {
+    "front": "Diabetic: 'cold and clammy' vs 'hot and dry'",
+    "back": "Cold and clammy = give sugar (hypoglycemia). Hot and dry = hyperglycemia; transport and treat per protocol."
+   },
+   {
+    "front": "Anaphylaxis definition",
+    "back": "Severe life-threatening allergic reaction with airway/breathing/circulatory involvement."
+   },
+   {
+    "front": "Anaphylaxis signs",
+    "back": "Hives, swelling of face/lips/tongue, wheezing, stridor, hypotension, vomiting, tachycardia."
+   },
+   {
+    "front": "Epinephrine auto-injector dose: adult",
+    "back": "0.3 mg for patients over about 30 kg (66 lb)."
+   },
+   {
+    "front": "Epinephrine auto-injector dose: child",
+    "back": "0.15 mg for children about 15-30 kg (33-66 lb). A 0.1 mg device exists for infants 7.5-15 kg; under 15 kg follow medical direction/local protocol."
+   },
+   {
+    "front": "Epinephrine injection site",
+    "back": "Lateral mid-thigh (vastus lateralis), through clothing if needed; hold 3 seconds (follow device). Record time; may repeat per protocol."
+   },
+   {
+    "front": "Epinephrine side effects",
+    "back": "Tachycardia, palpitations, anxiety, tremor, pallor, headache, hypertension."
+   },
+   {
+    "front": "Bronchodilator MDI/nebulizer",
+    "back": "Albuterol relieves wheezing in asthma/COPD; check expiration, shake, spacer, patient's own prescription with medical direction."
+   },
+   {
+    "front": "Asthma vs COPD",
+    "back": "Asthma: reversible wheezing, younger, triggers. COPD: chronic, smoking, barrel chest, productive cough. Both: oxygen, bronchodilator."
+   },
+   {
+    "front": "CPAP indication",
+    "back": "Acute pulmonary edema/CHF or COPD with respiratory distress; contraindicated if unresponsive, vomiting, or hypotensive."
+   },
+   {
+    "front": "Nitroglycerin: EMT assistance rules",
+    "back": "Patient's own prescription, medical direction, SBP above local minimum (commonly 100; some use 90), no ED drugs in 24-48 h. 1 SL dose every 5 min, max 3; recheck BP each time."
+   },
+   {
+    "front": "Aspirin for chest pain",
+    "back": "162-324 mg chewed (2-4 baby aspirin of 81 mg) for suspected ACS if no allergy, active GI bleeding or other contraindication; per local protocol."
+   },
+   {
+    "front": "Poison routes of exposure",
+    "back": "Ingestion, inhalation, absorption (skin), injection."
+   },
+   {
+    "front": "Activated charcoal",
+    "back": "Binds ingested toxins; use only per medical direction. Not for acids/alkalis/alcohol; patient must be alert."
+   },
+   {
+    "front": "Opioid toxidrome",
+    "back": "Pinpoint pupils, decreased mental status, slow respirations (respiratory depression). Treat with ventilation and naloxone."
+   },
+   {
+    "front": "Naloxone (Narcan)",
+    "back": "Opioid antagonist; intranasal commonly 2-4 mg (per local protocol), may repeat in 2-3 min. Support ventilations first."
+   },
+   {
+    "front": "Stimulant toxidrome",
+    "back": "Dilated pupils, agitation, tachycardia, hypertension, hyperthermia, diaphoresis (cocaine, amphetamines)."
+   },
+   {
+    "front": "Sedative-hypnotic overdose",
+    "back": "Decreased mental status and respirations, slurred speech (alcohol, benzodiazepines, barbiturates)."
+   },
+   {
+    "front": "Cholinergic (organophosphate) toxidrome",
+    "back": "SLUDGE/DUMBELS: salivation, lacrimation, urination, defecation, GI upset, emesis; pinpoint pupils. Decontaminate; ALS atropine."
+   },
+   {
+    "front": "Anticholinergic toxidrome",
+    "back": "'Hot as a hare, dry as a bone, red as a beet, blind as a bat, mad as a hatter': fever, dry skin, dilated pupils, delirium."
+   }
+  ]
+ },
+ {
+  "name": "NREMT · Abdominal, Behavioral, Cardiac & Geriatrics",
+  "domain": "Medical",
+  "cards": [
+   {
+    "front": "Appendicitis presentation",
+    "back": "Periumbilical pain moving to right lower quadrant (McBurney's point), nausea, fever, guarding."
+   },
+   {
+    "front": "Peritonitis signs",
+    "back": "Rigid board-like abdomen, rebound tenderness, patient lies still with knees flexed."
+   },
+   {
+    "front": "Abdominal aortic aneurysm (AAA)",
+    "back": "Tearing abdominal/back pain, pulsatile mass, hypotension, syncope; older male smoker. Rapid transport, gentle palpation."
+   },
+   {
+    "front": "Aortic dissection",
+    "back": "Sudden tearing chest/back pain, unequal BP or pulses in arms; can mimic MI."
+   },
+   {
+    "front": "Referred pain: gallbladder",
+    "back": "Right upper quadrant to right shoulder/scapula."
+   },
+   {
+    "front": "Referred pain: spleen",
+    "back": "Left upper quadrant to left shoulder (Kehr's sign)."
+   },
+   {
+    "front": "Referred pain: pancreatitis",
+    "back": "Epigastric pain radiating to back, nausea; often after alcohol or gallstones."
+   },
+   {
+    "front": "Referred pain: kidney stone",
+    "back": "Flank pain radiating to groin, restless patient, hematuria."
+   },
+   {
+    "front": "GI bleed signs",
+    "back": "Hematemesis, coffee-ground emesis, melena (black tarry stool), hematochezia. Treat for shock."
+   },
+   {
+    "front": "Visceral vs parietal pain",
+    "back": "Visceral: dull, poorly localized, crampy. Parietal: sharp, constant, localized (peritoneal irritation)."
+   },
+   {
+    "front": "Acute MI classic signs",
+    "back": "Chest pressure/pain radiating to arm/jaw, dyspnea, diaphoresis, nausea. Women/diabetics/elderly may have atypical symptoms."
+   },
+   {
+    "front": "Angina vs MI",
+    "back": "Angina: relieved by rest/nitro in about 5-15 minutes. MI: lasts over 15-20 minutes, not relieved by rest/nitro."
+   },
+   {
+    "front": "Heart failure signs",
+    "back": "Left: crackles, dyspnea, orthopnea, frothy sputum. Right: JVD, peripheral edema, ascites."
+   },
+   {
+    "front": "AED use steps",
+    "back": "Power on, attach pads, analyze, clear, shock if advised; resume CPR immediately for 2 minutes."
+   },
+   {
+    "front": "Adult CPR rates/depths",
+    "back": "Compressions 100-120/min, depth at least 2 inches (5 cm), full recoil, minimal interruptions. Ratio 30:2 (1 or 2 rescuers)."
+   },
+   {
+    "front": "Behavioral emergency definition",
+    "back": "Behavior unacceptable to patient, family, or community; can be due to medical cause: always rule out hypoglycemia, hypoxia, head injury, drugs."
+   },
+   {
+    "front": "Hyperactive delirium with severe agitation (formerly 'excited delirium')",
+    "back": "Extreme agitation, hyperthermia, sweating, tachycardia, pain tolerance, paranoia. Sudden death risk: avoid prone restraint, monitor airway/breathing, request ALS and police."
+   },
+   {
+    "front": "Restraint principles",
+    "back": "Reasonable force, adequate help (4-5), supine or lateral, never prone/hobble, reassess airway and circulation, document, follow protocol."
+   },
+   {
+    "front": "Suicide risk questions",
+    "back": "Ask directly about thoughts and plan; secure scene; never leave patient alone; transport all."
+   },
+   {
+    "front": "Talking to behavioral patient",
+    "back": "Calm, honest, nonjudgmental, keep distance, avoid sudden moves, don't argue or lie."
+   },
+   {
+    "front": "Geriatric vital sign tip",
+    "back": "Older adults may have blunted responses: normal-looking BP may be abnormal for them; beta-blockers hide tachycardia."
+   },
+   {
+    "front": "Geriatric: atypical presentations",
+    "back": "MI/infection may present as weakness, confusion or falls rather than classic pain."
+   },
+   {
+    "front": "Geriatric falls",
+    "back": "Consider syncope, medications, infection, poor vision; high risk for hip fracture and head bleeds (anticoagulants)."
+   },
+   {
+    "front": "Delirium vs dementia",
+    "back": "Delirium: acute onset, fluctuating, medical cause. Dementia: gradual, chronic memory decline."
+   },
+   {
+    "front": "Polypharmacy",
+    "back": "Many medications raise risks for interactions, falls, and toxicity; bring/collect med list."
+   },
+   {
+    "front": "Elder abuse signs",
+    "back": "Unexplained injuries, poor hygiene, malnutrition, fearful caregiver interaction. Mandatory reporting per local law."
+   },
+   {
+    "front": "Sepsis signs",
+    "back": "Infection plus fever/hypothermia, tachycardia, tachypnea, altered mental status, hypotension, warm or mottled skin. Early recognition and pre-alert."
+   },
+   {
+    "front": "Pulmonary embolism signs",
+    "back": "Sudden dyspnea, pleuritic chest pain, tachycardia, hypoxia; risk: immobilization, surgery, clotting, pregnancy."
+   },
+   {
+    "front": "Hypertensive emergency",
+    "back": "Severe BP elevation with headache, vision change, confusion, chest pain or neurologic signs."
+   },
+   {
+    "front": "Dialysis patient",
+    "back": "Fluid overload/hyperkalemia risk; do not take BP or IV in fistula arm."
+   }
+  ]
+ },
+ {
+  "name": "NREMT · OB/GYN & Childbirth",
+  "domain": "OB/Peds",
+  "cards": [
+   {
+    "front": "Stages of labor",
+    "back": "Stage 1: dilation (onset to full cervical dilation). Stage 2: expulsion (full dilation to birth). Stage 3: placental delivery."
+   },
+   {
+    "front": "Signs of imminent delivery",
+    "back": "Crowning, urge to push/bear down, contractions 2 minutes or less apart, bloody show, rupture of membranes."
+   },
+   {
+    "front": "Crowning",
+    "back": "Baby's head visible at vaginal opening during contraction. Prepare for delivery; do not delay delivery to transport."
+   },
+   {
+    "front": "Contraction timing",
+    "back": "Frequency: start of one to start of next. Duration: start to end of one. Active labor: 2-3 minutes apart, 45-60 s each."
+   },
+   {
+    "front": "Questions to ask in labor",
+    "back": "Due date, first baby?, prior births/C-section, contractions timing, water broke, urge to push, bleeding, multiples, prenatal care."
+   },
+   {
+    "front": "Gravida vs para",
+    "back": "Gravida: number of pregnancies. Para: number of births (viable deliveries)."
+   },
+   {
+    "front": "Delivery steps",
+    "back": "Support the head, check for cord around neck, suction mouth then nose only if airway is obstructed, guide head down for upper shoulder then up for lower; support the slippery newborn."
+   },
+   {
+    "front": "Cord around neck",
+    "back": "Gently slip over head or shoulder; if too tight, clamp in two places and cut between."
+   },
+   {
+    "front": "Cord clamping: timing and placement",
+    "back": "Vigorous newborn: wait at least 60 s (AHA 2025). First clamp about 6 in from baby (texts vary, 4-10 in), second 2-3 in from the first; cut between. Follow local protocol."
+   },
+   {
+    "front": "Placenta delivery",
+    "back": "Usually within 30 minutes; do not pull on cord. Transport placenta in bag with mother."
+   },
+   {
+    "front": "Postpartum hemorrhage care",
+    "back": "Massage uterus (fundus) firmly, place newborn to breast, treat shock, rapid transport."
+   },
+   {
+    "front": "Normal blood loss at delivery",
+    "back": "About 500 mL is normal; more than that is excessive."
+   },
+   {
+    "front": "Breech presentation",
+    "back": "Buttocks or feet first; high risk. Do not pull; support and rapid transport; if head stuck, make airway space with fingers (V-shape)."
+   },
+   {
+    "front": "Prolapsed umbilical cord",
+    "back": "Cord appears in vagina before baby. Mother knee-chest or Trendelenburg, gloved hand lifts presenting part off cord, keep cord moist, rapid transport."
+   },
+   {
+    "front": "Limb presentation",
+    "back": "Arm or leg first; cannot be delivered in field; rapid transport, knee-chest."
+   },
+   {
+    "front": "Multiple births",
+    "back": "Expect more babies; call ALS; keep each baby warm; second delivery usually quick; increased bleeding risk."
+   },
+   {
+    "front": "Placenta previa",
+    "back": "Placenta covers cervix: painless bright red vaginal bleeding in third trimester."
+   },
+   {
+    "front": "Abruptio placentae",
+    "back": "Placenta separates early: painful bleeding (may be hidden), rigid tender uterus, fetal distress; trauma/hypertension risk."
+   },
+   {
+    "front": "Previa vs abruption",
+    "back": "Previa = painless, bright red. Abruption = painful, dark, rigid uterus."
+   },
+   {
+    "front": "Ectopic pregnancy",
+    "back": "Implantation outside uterus (usually tube): lower abdominal pain, vaginal bleeding, shock, missed period; life-threatening."
+   },
+   {
+    "front": "Preeclampsia signs",
+    "back": "After 20 weeks: hypertension, headache, visual changes, edema, upper abdominal pain."
+   },
+   {
+    "front": "Eclampsia",
+    "back": "Seizures in pregnancy/preeclampsia. Care: left lateral, airway, oxygen, dim lights, rapid transport, ALS (magnesium)."
+   },
+   {
+    "front": "Supine hypotensive syndrome",
+    "back": "Uterus compresses inferior vena cava when lying flat after about 20 weeks; place mother on left side or tilt uterus left."
+   },
+   {
+    "front": "Trauma in pregnancy",
+    "back": "Treat the mother first; high-flow oxygen, left lateral tilt on backboard, fetal loss risk from placental abruption."
+   },
+   {
+    "front": "Spontaneous abortion (miscarriage)",
+    "back": "Loss before 20 weeks: cramping, bleeding, tissue. Care: pads (no packing), keep tissue, emotional support."
+   },
+   {
+    "front": "Normal changes in pregnancy",
+    "back": "Increased heart rate and blood volume, decreased BP in 2nd trimester, increased respiratory rate."
+   },
+   {
+    "front": "Vaginal bleeding care",
+    "back": "Pads, not packing; save clots/tissue; treat shock; ask about pregnancy."
+   },
+   {
+    "front": "Sexual assault care",
+    "back": "Preserve evidence (do not wash, change, or clean), be nonjudgmental, privacy, same-gender provider if possible, notify law enforcement per protocol."
+   },
+   {
+    "front": "Pelvic inflammatory disease (PID)",
+    "back": "Infection of female organs: lower abdominal pain, fever, discharge."
+   }
+  ]
+ },
+ {
+  "name": "NREMT · Newborn & Pediatrics",
+  "domain": "OB/Peds",
+  "cards": [
+   {
+    "front": "APGAR: five parts",
+    "back": "Appearance (color), Pulse, Grimace (reflex irritability), Activity (muscle tone), Respirations. Each scored 0-2."
+   },
+   {
+    "front": "APGAR: Appearance scores",
+    "back": "0 blue/pale all over, 1 pink body with blue extremities, 2 completely pink."
+   },
+   {
+    "front": "APGAR: Pulse scores",
+    "back": "0 absent, 1 under 100/min, 2 at 100/min or more."
+   },
+   {
+    "front": "APGAR: Grimace scores",
+    "back": "0 no response, 1 grimace/weak cry, 2 cough, sneeze or strong cry."
+   },
+   {
+    "front": "APGAR: Activity scores",
+    "back": "0 limp/flaccid, 1 some flexion of extremities, 2 active motion."
+   },
+   {
+    "front": "APGAR: Respirations scores",
+    "back": "0 absent, 1 slow/irregular/weak cry, 2 good strong cry."
+   },
+   {
+    "front": "APGAR timing and interpretation",
+    "back": "Scored at 1 and 5 minutes. 7-10 normal, 4-6 moderately depressed, 0-3 severely depressed. Do not delay resuscitation to score."
+   },
+   {
+    "front": "Newborn initial care",
+    "back": "Dry, warm (wrap, cover head), position airway, suction mouth then nose only if secretions obstruct, stimulate by rubbing back/flicking feet."
+   },
+   {
+    "front": "Newborn resuscitation: when to ventilate",
+    "back": "Apnea/gasping or heart rate under 100 after drying, warming and stimulating: BVM ventilations at 40-60 breaths/min with room air first. Recheck heart rate after 30 s."
+   },
+   {
+    "front": "Newborn compressions",
+    "back": "Heart rate under 60 despite at least 30 s of effective ventilation: 3:1 ratio (90 compressions + 30 breaths per min), two thumbs on lower third of sternum, depth 1/3 of chest."
+   },
+   {
+    "front": "Normal newborn vitals",
+    "back": "Heart rate about 120-160, respirations 40-60, temp maintained; acrocyanosis (blue hands/feet) is common."
+   },
+   {
+    "front": "Meconium in amniotic fluid",
+    "back": "Green/brown fluid; if baby not vigorous suction and resuscitate per protocol; avoid routine deep suctioning."
+   },
+   {
+    "front": "Pediatric Assessment Triangle",
+    "back": "Appearance (tone, interactiveness, consolability, look/gaze, speech/cry), Work of breathing, Circulation to skin. Done from across the room."
+   },
+   {
+    "front": "Pediatric normal HR (awake)",
+    "back": "Infant 100-160, toddler 90-150, preschool 80-140, school age 70-120, adolescent 60-100. Approximate: ranges vary by textbook."
+   },
+   {
+    "front": "Pediatric normal respirations",
+    "back": "Infant 30-60, toddler 24-40, preschool 22-34, school age 18-30, adolescent 12-16. Approximate: ranges vary by textbook."
+   },
+   {
+    "front": "Pediatric normal systolic BP",
+    "back": "Infant 70-95, toddler 80-100, preschool 80-100, school age 80-110, adolescent 110-130 (tables vary). Hypotension age 1-10: SBP under 70 + 2 x age in years."
+   },
+   {
+    "front": "Signs of respiratory distress in children",
+    "back": "Nasal flaring, retractions (intercostal/supraclavicular), grunting, head bobbing, seesaw breathing, stridor."
+   },
+   {
+    "front": "Signs of pediatric respiratory failure (late/ominous)",
+    "back": "Altered mental status, slowing or irregular respirations, poor tone, cyanosis. Bradycardia in a child is hypoxia until proven otherwise: ventilate with BVM."
+   },
+   {
+    "front": "Croup",
+    "back": "Viral, gradual onset, barky seal-like cough, stridor on inspiration, low fever, 6 months to 3 years; humidified O2, calm child."
+   },
+   {
+    "front": "Epiglottitis",
+    "back": "Bacterial; rapid onset, high fever, drooling, tripod position, muffled voice, no cough. Keep calm, do not examine throat, oxygen blow-by, rapid transport."
+   },
+   {
+    "front": "Croup vs epiglottitis summary",
+    "back": "Croup: barky cough, no drooling, gradual. Epiglottitis: drooling, toxic ill, sudden, minimal cough."
+   },
+   {
+    "front": "Bronchiolitis (RSV)",
+    "back": "Wheezing and respiratory distress in infants in winter; nasal suction, oxygen."
+   },
+   {
+    "front": "Foreign body airway obstruction: infant vs child (AHA 2025)",
+    "back": "Infant: 5 back blows then 5 chest thrusts. Child: 5 back blows alternating with 5 abdominal thrusts (2025 change; older texts say thrusts only). Unresponsive: start CPR."
+   },
+   {
+    "front": "Pediatric CPR ratios",
+    "back": "1 rescuer 30:2; 2 rescuers 15:2; 100-120/min; depth 1/3 of chest (about 1.5 in infant, 2 in child). Infant: 2 thumbs-encircling or heel of 1 hand (AHA 2025: no 2-finger)."
+   },
+   {
+    "front": "Pediatric dosing/airway sizing tools",
+    "back": "Length-based tape (Broselow) for equipment/doses. Oral airway: corner of mouth to earlobe/angle of jaw; in children insert tip-down with a tongue depressor, without rotating."
+   },
+   {
+    "front": "Pediatric airway differences",
+    "back": "Larger tongue, narrower airway, floppy trachea, belly breathers; use padding under shoulders to neutral/sniffing position."
+   },
+   {
+    "front": "SIDS",
+    "back": "Sudden unexplained death of infant under 1 year, usually during sleep, peak 2-4 months. Attempt resuscitation unless obvious death signs; support family."
+   },
+   {
+    "front": "Febrile seizure (peds)",
+    "back": "Typically 6 months to 5 years with rapid temp rise; usually under 5 minutes. Protect airway, remove excess clothing (no ice or cold baths), transport."
+   },
+   {
+    "front": "Pediatric dehydration signs",
+    "back": "Sunken fontanelle/eyes, no tears, dry mucosa, fewer diapers, lethargy, delayed cap refill."
+   },
+   {
+    "front": "Child abuse red flags",
+    "back": "Injury inconsistent with story, delay seeking care, multiple bruises at different stages, patterned marks, shaken baby signs. Report per law."
+   },
+   {
+    "front": "Pediatric burns/falls caution",
+    "back": "Use a pediatric burn chart (head is a larger % of BSA); large heavy head makes head injury likely in falls; pad under the torso to keep the spine neutral during SMR."
+   },
+   {
+    "front": "Pediatric hypoglycemia",
+    "back": "Common in sick infants; check glucose; altered mental status or poor feeding."
+   },
+   {
+    "front": "Pediatric poisoning",
+    "back": "Common household toxins; call poison control 1-800-222-1222 and get substance, amount, time."
+   }
+  ]
+ }
+]
