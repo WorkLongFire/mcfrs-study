@@ -47,6 +47,30 @@ const ROOT=path.resolve(__dirname,'..');const FX=path.join(__dirname,'fixtures')
   await p2.goto(URL);await p2.waitForTimeout(1000);await p2.click('nav [data-view=learn]');
   await p2.setInputFiles('#ulImportFile',file);await p2.waitForTimeout(600);
   ok('importedSets',await p2.$$eval('.ulset',a=>a.length));
+  const bk=JSON.parse(fs.readFileSync(file,'utf8'));
+  ok('backupContents',{sets:bk.sets.length,decks:bk.decks.length,creations:bk.creations.length,stats:Object.keys(bk.stats).length,thumbs:Object.keys(bk.thumbs).length});
+  ok('restoredOnDevice2',await p2.evaluate(()=>({sets:JSON.parse(localStorage.getItem('sr:ul:sets')||'[]').length,decks:JSON.parse(localStorage.getItem('sr:decks')||'[]').length,creations:JSON.parse(localStorage.getItem('sr:localCreations')||'[]').length,thumbs:Object.keys(localStorage).filter(k=>k.startsWith('sr:ul:thumb:')).length})));
+  // importing the same backup again must not duplicate anything
+  await p2.setInputFiles('#ulImportFile',file);await p2.waitForTimeout(600);
+  ok('reimportNoDuplicates',await p2.$$eval('.ulset',a=>a.length));
+  // a file that is not a Shift Ready export is rejected
+  const bad=path.join(os.tmpdir(),'not-shift-ready.json');fs.writeFileSync(bad,'{"hello":1}');
+  await p2.setInputFiles('#ulImportFile',bad);await p2.waitForTimeout(300);
+  ok('badFileRejected',await p2.evaluate(()=>document.querySelector('.toast')?.textContent||''));
+  // "Send to a friend": one set as a file, imported on a third device with its deck
+  await p.click('nav [data-view=learn]');await p.waitForTimeout(200);
+  const [dl2]=await Promise.all([p.waitForEvent('download',{timeout:5000}),p.click('[data-share]')]);
+  const setFile=path.join(os.tmpdir(),'shift-ready-set-test.json');await dl2.saveAs(setFile);
+  const sf=JSON.parse(fs.readFileSync(setFile,'utf8'));
+  const ctx3=await b.newContext({viewport:{width:400,height:820}});const p3=await ctx3.newPage();p3.on('pageerror',e=>errs.push('device3: '+e.message));
+  await p3.goto(URL);await p3.waitForTimeout(1000);await p3.click('nav [data-view=learn]');
+  await p3.setInputFiles('#ulImportFile',setFile);await p3.waitForTimeout(600);
+  ok('friendSet',{kind:sf.kind,setsInFile:sf.sets.length,hasProgress:!!sf.stats,friendSees:await p3.$$eval('.ulset',a=>a.length),
+    friendDeck:await p3.evaluate(()=>JSON.parse(localStorage.getItem('sr:decks')||'[]').some(d=>d.id.startsWith('deck-ul-')))});
+  await p3.click('[data-play]');await p3.waitForTimeout(800);
+  ok('friendCanPlay',await p3.$$eval('#feed .clip',a=>a.length));
+  // continuous player: one timeline per clip, no segment bars
+  ok('player',{segmentBars:await p3.$$eval('#feed .clip .bars',a=>a.length),timeline:await p3.$$eval('#feed .clip .tl',a=>a.length)});
   // update prompt: pretend a new build was deployed
   const vf=path.join(ROOT,'version.json');const keep=fs.readFileSync(vf,'utf8');
   try{fs.writeFileSync(vf,JSON.stringify({build:'99999999999999'}));await p.evaluate(()=>document.dispatchEvent(new Event('visibilitychange')));await p.waitForTimeout(1000);ok('updatePrompt',await p.isVisible('#updateBar'))}

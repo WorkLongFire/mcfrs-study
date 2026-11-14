@@ -6,7 +6,7 @@ It is a Progressive Web App: one static site that installs on iPhone and Mac, ru
 
 ## Features
 
-- **Home**: vertical clip feed with an EMT / Fire switch, auto-advancing scenes, tap to pause, and read-aloud narration (🔊 Sound).
+- **Home**: vertical clip feed with an EMT / Fire switch. Each clip plays as one continuous video: a single timeline with elapsed and total time, crossfading scenes, drag or arrow keys to seek, tap to pause, and read-aloud narration (🔊 Sound). A clip counts as watched, and unlocks its quiz, only when every scene has played through.
 - **Quiz**: questions only from clips you finished since opening the app.
 - **Search**: by title, hashtag, term or text.
 - **Create**: turn a flashcard deck into a teaching clip (narration, captions, visual suggestions), edit it, add a recorded or uploaded video, and post it. Videos are stored on the device. Also includes a free-form scene editor and flip-card study for every deck.
@@ -25,7 +25,7 @@ It is a Progressive Web App: one static site that installs on iPhone and Mac, ru
 | `source/shift-ready.artifact.html` | **The source of truth.** The same app as it runs on claude.ai. Edit this file. |
 | `tools/build_pwa.py` | Builds the root app files from the source file. |
 | `content/` | Study content as data: `emt.json` and `fire.json` (handcrafted clips), `nremt/*.json` (flashcard decks), `nremt-flashcards.tsv` (Quizlet/Anki import), `nremt-study-list.md`. |
-| `tests/smoke.js`, `tests/fixtures/` | End-to-end browser test. |
+| `tests/smoke.js`, `tests/fixtures/` | End-to-end browser test: offline install, Upload & Learn (text and photo), saved videos, backup export and restore, re-import without duplicates, bad-file rejection, Send to a friend, the continuous player and the update prompt. |
 
 ## Run it locally
 
