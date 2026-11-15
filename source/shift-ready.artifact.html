@@ -36,7 +36,10 @@ main{flex:1;min-height:0;position:relative}
 .tswitch button[aria-pressed="true"]{color:#fff}
 .tswitch button[aria-pressed="true"]::after{content:"";position:absolute;left:20%;right:20%;bottom:-3px;height:3px;border-radius:2px;background:var(--accent)}
 .topbar .side{position:absolute;top:10px;display:flex;gap:6px}
-.topbar .left{left:max(12px,env(safe-area-inset-left,0px))}
+.topbar .left{left:max(12px,env(safe-area-inset-left,0px));flex-direction:column;align-items:flex-start}
+#focusPill{font-family:var(--f-body);font-weight:600;font-size:12px;max-width:52%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px}
+input[type=range]{padding:0;accent-color:var(--accent)}
+.focuschk{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--accent);border-radius:12px;padding:10px;background:color-mix(in srgb,var(--accent) 10%,transparent);font-size:14px;line-height:1.4;cursor:pointer}
 .topbar .right{right:max(12px,env(safe-area-inset-right,0px))}
 .pill{font-family:var(--f-mono);font-size:11px;background:rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:6px 10px;backdrop-filter:blur(6px)}
 .pill b{color:var(--accent)}
@@ -243,11 +246,12 @@ nav.tabs button{font-size:10.5px}
 <div id="app">
   <main>
     <div class="topbar" id="topbar">
-      <div class="side left"><span class="pill" id="watchPill">🎯 <b id="watchN">0</b> watched</span></div>
+      <div class="side left"><span class="pill" id="watchPill">👀 <b id="watchN">0</b> watched</span><button class="pill" id="modeBtn">🔀 Mixed ▾</button></div>
       <div class="tswitch" role="group" aria-label="Topic">
         <button id="tEmt" aria-pressed="true">EMT</button>
         <button id="tFire" aria-pressed="false">Fire</button>
       </div>
+      <button class="pill" id="focusPill" hidden></button>
       <div class="side right"><button class="pill" id="soundBtn" aria-pressed="false" title="Read clips aloud">🔇 Sound</button></div>
     </div>
     <section class="view" id="feed" aria-label="Home feed"></section>
@@ -283,7 +287,7 @@ const FIRE_VIDEOS = [{"id": "fire-01", "topic": "fire", "title": "The Fire Tetra
     const short=d.name.replace(/^NREMT\s*·\s*/,"");
     const parts=Math.ceil(d.cards.length/4);
     for(let p=0;p<parts;p++){
-      const cards=d.cards.slice(p*4,p*4+4);if(cards.length<2)continue;
+      const cards=d.cards.slice(p*4,p*4+4);if(cards.length<2)continue;cards.forEach(c=>c._vid=`${d.id}-${p+1}`);
       const others=d.cards.filter(c=>!cards.includes(c));
       const scenes=[{emoji:EMO[d.domain]||"📋",heading:`${short}${parts>1?` · ${p+1}/${parts}`:""}`,text:`${cards.length} NREMT must-knows. Say each answer out loud before you read it.`}]
         .concat(cards.map(c=>({emoji:EMO[d.domain]||"📋",heading:c.front,text:c.back})));
@@ -308,6 +312,7 @@ const FIRE_VIDEOS = [{"id": "fire-01", "topic": "fire", "title": "The Fire Tetra
 <script>
 (function(){
 "use strict";
+window.SR_STANDALONE=!(window.claude&&window.claude.use); // launched outside claude.ai: use on-device alternatives
 const $=(s,r=document)=>r.querySelector(s);
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const SCENE_MS=4200;
@@ -317,7 +322,7 @@ const S={
   topic:"emt", view:"feed",
   watched:new Set(),             // this session only: since opening the app
   liked:new Set(store.get("liked",[])),
-  sound:false,
+  sound:store.get("sound",true)!==false, unlocked:false,
   creations:[], localCreations:store.get("localCreations",[]),
   chat:[], comments:[], scores:[],
   me:null, myId:null, names:{}, avatars:{},
@@ -354,6 +359,7 @@ function setTopic(t){
   store.set("topic",t);
   if(S.view==="feed")renderFeed(); else renderView(S.view);
 }
+$("#modeBtn").onclick=openFocusSheet;$("#focusPill").onclick=openFocusSheet;
 $("#tEmt").onclick=()=>setTopic("emt");$("#tFire").onclick=()=>setTopic("fire");
 document.querySelectorAll("nav.tabs button").forEach(b=>b.onclick=()=>show(b.dataset.view));
 function show(v){
@@ -369,9 +375,10 @@ function show(v){
 function renderView(v){({search:renderSearch,create:renderCreate,quiz:renderQuiz,squad:renderSquad,learn:renderLearn,feed:renderFeed})[v]()}
 
 /* ---------- sound ---------- */
-$("#soundBtn").onclick=()=>{S.sound=!S.sound;{const vd=P.el&&P.el.querySelector("video.vbg");if(vd)vd.muted=!S.sound}$("#soundBtn").textContent=S.sound?"🔊 Sound":"🔇 Sound";$("#soundBtn").setAttribute("aria-pressed",S.sound);if(!S.sound)hush();playerSoundChanged()};
+$("#soundBtn").onclick=()=>{S.sound=!S.sound;S.unlocked=true;$("#unmute")?.remove();store.set("sound",S.sound);{const vd=P.el&&P.el.querySelector("video.vbg");if(vd)vd.muted=!S.sound}$("#soundBtn").textContent=S.sound?"🔊 Sound":"🔇 Sound";$("#soundBtn").setAttribute("aria-pressed",S.sound);if(!S.sound)hush();playerSoundChanged()};
 function say(text,force){
   if(!S.sound&&!force)return Promise.resolve();
+  hush(); // one voice at a time
   if(S.tts) return S.tts.speak(text,{rate:1.08}).catch(()=>{});
   try{ if("speechSynthesis" in window){ return new Promise(res=>{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.rate=1.05;u.onend=res;u.onerror=res;speechSynthesis.speak(u);setTimeout(res,12000)}) } }catch(e){}
   return Promise.resolve();
@@ -390,7 +397,7 @@ function clipHTML(v,opts={}){
   return `<article class="clip${v.videoUrl?" has-video":""}" data-id="${esc(v.id)}" data-topic="${esc(v.topic)}">
     <div class="bg">${v.videoUrl?`<video class="vbg" src="${esc(v.videoUrl)}" muted playsinline loop preload="metadata"></video>`:bgDecor(v.topic)}</div>
     ${opts.preview?`<div class="bars">${v.scenes.map(()=>`<span><i></i></span>`).join("")}</div>`:`<div class="tl" role="slider" tabindex="0" aria-label="Seek video" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="tl-track"><i class="tl-fill"></i><b class="tl-knob"></b></div></div><span class="tl-time">0:00 / ${fmtTime(v.scenes.reduce((a,sc)=>a+sceneDur(sc),0))}</span>`}
-    ${S.watched.has(v.id)?`<span class="watched-chip">✓ IN QUIZ</span>`:""}
+    ${progressChip(v.id)}
     <div class="stage"></div>
     <div class="paused-badge">▶</div>
     <div class="meta">
@@ -404,6 +411,7 @@ function clipHTML(v,opts={}){
       <button data-act="comments" aria-label="Comments"><span class="ic">💬</span>${cCount}</button>
       <button data-act="share" aria-label="Share with squad"><span class="ic">↗️</span>Share</button>
       <button data-act="quizme" aria-label="Quiz me on this"><span class="ic">🧠</span>Quiz</button>
+      <button data-act="tune" aria-label="More, less, already know, review later"><span class="ic">${(PR[v.id]||{}).later?"🔖":"⋯"}</span>Tune</button>
       ${v.ulSet||v.ulFix?`<button data-act="source" aria-label="Show source"><span class="ic">📎</span>Source</button>`:""}
     </div>`}
   </article>`;
@@ -423,7 +431,7 @@ const fmtTime=ms=>{const s=Math.max(0,Math.round(ms/1000));return Math.floor(s/6
 const sceneAt=ms=>{let i=0;while(i<P.starts.length-1&&ms>=P.starts[i+1])i++;return i};
 function sceneMarkup(v,i){
   const sc=v.scenes[i];
-  return `<div class="scene-emoji" aria-hidden="true">${esc(sc.emoji)}</div><div class="scene-tag">${v.ulSet||v.ulFix?"FROM YOUR UPLOAD":v.topic==="emt"?"PATIENT CARE":v.topic==="fire"?"FIREGROUND":"STUDY"}</div><h2 class="scene-head${String(sc.heading).length>30?" long":""}">${esc(sc.heading)}</h2><p class="scene-text">${esc(sc.text)}</p>${sc.img&&/^data:image\//.test(sc.img)?`<img class="scene-img" src="${esc(sc.img)}" alt="Your uploaded source">`:""}`;
+  return `<div class="scene-emoji" aria-hidden="true">${esc(sc.emoji)}</div><div class="scene-tag">${i===0?"🎯 GOAL · "+esc(trunc(v.objective||v.title,44)):v.ulSet||v.ulFix?"FROM YOUR UPLOAD":v.topic==="emt"?"PATIENT CARE":v.topic==="fire"?"FIREGROUND":"STUDY"}</div><h2 class="scene-head${String(sc.heading).length>30?" long":""}">${esc(sc.heading)}</h2><p class="scene-text">${esc(sc.text)}</p>${sc.img&&/^data:image\//.test(sc.img)?`<img class="scene-img" src="${esc(sc.img)}" alt="Your uploaded source">`:""}`;
 }
 function renderScene(i,instant){
   const {el,v}=P;const stage=el.querySelector(".stage");
@@ -508,7 +516,7 @@ function seekTo(clip,f,final){
 })();
 function markWatched(v){
   if(S.watched.has(v.id))return;
-  S.watched.add(v.id);
+  S.watched.add(v.id);{const p=pr(v.id);p.done=Date.now();p.views=(p.views||0)+1;prSave()}
   if(v.ulSet||v.ulFix)ulOnWatched(v);
   const el=document.querySelector(`#feed .clip[data-id="${CSS.escape(v.id)}"]`);
   if(el&&!el.querySelector(".watched-chip")){const c=document.createElement("span");c.className="watched-chip";c.textContent="✓ IN QUIZ";el.appendChild(c)}
@@ -520,12 +528,117 @@ function updateCounts(){
   const n=quizPool().length;const b=$("#quizBadge");b.hidden=!n;b.textContent=n;
 }
 
+/* ---------- progress (saved on device): watched vs proven, prefs, review later ---------- */
+let PR=(()=>{const p=store.get("progress",{});return p&&typeof p==="object"?p:{}})();
+const pr=id=>PR[id]||(PR[id]={});
+function prSave(){store.set("progress",PR)}
+const prUnderstood=id=>{const p=PR[id];return !!(p&&p.right&&p.last==="right")};
+function prAnswer(vid,ok){if(!vid)return;const p=pr(vid);if(ok)p.right=(p.right||0)+1;else p.wrong=(p.wrong||0)+1;p.last=ok?"right":"wrong";p.at=Date.now();prSave()}
+function progressChip(id){const p=PR[id]||{};if(prUnderstood(id))return`<span class="watched-chip">✓ PROVEN</span>`;if(p.last==="wrong")return`<span class="watched-chip" style="color:var(--bad);border-color:var(--bad)">↻ MISSED, REVIEW</span>`;if(p.done||S.watched.has(id))return`<span class="watched-chip" style="color:var(--muted);border-color:var(--muted)">WATCHED · NOT QUIZZED</span>`;return""}
+
+/* ---------- feed: mixed / focused, ranked so new + missed come first and repeats sink ---------- */
+let FOCUS=(()=>{const f=store.get("focus",null);return f&&Array.isArray(f.sets)?{sets:f.sets,related:f.related!==false,topics:Array.isArray(f.topics)?f.topics.filter(t=>typeof t==="string").slice(0,20):[]}:{sets:[],related:true,topics:[]}})();
+S.feedMode=store.get("feedMode","mixed")==="focused"?"focused":"mixed";
+const focusSets=()=>FOCUS.sets.map(id=>UL.find(s=>s.id===id)).filter(Boolean);
+function saveFocus(){store.set("focus",FOCUS);store.set("feedMode",S.feedMode)}
+let relDocs=null;
+function relatedBuiltins(sets){
+  const words=new Set();sets.forEach(s=>ulEligible(s).forEach(c=>ulTok(c.front+" "+c.back).forEach(w=>words.add(w))));
+  if(!words.size)return [];
+  if(!relDocs){relDocs=BUILTIN.map(v=>({v,t:new Set(ulTok(v.title+" "+(v.hashtags||[]).join(" ")+" "+v.scenes.map(s=>s.heading+" "+s.text).join(" ")))}));relDocs.df={};relDocs.forEach(d=>d.t.forEach(w=>relDocs.df[w]=(relDocs.df[w]||0)+1))}
+  const lim=Math.max(3,relDocs.length*0.08); // ignore words common to many clips ("patient", "signs")
+  return relDocs.map(d=>{let s=0;d.t.forEach(w=>{if(words.has(w)&&relDocs.df[w]<=lim)s++});return{v:d.v,s}}).filter(x=>x.s>=3).sort((a,b)=>b.s-a.s).slice(0,25).map(x=>x.v);
+}
+function feedRank(list){
+  const GEN=/^#(emt|nremt|firefighter|fire|uploadlearn|studytok)$/;
+  const tagsOf=v=>(v.hashtags||[]).map(h=>h.toLowerCase()).filter(t=>!GEN.test(t));
+  const more=new Set(),less=new Set();
+  for(const id in PR){const p=PR[id];if(p.pref!=="more"&&p.pref!=="less")continue;const v=byId(id);if(v)tagsOf(v).forEach(t=>(p.pref==="more"?more:less).add(t))}
+  const day=new Date().toDateString();
+  const jit=id=>{let h=0;for(const c of id+day)h=(h*31+c.charCodeAt(0))|0;return (Math.abs(h)%1000)/1000}; // stable per day, so re-renders don't reshuffle
+  return list.filter(v=>(PR[v.id]||{}).pref!=="known").map(v=>{const p=PR[v.id]||{};let s=jit(v.id);
+    if(!p.done)s+=3;else if(prUnderstood(v.id))s-=3;else s+=0.5;
+    if(p.last==="wrong")s+=4;if(p.later)s+=3.5;if(p.pref==="more")s+=1;if(p.pref==="less")s-=4;if(v.ulSet)s+=1;
+    tagsOf(v).forEach(t=>{if(more.has(t))s+=1.5;if(less.has(t))s-=1.5});
+    return{v,s}}).sort((a,b)=>b.s-a.s).map(x=>x.v);
+}
+const clipHit=(v,t)=>topicHit({front:v.title,back:(v.hashtags||[]).join(" ")+" "+v.scenes.map(s=>s.heading+" "+s.text).join(" "),label:v.topicLabel||""},t);
+const focusOn=()=>S.feedMode==="focused"&&(focusSets().length||FOCUS.topics.length);
+function feedList(){
+  if(S.feedFilter)return S.feedFilter.ids.map(byId).filter(Boolean);
+  if(focusOn()){const fs=focusSets(),ids=new Set(fs.map(s=>s.id)),out=new Set();
+    ulVideos().forEach(v=>{if(ids.has(v.ulSet)||(v.ulFix&&fs.length))out.add(v)});
+    if(FOCUS.related&&fs.length)relatedBuiltins(fs).forEach(v=>out.add(v));
+    if(FOCUS.topics.length)allVideos().forEach(v=>{if(FOCUS.topics.some(t=>clipHit(v,t)))out.add(v)});
+    return feedRank([...out])}
+  return feedRank(allVideos().filter(v=>v.topic===S.topic||v.ulSet||v.ulFix));
+}
+const focusLabel=()=>[...FOCUS.topics,...focusSets().map(s=>s.name)].join(", ");
+function drawTopbar(){
+  const foc=S.feedMode==="focused",showF=focusOn()&&!S.feedFilter;
+  const mb=$("#modeBtn");mb.textContent=foc?"🎯 Focused ▾":"🔀 Mixed ▾";mb.setAttribute("aria-label",`Feed mode: ${foc?"focused":"mixed"}. Change what For You shows`);
+  $(".tswitch").hidden=!!showF;const fp=$("#focusPill");fp.hidden=!showF;
+  if(showF)fp.textContent="Studying: "+trunc(focusLabel(),26)+" ▾";
+}
+function refeed(){$("#feed").innerHTML="";if(S.view==="feed")renderFeed()}
+function focusSuggestions(){
+  const GEN=/^#(emt|nremt|firefighter|fire|uploadlearn|studytok|fixit|spacedreview)$/,c={};
+  BUILTIN.forEach(v=>(v.hashtags||[]).forEach(h=>{h=h.toLowerCase();if(!GEN.test(h))c[h]=(c[h]||0)+1}));
+  return Object.entries(c).sort((a,b)=>b[1]-a[1]).slice(0,16).map(x=>x[0].slice(1));
+}
+function openFocusSheet(){
+  const sel=new Set(FOCUS.sets),topics=FOCUS.topics.slice();let mode=S.feedMode;
+  sheet(`<h3>What are you studying?</h3>
+    <p class="note" style="margin:0">Type topics or tap suggestions. For You then shows only clips about them.</p>
+    <div style="display:flex;gap:8px"><input id="fTopic" maxlength="40" placeholder="e.g. airway, stroke, ladders" aria-label="Add a study topic"><button class="btn" id="fAdd" style="padding:10px 14px">Add</button></div>
+    <div class="chips" id="fChips"></div>
+    <span class="lbl" style="margin:0">Suggestions</span><div class="chips" id="fSug">${focusSuggestions().map(t=>`<button class="chip" data-sug="${esc(t)}">+ ${esc(t)}</button>`).join("")}</div>
+    ${UL.length?`<span class="lbl" style="margin:0">Your uploads</span><div class="stack">${UL.map(s=>`<label class="ulc" style="display:flex;gap:10px;align-items:center;cursor:pointer"><input type="checkbox" data-fs="${esc(s.id)}" style="width:auto" ${sel.has(s.id)?"checked":""}><span style="min-width:0"><b>${esc(s.name)}</b><span class="note" style="display:block">${esc(ulTopicLabel(s))} · ${ulEligible(s).length} cards</span></span></label>`).join("")}</div>
+      <label class="note" style="display:flex;gap:8px;align-items:center"><input type="checkbox" id="fRel" style="width:auto" ${FOCUS.related?"checked":""}> Also show app clips that match my uploads</label>`:""}
+    <div class="seg" id="fmSeg" style="margin:0"><button data-fm="focused">🎯 Only these</button><button data-fm="mixed">🔀 Show everything</button></div>
+    <p class="note" id="fmNote" style="margin:0"></p>
+    <button class="btn" id="fSave">Done</button>`,s=>{
+    const draw=()=>{const n=topics.length?allVideos().filter(v=>topics.some(t=>clipHit(v,t))).length:0;
+      s.querySelector("#fChips").innerHTML=topics.map((t,i)=>`<button class="chip" aria-pressed="true" data-rm="${i}" aria-label="Remove ${esc(t)}">${esc(t)} ✕</button>`).join("");
+      s.querySelector("#fmNote").textContent=mode==="mixed"?"Mixed: new lessons, missed questions, review-later and related topics from everything.":topics.length||sel.size?`Only these: ${n} clip${n===1?"":"s"} match your topics${sel.size?", plus your ticked uploads":""}.`:"Add a topic to focus your feed.";
+      s.querySelectorAll("[data-fm]").forEach(b=>b.setAttribute("aria-pressed",b.dataset.fm===mode))};
+    const add=v=>{v.split(",").map(x=>x.trim()).filter(Boolean).forEach(t=>{if(topics.length<20&&!topics.some(x=>x.toLowerCase()===t.toLowerCase()))topics.push(t.slice(0,40))});mode="focused";draw()};
+    const inp=s.querySelector("#fTopic");inp.onkeydown=e=>{if(e.key==="Enter"){e.preventDefault();add(inp.value);inp.value=""}};
+    s.querySelector("#fAdd").onclick=()=>{add(inp.value);inp.value="";inp.focus()};
+    s.querySelector("#fSug").onclick=e=>{const b=e.target.closest("[data-sug]");if(b)add(b.dataset.sug)};
+    s.querySelector("#fChips").onclick=e=>{const b=e.target.closest("[data-rm]");if(b){topics.splice(+b.dataset.rm,1);draw()}};
+    s.querySelector("#fmSeg").onclick=e=>{const b=e.target.closest("[data-fm]");if(b){mode=b.dataset.fm;draw()}};
+    s.querySelectorAll("[data-fs]").forEach(c=>c.onchange=()=>{c.checked?sel.add(c.dataset.fs):sel.delete(c.dataset.fs);if(c.checked)mode="focused";draw()});
+    draw();
+    s.querySelector("#fSave").onclick=()=>{
+      if(inp.value.trim()){add(inp.value);inp.value=""}
+      if(mode==="focused"&&!topics.length&&!sel.size){toast("Add a topic first, or pick Show everything");return}
+      FOCUS.topics=topics;FOCUS.sets=[...sel].filter(id=>UL.some(x=>x.id===id));const r=s.querySelector("#fRel");if(r)FOCUS.related=r.checked;
+      S.feedMode=mode;S.feedFilter=null;saveFocus();s.remove();refeed();if(S.view==="learn")renderLearn();
+      toast(focusOn()?"For You now shows only what you're studying":"For You shows everything")};
+  });
+}
+function openTune(v){
+  const p=PR[v.id]||{};
+  sheet(`<h3>Tune your feed</h3><p class="note" style="margin:0">“${esc(v.title)}”</p>
+    <button class="btn ghost" data-p="more">👍 More like this</button>
+    <button class="btn ghost" data-p="less">👎 Less like this</button>
+    <button class="btn ghost" data-p="known">✅ Already know this (hide it)</button>
+    <button class="btn ghost" data-p="later">${p.later?"🔖 Remove from Review later":"🔖 Review later"}</button>
+    <button class="btn ghost" data-close>Cancel</button>`,s=>s.addEventListener("click",e=>{const b=e.target.closest("[data-p]");if(!b)return;const k=b.dataset.p,q=pr(v.id);
+      if(k==="later"){q.later=!q.later;toast(q.later?"Saved to Review later (Quiz tab)":"Removed from Review later")}
+      else{q.pref=q.pref===k?null:k;toast(k==="more"?"You'll see more like this":k==="less"?"You'll see less like this":"Hidden. It's still in Search if you need it")}
+      prSave();s.remove();
+      if(k==="known"){const el=document.querySelector(`#feed .clip[data-id="${CSS.escape(v.id)}"]`);if(el){const nx=el.nextElementSibling;if(P.el===el)stopPlayer();el.remove();if(nx&&S.view==="feed")startPlayer(nx)}}
+    }));
+}
+
 /* ---------- feed ---------- */
 let io;
 function renderFeed(){
   stopPlayer();
   const feed=$("#feed");
-  const list=S.feedFilter?S.feedFilter.ids.map(byId).filter(Boolean):allVideos().filter(v=>v.topic===S.topic);ulFilterPill();
+  const list=feedList();ulFilterPill();drawTopbar();
   // interleave: crew-made first few, then builtins
   feed.innerHTML=list.map(v=>clipHTML(v)).join("")||`<div class="empty"><div class="big">📭</div>No clips yet.</div>`;
   feed.scrollTop=0;
@@ -544,11 +657,12 @@ $("#feed").addEventListener("click",e=>{
   if(e.target.closest(".tl"))return;
   const btn=e.target.closest("button[data-act]");const clip=e.target.closest(".clip");if(!clip)return;
   const v=byId(clip.dataset.id);
-  if(!btn){togglePause(clip);return}
+  if(!btn){if(!S.unlocked&&S.sound&&P.el===clip&&!P.paused){S.unlocked=true;$("#unmute")?.remove();speakScene(P.idx);return}togglePause(clip);return}
   const a=btn.dataset.act;
   if(a==="like"){if(S.liked.has(v.id))S.liked.delete(v.id);else S.liked.add(v.id);store.set("liked",[...S.liked]);btn.classList.toggle("on");btn.lastChild.textContent=fmt((v.likes||0)+(S.liked.has(v.id)?1:0))}
   if(a==="comments")openComments(v);
   if(a==="share")openShare(v);
+  if(a==="tune"){openTune(v);return}
   if(a==="source"){ulSourcesSheet(v.scenes.filter(x=>x.src).map(x=>x.src));return}
   if(a==="quizme"){if(!S.watched.has(v.id)){toast("Finish this clip to unlock its quiz");return}if(!quizPool([v.id]).length){toast("This clip has no quiz question");return}startQuiz([v.id])}
 });
@@ -560,6 +674,7 @@ function openVideo(id){
   if(!$("#feed").children.length)renderFeed();
   let el=document.querySelector(`#feed .clip[data-id="${CSS.escape(id)}"]`);
   if(!el){renderFeed();el=document.querySelector(`#feed .clip[data-id="${CSS.escape(id)}"]`)} // feed was stale (new post)
+  if(!el){S.feedFilter={label:v.title,ids:[id]};renderFeed();el=document.querySelector(`#feed .clip[data-id="${CSS.escape(id)}"]`)}
   if(el){$("#feed").scrollTop=el.offsetTop;setTimeout(()=>startPlayer(el),60)}
 }
 
@@ -569,27 +684,35 @@ function sheet(html,onMount){
   s.addEventListener("click",e=>{if(e.target===s||e.target.closest("[data-close]"))s.remove()});
   $("#app").appendChild(s);onMount&&onMount(s);return s;
 }
+function shareText(title,text){
+  if(navigator.share){navigator.share({title,text}).catch(()=>{});return}
+  const b=encodeURIComponent(text);
+  sheet(`<h3>Send it</h3><a class="btn" href="sms:?&body=${b}">💬 Text message</a><a class="btn ghost" href="mailto:?subject=${encodeURIComponent(title)}&body=${b}">✉️ Email</a><button class="btn ghost" id="shCopy">📋 Copy</button><button class="btn ghost" data-close>Cancel</button>`,
+    s=>s.querySelector("#shCopy").onclick=()=>navigator.clipboard.writeText(text).then(()=>{toast("Copied. Paste it anywhere");s.remove()},()=>toast("Copy blocked. Long-press to copy instead")));
+}
 function needDb(){ if(!S.db){toast(S.dbState==="loading"?"Connecting to your squad…":"Sign in to claude.ai to chat with friends");return false} return true }
 function openComments(v){
   const draw=s=>{
     const list=S.comments.filter(c=>c.videoId===v.id).sort((a,b)=>a.createdAt-b.createdAt);
     s.querySelector(".clist").innerHTML=list.length?list.map(c=>`<div class="msg">${avatarHTML(c.author)}<div class="body"><div class="name">${esc(S.names[c.author]||"Crew member")}<span>${ago(c.createdAt)}</span></div><div class="txt">${esc(c.text)}</div></div></div>`).join(""):`<p class="note">No comments yet. Ask a question or drop a memory trick.</p>`;
   };
-  sheet(`<h3>Comments</h3><div class="msgs clist"></div><form class="composer" id="cform"><input id="ctext" maxlength="300" placeholder="Add a comment…" aria-label="Comment"><button class="btn" type="submit">Post</button></form>`,s=>{
+  sheet(`<h3>${window.SR_STANDALONE&&!S.db?"Your notes":"Comments"}</h3><div class="msgs clist"></div><form class="composer" id="cform"><input id="ctext" maxlength="300" placeholder="Add a comment…" aria-label="Comment"><button class="btn" type="submit">Post</button></form>`,s=>{
     draw(s);S._commentSheet={s,draw};
-    s.querySelector("#cform").onsubmit=async e=>{e.preventDefault();const t=s.querySelector("#ctext").value.trim();if(!t||!needDb())return;
+    s.querySelector("#cform").onsubmit=async e=>{e.preventDefault();const t=s.querySelector("#ctext").value.trim();if(!t)return;
+      if(window.SR_STANDALONE&&!S.db){S.comments.push({videoId:v.id,author:"me",text:t,createdAt:Date.now()});store.set("localComments",S.comments.filter(c=>c.author==="me"));s.querySelector("#ctext").value="";draw(s);return}
+      if(!needDb())return;
       try{await S.db.collection("comments").add({videoId:v.id,author:S.myId,text:t,createdAt:Date.now()});s.querySelector("#ctext").value=""}catch(err){toast("Comment didn't post. You may have view-only access.")}};
   });
 }
 function openShare(v){
   sheet(`<h3>Share clip</h3><div class="mini"><span class="e">${esc(v.scenes[0].emoji)}</span><div><div class="t">${esc(v.title)}</div><div class="s">${esc(creatorName(v))}</div></div></div>
-    <label class="lbl" for="shareMsg">Message to your squad</label><input id="shareMsg" maxlength="200" value="Study this one before shift 👇">
-    <button class="btn" id="sendSquad">Send to Squad chat</button>
-    ${window.SR_STANDALONE&&navigator.share?`<button class="btn" id="nativeShare">Share to Messages, AirDrop…</button>`:""}<button class="btn ghost" id="copyClip">Copy clip as text</button>
+    ${window.SR_STANDALONE?"":`<label class="lbl" for="shareMsg">Message to your squad</label><input id="shareMsg" maxlength="200" value="Study this one before shift 👇">
+    <button class="btn" id="sendSquad">Send to Squad chat</button>`}
+    ${window.SR_STANDALONE?`<button class="btn" id="nativeShare">↗️ Send to a friend (text, email…)</button>`:""}<button class="btn ghost" id="copyClip">Copy clip as text</button>
     <button class="btn ghost" data-close>Cancel</button>`,s=>{
-    s.querySelector("#sendSquad").onclick=async()=>{if(!needDb())return;try{await S.db.collection("chat").add({author:S.myId,text:s.querySelector("#shareMsg").value.trim().slice(0,200),videoId:v.id,createdAt:Date.now()});s.remove();toast("Sent to your squad")}catch(e){toast("Couldn't send. You may have view-only access.")}};
+    const sq=s.querySelector("#sendSquad");if(sq)sq.onclick=async()=>{if(!needDb())return;try{await S.db.collection("chat").add({author:S.myId,text:s.querySelector("#shareMsg").value.trim().slice(0,200),videoId:v.id,createdAt:Date.now()});s.remove();toast("Sent to your squad")}catch(e){toast("Couldn't send. You may have view-only access.")}};
     const ns=s.querySelector("#nativeShare");if(ns)ns.onclick=()=>{const txt=`${v.title}\n`+v.scenes.map(x=>`${x.emoji} ${x.heading}: ${x.text}`).join("\n");const builtIn=BUILTIN.some(b=>b.id===v.id);
-      navigator.share({title:v.title,text:txt+"\n\nStudied on Shift Ready",url:builtIn?location.origin+location.pathname+"#v-"+v.id:location.origin+location.pathname}).catch(()=>{})};
+      s.remove();shareText(v.title,txt+"\n\nStudied on Shift Ready: "+(builtIn?location.origin+location.pathname+"#v-"+v.id:location.origin+location.pathname))};
     s.querySelector("#copyClip").onclick=()=>{const txt=`${v.title} (${v.topic.toUpperCase()})\n`+v.scenes.map(x=>`${x.emoji} ${x.heading}: ${x.text}`).join("\n")+`\nShift Ready · #v-${v.id}`;
       navigator.clipboard.writeText(txt).then(()=>toast("Copied"),()=>toast("Copy blocked here. Long-press the clip text to copy."))};
   });
@@ -626,53 +749,183 @@ let Q=null;
 function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
 function startQuiz(only){
   const pool=quizPool(only);if(!pool.length)return;
-  Q={items:shuffle(pool).map(q=>{const order=shuffle(q.choices.map((c,i)=>i));return{...q,order}}),i:0,score:0,answers:[]};
+  Q={items:shuffle(pool).map(q=>({...q,type:"mc",order:shuffle(q.choices.map((c,i)=>i))})),i:0,score:0,answers:[],res:[],label:"Clip quiz"};
   show("quiz");
 }
-let qFilter="all";
+
+/* ---------- quiz builder: what you studied (default) or up to 20 typed topics; MC + matching + typed ---------- */
+const QMAX=120,QTOPICS=20;
+let QB=(()=>{const d={mode:"base",topics:[],n:30,types:{mc:true,match:true,typed:true}};const s=store.get("qb",null);if(!s||typeof s!=="object")return d;
+  return{mode:s.mode==="custom"?"custom":"base",topics:Array.isArray(s.topics)?s.topics.filter(t=>typeof t==="string").slice(0,QTOPICS):[],n:Math.max(5,Math.min(QMAX,+s.n||30)),types:{mc:s.types?.mc!==false,match:s.types?.match!==false,typed:s.types?.typed!==false}}})();
+const qbSave=()=>store.set("qb",QB);
+const short=(s,c,w)=>{s=String(s||"").trim();return s.length<=c&&s.split(/\s+/).length<=w};
+function quizFacts(){
+  ulVideos();const out=[],seen=new Set();
+  const add=f=>{const k=ulNorm(f.front)+"|"+ulNorm(f.back);if(!f.front||!f.back||seen.has(k))return;seen.add(k);out.push(f)};
+  UL.forEach(set=>ulEligible(set).forEach(c=>add({front:c.front,back:c.back,topic:set.topic,group:"ul:"+set.id,label:set.name,topicLabel:ulTopicLabel(set),vid:ulCardClip[ulKey(set.id,c.id)]||null,src:{set:set.id,card:c.id},key:ulKey(set.id,c.id)})));
+  decks.forEach(d=>(d.cards||[]).forEach((c,i)=>add({front:c.front,back:c.back,topic:d.topic==="fire"?"fire":d.topic==="custom"?"custom":"emt",group:"d:"+(d.id||d.name),label:d.name,vid:c._vid||null,key:"d:"+(d.id||d.name)+":"+i})));
+  allVideos().filter(v=>!v.nremt&&!v.ulSet&&!v.ulFix).forEach(v=>(v.quiz||[]).forEach((q,i)=>{if(q&&q.q&&Array.isArray(q.choices)&&q.choices[q.answer]!=null)
+    add({mcq:q,front:q.q,back:q.choices[q.answer],topic:v.topic,group:"v:"+v.id,label:v.title,vid:v.id,key:v.id+":"+i,text:(v.hashtags||[]).join(" ")+" "+v.scenes.map(s=>s.heading+" "+s.text).join(" ")})}));
+  return out;
+}
+function topicHit(f,t){
+  const tn=ulNorm(t);if(!tn)return false;
+  const hay=f._hay||(f._hay=ulNorm(f.front+" "+f.back+" "+f.label+" "+(f.text||"")));if(hay.includes(tn))return true;
+  const tt=ulTok(t);if(!tt.length)return false;const words=hay.split(" ");
+  return tt.every(w=>words.some(x=>x.startsWith(w.length>4?w.slice(0,w.length-2):w))); // "fractures" finds "fracture"
+}
+function scopeFacts(){
+  const U=quizFacts();
+  if(QB.mode==="custom")return{facts:U.filter(f=>QB.topics.some(t=>topicHit(f,t))),label:QB.topics.join(", ")};
+  const vids=new Set(S.watched),sets=new Set(S.feedMode==="focused"?FOCUS.sets:[]);
+  for(const id in PR)if(PR[id].later||PR[id].last==="wrong")vids.add(id);
+  const tps=S.feedMode==="focused"?FOCUS.topics:[];
+  const facts=U.filter(f=>(f.vid&&vids.has(f.vid))||(f.src&&sets.has(f.src.set))||tps.some(t=>topicHit(f,t)));
+  const parts=[];if(S.watched.size)parts.push(`${S.watched.size} clip${S.watched.size>1?"s":""} you watched`);if(sets.size)parts.push("🎯 "+focusSets().map(s=>s.name).join(", "));
+  if(tps.length)parts.push("🎯 "+tps.join(", "));
+  if(vids.size>S.watched.size)parts.push("your missed & review-later clips");
+  if(!facts.length)return{facts:U.filter(f=>f.topic===S.topic),label:`all ${S.topic==="fire"?"Fire":"EMT"} material (you haven't studied anything yet)`,fallback:true};
+  return{facts,label:parts.join(" · ")};
+}
+function mcOf(f,U){
+  if(f.mcq){const q=f.mcq;return{type:"mc",q:q.q,choices:q.choices,answer:q.answer,explain:q.explain||`${q.q} ${f.back}`,order:shuffle(q.choices.map((c,i)=>i))}}
+  const dir=Math.random()<.3&&short(f.front,60,10),val=x=>dir?x.front:x.back,me=ulNorm(val(f));
+  let near=U.filter(o=>!o.mcq&&o.group===f.group&&ulNorm(val(o))!==me);
+  if(near.length<3)near=near.concat(U.filter(o=>!o.mcq&&o.group!==f.group&&o.topic===f.topic&&ulNorm(val(o))!==me));
+  const picks=[],seen=new Set([me]);for(const o of shuffle(near)){const k=ulNorm(val(o));if(seen.has(k))continue;seen.add(k);picks.push(val(o));if(picks.length===3)break}
+  if(!picks.length)return null;
+  const choices=[val(f),...picks];
+  return{type:"mc",q:dir?`Which term matches: “${trunc(f.back,150)}”?`:(/\?$/.test(f.front)?f.front:`What matches “${f.front}”?`),choices,answer:0,explain:`${f.front}: ${f.back}`,order:shuffle(choices.map((c,i)=>i))};
+}
+function typedOf(f){
+  if(f.mcq)return short(f.back,30,4)?{q:f.mcq.q,answer:f.back}:null;
+  if(!/\?$/.test(f.front)&&short(f.front,40,5))return{q:`Type the term for: “${trunc(f.back,180)}”`,answer:f.front};
+  if(short(f.back,30,4))return{q:/\?$/.test(f.front)?f.front:`${f.front}: type the answer`,answer:f.back};
+  return null;
+}
+function matchGroups(facts){
+  const by={},left=[],groups=[];
+  shuffle(facts.filter(f=>!f.mcq||short(f.front,90,16))).forEach(f=>(by[f.group]=by[f.group]||[]).push(f));
+  Object.values(by).forEach(l=>{while(l.length>=4)groups.push(l.splice(0,4));left.push(...l)});
+  const bt={};left.forEach(f=>(bt[f.topic]=bt[f.topic]||[]).push(f));Object.values(bt).forEach(l=>{while(l.length>=4)groups.push(l.splice(0,4))});
+  return shuffle(groups).filter(g=>new Set(g.map(f=>ulNorm(f.back))).size===4&&new Set(g.map(f=>ulNorm(f.front))).size===4);
+}
+function buildQuiz(facts,n,types){
+  const U=quizFacts();n=Math.max(1,Math.min(QMAX,n));
+  const meta=f=>({vid:f.vid,vtitle:f.label,topic:f.topic,topicLabel:f.topicLabel||f.label,src:f.src||null,key:f.key});
+  const lanes=[];
+  if(types.mc)lanes.push(shuffle(facts).map(f=>()=>{const q=mcOf(f,U);return q&&{...q,...meta(f)}}));
+  if(types.match)lanes.push(matchGroups(facts).map(g=>()=>({type:"match",q:"Match each term to its definition",pairs:g.map(f=>({front:f.front,back:f.back,...meta(f)})),opts:shuffle([0,1,2,3]),...meta(g[0]),src:null,vid:null,vtitle:g[0].label})));
+  if(types.typed)lanes.push(shuffle(facts).map(f=>()=>{const t=typedOf(f);return t&&{type:"typed",q:t.q,answer:t.answer,explain:`${f.front}: ${f.back}`,...meta(f)}}));
+  const out=[];let moved=true;
+  while(out.length<n&&moved){moved=false;for(const l of lanes){while(l.length){const q=l.shift()();if(q){out.push(q);moved=true;break}}if(out.length>=n)break}}
+  return out;
+}
+function lev(a,b){if(a===b)return 0;if(!a.length||!b.length)return a.length||b.length;let p=Array.from({length:b.length+1},(_,j)=>j);for(let i=1;i<=a.length;i++){const c=[i];for(let j=1;j<=b.length;j++)c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]===b[j-1]?0:1));p=c}return p[b.length]}
+const tNorm=s=>ulNorm(String(s||"").replace(/\([^)]*\)/g," ")).replace(/\b(the|a|an)\b/g," ").replace(/\s+/g," ").trim();
+function typedOk(input,ans){
+  const a=tNorm(input);if(!a)return false;
+  const alts=[ans,...String(ans).split(/\s*\/\s*|\s+or\s+/i),String(ans).replace(/[()]/g,"")].map(tNorm).filter(Boolean);
+  return alts.some(t=>{if(a===t)return true;const nt=ulNums(t),na=ulNums(a);if(nt.length)return nt.join()===na.join()&&lev(a,t)<=Math.max(2,Math.floor(t.length*.5)); // numbers must match exactly
+    return lev(a,t)<=Math.max(1,Math.floor(t.length*.2))});
+}
+setTimeout(()=>console.assert(typedOk("simplx","Simplex")&&typedOk("100-120","100-120/min")&&!typedOk("90-120","100-120/min")&&!typedOk("alert","Alert, Verbal, Painful, Unresponsive")&&typedOk("oral glucose","Oral glucose"),"typedOk self-check"));
+function startBuilt(facts,n,label){
+  const items=buildQuiz(facts,n,QB.types);
+  if(!items.length){toast("Not enough material for those question types yet");return false}
+  if(items.length<n)toast(`Only ${items.length} questions available from this material`);
+  Q={items,i:0,score:0,answers:[],res:[],label};show("quiz");return true;
+}
+function startCustomQuiz(items){
+  if(!items.length){toast("Nothing to quiz yet");return}
+  ulVideos();
+  Q={items:shuffle(items).map(q=>({...q,type:"mc",order:shuffle(q.choices.map((c,i)=>i))})),i:0,score:0,answers:[],res:[],label:"Spaced review"};
+  show("quiz");
+}
+function qRecord(src,vid,ok){if(src)ulAnswer(src,ok);prAnswer(vid,ok)}
 function renderQuiz(){
-  const el=$("#quiz");
-  if(Q&&Q.i<Q.items.length){
-    const q=Q.items[Q.i];const ans=Q.answers[Q.i];
-    el.innerHTML=`<div class="stack">
-      <div class="qprog"><span>QUESTION ${Q.i+1}/${Q.items.length}</span><span>SCORE ${Q.score}</span></div>
-      <div class="from">${q.topic==="emt"?"🚑 EMT":q.topic==="fire"?"🚒 FIRE":"📥 "+esc(q.topicLabel||"Your upload")} · from “${esc(q.vtitle)}”${q.src?` · <button class="srcLink" id="qSrc">📎 Source</button>`:""}</div>
-      <h2 class="qtext">${esc(q.q)}</h2>
-      <div class="stack" id="choices">${q.order.map(ci=>{let cls="";if(ans!=null){if(ci===q.answer)cls="right";else if(ci===ans)cls="wrong"}return`<button class="choice ${cls}" data-ci="${ci}" ${ans!=null?"disabled":""}>${esc(q.choices[ci])}</button>`}).join("")}</div>
-      ${ans!=null?`<div class="explain"><b>${ans===q.answer?"Correct.":"Not quite."}</b> ${esc(q.explain)}</div><button class="btn" id="qNext">${Q.i+1<Q.items.length?"Next question":"See my run report"}</button>`:""}
-      <button class="btn ghost" id="qQuit">End quiz</button></div>`;
-    el.querySelector("#choices").onclick=e=>{const b=e.target.closest(".choice");if(!b||ans!=null)return;const ci=+b.dataset.ci;Q.answers[Q.i]=ci;if(ci===q.answer)Q.score++;if(q.src)ulAnswer(q.src,ci===q.answer);renderQuiz()};
-    const n=el.querySelector("#qNext");if(n)n.onclick=()=>{Q.i++;if(Q.i>=Q.items.length)finishQuiz();renderQuiz()};
-    {const qs=el.querySelector("#qSrc");if(qs)qs.onclick=()=>ulSourcesSheet([q.src]);}
-    el.querySelector("#qQuit").onclick=()=>{Q=null;renderQuiz()};
-    return;
-  }
-  if(Q&&Q.i>=Q.items.length){
-    const pct=Math.round(Q.score/Q.items.length*100);
-    const missed=Q.items.filter((q,i)=>Q.answers[i]!==q.answer);
-    el.innerHTML=`<div class="stack"><span class="lbl">Run report</span><div class="score">${pct}%</div>
-      <p class="sub">${Q.score} of ${Q.items.length} correct. ${pct>=80?"Shift ready. 💪":pct>=60?"Close. Rewatch the misses.":"Rewatch these and try again."}</p>
-      ${missed.length?`<span class="lbl">Review these clips</span>${[...new Set(missed.map(m=>m.vid))].map(id=>{const v=byId(id);if(!v)return"";return`<button class="mini" data-id="${esc(id)}"><span class="e">${esc(v.scenes[0].emoji)}</span><div><div class="t">${esc(v.title)}</div><div class="s">Tap to rewatch</div></div></button>`}).join("")}`:""}
-      <button class="btn" id="qAgain">Retake</button><button class="btn ghost" id="qDone">Back to quiz home</button></div>`;
-    el.onclick=e=>{const m=e.target.closest(".mini");if(m)openVideo(m.dataset.id)};
-    el.querySelector("#qAgain").onclick=()=>{const ids=[...new Set(Q.items.map(x=>x.vid))];startQuiz(ids)};
-    el.querySelector("#qDone").onclick=()=>{Q=null;renderQuiz()};
-    return;
-  }
-  el.onclick=null;
-  const pool=quizPool();const emtN=pool.filter(q=>q.topic==="emt").length,fireN=pool.length-emtN;
-  el.innerHTML=`<h1 class="vh">Quiz</h1><p class="sub">Questions come only from clips you've finished since you opened the app. Watch a clip through its last scene to add it.</p>
-    ${pool.length?`<div class="card stack"><div class="row2"><div><span class="lbl">EMT</span><div class="score" style="font-size:44px">${emtN}</div></div><div><span class="lbl">Fire</span><div class="score" style="font-size:44px">${fireN}</div></div></div>
-      <div class="chips" id="qf">${["all","emt","fire"].map(t=>`<button class="chip" data-t="${t}" aria-pressed="${qFilter===t}">${t==="all"?"Mixed":t.toUpperCase()+" only"}</button>`).join("")}</div>
-      <button class="btn" id="qStart">Start ${pool.filter(q=>qFilter==="all"||q.topic===qFilter).length}-question quiz</button></div>
-      <span class="lbl" style="margin-top:18px">Clips in this quiz</span><div class="stack">${[...S.watched].map(byId).filter(Boolean).map(v=>`<button class="mini" data-id="${esc(v.id)}"><span class="e">${esc(v.scenes[0].emoji)}</span><div><div class="t">${esc(v.title)}</div><div class="s">${v.topic.toUpperCase()} · ${(v.quiz||[]).length} questions</div></div></button>`).join("")}</div>`
-    :`<div class="empty"><div class="big">🧠</div><div>Nothing to quiz yet.<br>Finish a clip on Home and it lands here.</div><button class="btn" id="goHome">Watch clips</button></div>`}`;
-  const gh=$("#goHome");if(gh)gh.onclick=()=>show("feed");
-  const qf=$("#qf");if(qf)qf.onclick=e=>{const b=e.target.closest("[data-t]");if(b){qFilter=b.dataset.t;renderQuiz()}};
-  const qs=$("#qStart");if(qs)qs.onclick=()=>{const ids=[...S.watched].filter(id=>{const v=byId(id);return v&&(qFilter==="all"||v.topic===qFilter)});if(!quizPool(ids).length){toast("No clips in that topic yet");return}startQuiz(ids)};
+  const el=$("#quiz");el.onclick=null;
+  if(Q&&Q.i<Q.items.length)return renderQ(el);
+  if(Q)return renderReport(el);
+  renderBuilder(el);
+}
+function renderQ(el){
+  const q=Q.items[Q.i],a=Q.answers[Q.i],done=a!=null,ok=Q.res[Q.i];let body;
+  const kind=q.type==="match"?"MATCHING":q.type==="typed"?"TYPE THE ANSWER":"MULTIPLE CHOICE";
+  if(q.type==="typed")body=`<h2 class="qtext">${esc(q.q)}</h2>
+    <input id="qType" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Type your answer" value="${esc(done?a.text:"")}" ${done?"disabled":""} aria-label="Your answer">
+    ${done?`<div class="explain"><b>${ok?"Correct.":"Not quite."}</b> Answer: <b>${esc(q.answer)}</b>. ${esc(q.explain)}</div>${!ok?`<button class="chip" id="qOverride">I meant the same thing. Count it</button>`:""}`:`<button class="btn" id="qCheck">Check</button>`}`;
+  else if(q.type==="match")body=`<h2 class="qtext">${esc(q.q)}</h2><div class="stack">${q.pairs.map((p,i)=>{const pick=done?a.sel[i]:"",good=done&&+pick===i;
+      return`<div class="ulc ${done&&!good?"flag":""}"><b>${esc(p.front)}</b><select data-mi="${i}" ${done?"disabled":""} aria-label="Definition for ${esc(p.front)}"><option value="">Choose…</option>${q.opts.map(o=>`<option value="${o}" ${String(pick)===String(o)?"selected":""}>${esc(trunc(q.pairs[o].back,110))}</option>`).join("")}</select>
+      ${done?(good?`<span class="okc">✓ Right</span>`:`<span class="note">✗ Correct: ${esc(p.back)}</span>`):""}</div>`}).join("")}</div>
+    ${done?`<div class="explain"><b>${a.n}/${q.pairs.length} matched.</b> ${ok?"All correct.":"Read the ✗ ones again."}</div>`:`<button class="btn" id="qCheck">Check matches</button>`}`;
+  else body=`<h2 class="qtext">${esc(q.q)}</h2><div class="stack" id="choices">${q.order.map(ci=>{let cls="";if(done){if(ci===q.answer)cls="right";else if(ci===a)cls="wrong"}return`<button class="choice ${cls}" data-ci="${ci}" ${done?"disabled":""}>${esc(q.choices[ci])}</button>`}).join("")}</div>
+    ${done?`<div class="explain"><b>${a===q.answer?"Correct.":"Not quite."}</b> ${esc(q.explain)}</div>`:""}`;
+  el.innerHTML=`<div class="stack"><div class="qprog"><span>QUESTION ${Q.i+1}/${Q.items.length} · ${kind}</span><span>SCORE ${Q.score}</span></div>
+    <div class="from">${q.topic==="emt"?"🚑 EMT":q.topic==="fire"?"🚒 FIRE":"📥 "+esc(q.topicLabel||"Your upload")}${q.vtitle?` · from “${esc(q.vtitle)}”`:""}${q.src?` · <button class="srcLink" id="qSrc">📎 Source</button>`:""}</div>
+    ${body}${done?`<button class="btn" id="qNext">${Q.i+1<Q.items.length?"Next question":"See my run report"}</button>`:""}<button class="btn ghost" id="qQuit">End quiz</button></div>`;
+  const settle=(ans,good)=>{Q.answers[Q.i]=ans;Q.res[Q.i]=good;if(good)Q.score++;renderQuiz()};
+  const ch=el.querySelector("#choices");if(ch)ch.onclick=e=>{const b=e.target.closest(".choice");if(!b||done)return;const ci=+b.dataset.ci;qRecord(q.src,q.vid,ci===q.answer);settle(ci,ci===q.answer)};
+  const chk=el.querySelector("#qCheck");
+  if(chk&&q.type==="typed"){const inp=el.querySelector("#qType");const go=()=>{const t=inp.value.trim();if(!t){toast("Type an answer first");return}const g=typedOk(t,q.answer);qRecord(q.src,q.vid,g);settle({text:t},g)};chk.onclick=go;inp.onkeydown=e=>{if(e.key==="Enter")go()};inp.focus()}
+  if(chk&&q.type==="match")chk.onclick=()=>{const sel=[...el.querySelectorAll("[data-mi]")].map(s=>s.value);if(sel.some(v=>v==="")){toast("Pick a definition for every term");return}
+    const n=sel.filter((v,i)=>+v===i).length;q.pairs.forEach((p,i)=>qRecord(p.src,p.vid,+sel[i]===i));settle({sel,n},n===q.pairs.length)};
+  const ov=el.querySelector("#qOverride");if(ov)ov.onclick=()=>{Q.res[Q.i]=true;Q.score++;prAnswer(q.vid,true);if(q.src)ulAnswer(q.src,true);renderQuiz()};
+  const nx=el.querySelector("#qNext");if(nx)nx.onclick=()=>{Q.i++;if(Q.i>=Q.items.length)finishQuiz();renderQuiz();el.scrollTop=0};
+  const qs=el.querySelector("#qSrc");if(qs)qs.onclick=()=>ulSourcesSheet([q.src]);
+  el.querySelector("#qQuit").onclick=()=>{Q=null;renderQuiz()};
+}
+function renderReport(el){
+  const pct=Math.round(Q.score/Q.items.length*100),missed=Q.items.filter((q,i)=>!Q.res[i]);
+  const by={mc:[0,0],match:[0,0],typed:[0,0]};Q.items.forEach((q,i)=>{const t=by[q.type||"mc"];t[1]++;if(Q.res[i])t[0]++});
+  const vids=[...new Set(missed.flatMap(m=>m.type==="match"?m.pairs.map(p=>p.vid):[m.vid]).filter(Boolean))];
+  el.innerHTML=`<div class="stack"><span class="lbl">Run report</span><div class="score">${pct}%</div>
+    <p class="sub">${Q.score} of ${Q.items.length} correct. ${pct>=80?"Shift ready. 💪":pct>=60?"Close. Review the misses.":"Review these and try again."}</p>
+    <div class="card"><div class="note">${[["mc","Multiple choice"],["match","Matching"],["typed","Typed"]].filter(([k])=>by[k][1]).map(([k,l])=>`${l}: <b>${by[k][0]}/${by[k][1]}</b>`).join(" · ")}</div></div>
+    ${vids.length?`<span class="lbl">Rewatch these clips</span>${vids.map(id=>{const v=byId(id);return v?`<button class="mini" data-id="${esc(id)}"><span class="e">${esc(v.scenes[0].emoji)}</span><div><div class="t">${esc(v.title)}</div><div class="s">Missed here · it moves up in your feed</div></div></button>`:""}).join("")}`:""}
+    ${missed.length?`<button class="btn" id="qMissed">Retry the ${missed.length} I missed</button>`:""}
+    <button class="btn ${missed.length?"ghost":""}" id="qAgain">Retake all</button><button class="btn ghost" id="qDone">Back to quiz builder</button></div>`;
+  const redo=items=>{Q={...Q,items:shuffle(items).map(x=>({...x,order:x.order&&shuffle(x.order),opts:x.opts&&shuffle(x.opts)})),i:0,score:0,answers:[],res:[]};renderQuiz()};
+  el.onclick=e=>{const m=e.target.closest(".mini");if(m)openVideo(m.dataset.id)};
+  const qm=el.querySelector("#qMissed");if(qm)qm.onclick=()=>redo(missed);
+  el.querySelector("#qAgain").onclick=()=>redo(Q.items);
+  el.querySelector("#qDone").onclick=()=>{Q=null;renderQuiz()};
+}
+function renderBuilder(el){
+  const sc=scopeFacts(),f=sc.facts,U=QB.mode==="custom"?quizFacts():null;
+  const est=Math.min(QMAX,(QB.types.mc?f.length:0)+(QB.types.typed?f.filter(typedOf).length:0)+(QB.types.match?Math.floor(f.length/4):0));
+  const ids=Object.keys(PR),watched=ids.filter(id=>PR[id].done).length,proven=ids.filter(prUnderstood).length,later=ids.filter(id=>PR[id].later&&byId(id)),hist=store.get("qhist",[]);
+  el.innerHTML=`<h1 class="vh">Quiz</h1><p class="sub">By default your quiz covers what you've been studying. Want something else? Type up to ${QTOPICS} topics.</p>
+    <div class="seg" id="qbMode"><button data-m="base" aria-pressed="${QB.mode==="base"}">📚 What I studied</button><button data-m="custom" aria-pressed="${QB.mode==="custom"}">✏️ Topics I choose</button></div>
+    ${QB.mode==="base"?`<div class="card stack"><span class="lbl" style="margin:0">This quiz covers</span><div>${esc(sc.label)}</div><div class="note">${f.length} facts found.${sc.fallback?" Watch clips or focus an upload and this switches to them.":""}</div></div>`
+    :`<div class="card stack"><label class="lbl" for="qbTopic" style="margin:0">Topics (${QB.topics.length}/${QTOPICS})</label>
+      <div style="display:flex;gap:8px"><input id="qbTopic" maxlength="40" placeholder="e.g. CPR, stroke, ladders" ${QB.topics.length>=QTOPICS?"disabled":""}><button class="btn" id="qbAdd" style="padding:10px 14px" ${QB.topics.length>=QTOPICS?"disabled":""}>Add</button></div>
+      <div class="note">Press Enter after each one. Commas add several at once.</div>
+      <div class="chips" id="qbChips">${QB.topics.map((t,i)=>{const n=U.filter(x=>topicHit(x,t)).length;return`<button class="chip" data-rmt="${i}" aria-label="Remove ${esc(t)}" ${n?"":`style="border-color:var(--bad)"`}>${esc(t)} · ${n} ✕</button>`}).join("")}</div>
+      ${QB.topics.length?`<div class="note">${f.length} facts match.${QB.topics.some(t=>!U.some(x=>topicHit(x,t)))?" Red topics matched nothing; try a different word.":""}</div>`:`<div class="note">No topics yet.</div>`}</div>`}
+    <div class="card stack" style="margin-top:12px"><label class="lbl" for="qbN" style="margin:0">Length: <b id="qbNv">${QB.n}</b> questions (max ${QMAX})</label>
+      <input type="range" id="qbN" min="5" max="${QMAX}" step="5" value="${QB.n}"><div class="note">About ${est} available from this material.</div>
+      <span class="lbl" style="margin:6px 0 0">Question types</span><div class="chips" id="qbTypes">${[["mc","Multiple choice"],["match","Matching"],["typed","Typed answer"]].map(([k,l])=>`<button class="chip" data-ty="${k}" aria-pressed="${QB.types[k]}">${QB.types[k]?"✓ ":""}${l}</button>`).join("")}</div></div>
+    <button class="btn" id="qStart" style="width:100%;margin-top:12px" ${f.length?"":"disabled"}>Start ${Math.min(QB.n,est)}-question quiz</button>
+    <div class="card stack" style="margin-top:16px"><span class="lbl" style="margin:0">Your progress (saved on this device)</span>
+      <div class="row2"><div><div class="score" style="font-size:40px">${watched}</div><div class="note">clips watched</div></div><div><div class="score" style="font-size:40px">${proven}</div><div class="note">proven: got their quiz right</div></div></div>
+      <p class="note" style="margin:0">Watching isn't knowing. A clip only counts as proven after you answer its questions correctly.</p>
+      ${hist.length?`<span class="lbl" style="margin:6px 0 0">Recent quizzes</span>${hist.slice(0,5).map(h=>`<div class="note">${new Date(h.at).toLocaleDateString()} · <b>${h.score}/${h.total}</b> · ${esc(trunc(h.label||"Quiz",50))}</div>`).join("")}`:""}
+      ${later.length?`<span class="lbl" style="margin:6px 0 0">🔖 Review later (${later.length})</span>${later.slice(0,8).map(id=>{const v=byId(id);return`<button class="mini" data-id="${esc(id)}"><span class="e">${esc(v.scenes[0].emoji)}</span><div><div class="t">${esc(v.title)}</div><div class="s">Tap to watch</div></div></button>`}).join("")}`:""}</div>`;
+  $("#qbMode").onclick=e=>{const b=e.target.closest("[data-m]");if(b){QB.mode=b.dataset.m;qbSave();renderQuiz();if(QB.mode==="custom")$("#qbTopic").focus()}};
+  const inp=$("#qbTopic");
+  const add=()=>{const parts=inp.value.split(",").map(s=>s.trim()).filter(Boolean);if(!parts.length)return;
+    for(const p of parts){if(QB.topics.length>=QTOPICS){toast(`Max ${QTOPICS} topics`);break}if(!QB.topics.some(t=>t.toLowerCase()===p.toLowerCase()))QB.topics.push(p.slice(0,40))}
+    qbSave();renderQuiz();const ni=$("#qbTopic");if(ni&&!ni.disabled)ni.focus()};
+  if(inp){inp.onkeydown=e=>{if(e.key==="Enter"){e.preventDefault();add()}};$("#qbAdd").onclick=add}
+  const chips=$("#qbChips");if(chips)chips.onclick=e=>{const b=e.target.closest("[data-rmt]");if(b){QB.topics.splice(+b.dataset.rmt,1);qbSave();renderQuiz()}};
+  const rn=$("#qbN");rn.oninput=()=>{QB.n=+rn.value;$("#qbNv").textContent=QB.n;$("#qStart").textContent=`Start ${Math.min(QB.n,est)}-question quiz`};rn.onchange=qbSave;
+  $("#qbTypes").onclick=e=>{const b=e.target.closest("[data-ty]");if(!b)return;const k=b.dataset.ty;if(QB.types[k]&&Object.values(QB.types).filter(Boolean).length===1){toast("Keep at least one question type");return}QB.types[k]=!QB.types[k];qbSave();renderQuiz()};
+  $("#qStart").onclick=()=>startBuilt(f,QB.n,QB.mode==="custom"?"Topics: "+QB.topics.join(", "):sc.label);
   el.querySelectorAll(".mini").forEach(m=>m.onclick=()=>openVideo(m.dataset.id));
 }
 async function finishQuiz(){
+  if(Q){const h=store.get("qhist",[]);h.unshift({at:Date.now(),score:Q.score,total:Q.items.length,label:Q.label||"Quiz"});store.set("qhist",h.slice(0,20))}
   if(!S.db||!S.myId||!Q)return;const score=Q.score,total=Q.items.length;
   try{const ref=S.db.collection("scores").doc(S.myId);const cur=await ref.get();const d=cur.exists?cur.data():{correct:0,answered:0,quizzes:0};
     await ref.set({correct:(d.correct||0)+score,answered:(d.answered||0)+total,quizzes:(d.quizzes||0)+1,updatedAt:Date.now()});}catch(e){}
@@ -880,7 +1133,7 @@ function renderCreateAlt(){
       <p class="note">Works with Quizlet's export (tab between term and definition) and most spreadsheet CSVs. Lesson notes work too: write each key point as "term - explanation".</p>
     </div>
     ${d?`<div class="row2"><button class="btn" id="genBtn">${S.sample?"✨ Generate script":"Generate script"}</button>${d.sample?`<span></span>`:`<button class="btn ghost" id="delDeck">Delete deck</button>`}</div>`:""}
-    ${d&&!S.sample?`<p class="note">Uses the built-in script template. Open the shared link signed in to claude.ai to have Claude write it.</p>`:""}
+    ${d&&!S.sample&&!window.SR_STANDALONE?`<p class="note">Uses the built-in script template. Open the shared link signed in to claude.ai to have Claude write it.</p>`:""}
   </div>
 
   ${SC?`<div class="card stack"><div style="display:flex;justify-content:space-between;align-items:center"><span class="lbl" style="margin:0">2 · Preview</span><span class="note">~${secs()}s · ${SC.scenes.length} scenes${SC.source==="claude"?" · drafted by Claude":""}</span></div>
@@ -1185,12 +1438,6 @@ function ulQuizItems(list){
   ulVideos();
   return list.map(({set,c})=>{const q=ulQuestion(set,c,ulEligible(set),Math.random()<.35);if(!q)return null;return{...q,vid:ulCardClip[ulKey(set.id,c.id)]||"ul-fix",vtitle:`${set.name} · card ${set.cards.indexOf(c)+1}`,topic:set.topic==="custom"?"custom":set.topic,key:ulKey(set.id,c.id)}}).filter(Boolean);
 }
-function startCustomQuiz(items){
-  if(!items.length){toast("Nothing to quiz yet");return}
-  ulVideos();
-  Q={items:shuffle(items).map(q=>({...q,order:shuffle(q.choices.map((c,i)=>i))})),i:0,score:0,answers:[]};
-  show("quiz");
-}
 function ulPlay(ids,label){
   ids=ids.filter(id=>byId(id));if(!ids.length){toast("No clips yet. Review flagged cards first.");return}
   S.feedFilter={label,ids};$("#feed").innerHTML="";show("feed");
@@ -1237,18 +1484,25 @@ function ulSourcesSheet(srcs){
 
 /* image prep */
 function ulImage(file,max,q){return new Promise((res,rej)=>{const url=URL.createObjectURL(file);const img=new Image();img.onload=()=>{const sc=Math.min(1,max/Math.max(img.width,img.height));const c=document.createElement("canvas");c.width=Math.round(img.width*sc);c.height=Math.round(img.height*sc);c.getContext("2d").drawImage(img,0,0,c.width,c.height);URL.revokeObjectURL(url);c.toBlob(b=>b?res({blob:b,dataUrl:max<=400?c.toDataURL("image/jpeg",q):null}):rej(new Error("encode")),"image/jpeg",q)};img.onerror=()=>{URL.revokeObjectURL(url);rej(new Error("decode"))};img.src=url})}
-let ulTessWorker=null;
+let ulTessWorker=null,ulTessP=null,ulTessLoading=null;
+const ulLoadScript=src=>new Promise((res,rej)=>{const sc=document.createElement("script");sc.src=src;sc.onload=res;sc.onerror=()=>{sc.remove();rej(new Error("load"))};document.head.appendChild(sc)});
+function ulTessReady(){
+  if(ulTessWorker)return Promise.resolve(ulTessWorker);
+  return ulTessLoading||(ulTessLoading=(async()=>{
+    const log=m=>{if(m.status==="recognizing text"){const el=document.querySelector(`[data-prog="${ulTessP}"]`);if(el)el.textContent=Math.round(m.progress*100)+"%"}};
+    let local=true;try{if(!window.Tesseract)await ulLoadScript("vendor/tesseract/tesseract.min.js")}catch(e){local=false;await ulLoadScript("https://cdn.jsdelivr.net/npm/tesseract.js@5.1.1/dist/tesseract.min.js")}
+    ulTessWorker=await Tesseract.createWorker("eng",1,local?{workerPath:"vendor/tesseract/worker.min.js",corePath:"vendor/tesseract/core",langPath:"vendor/tesseract/lang",gzip:true,logger:log}:{logger:log});
+    ulTessWorker.local=local;return ulTessWorker})().catch(e=>{ulTessLoading=null;throw e}));
+}
 const ulCanPhotos=()=>!!((S.sample&&S.ulImgCaps)||window.SR_STANDALONE);
 async function ulOCRLocal(p){
   p.status="reading";p.local=true;renderLearn();
   try{
-    if(!window.Tesseract)await new Promise((res,rej)=>{const sc=document.createElement("script");sc.src="vendor/tesseract/tesseract.min.js";sc.onload=res;sc.onerror=()=>rej(new Error("load"));document.head.appendChild(sc)});
-    if(!ulTessWorker)ulTessWorker=await Tesseract.createWorker("eng",1,{workerPath:"vendor/tesseract/worker.min.js",corePath:"vendor/tesseract/core",langPath:"vendor/tesseract/lang",gzip:true,
-      logger:m=>{if(m.status==="recognizing text"){const el=document.querySelector(`[data-prog="${p.id}"]`);if(el)el.textContent=Math.round(m.progress*100)+"%"}}});
-    const {data}=await ulTessWorker.recognize(p.blob);
+    ulTessP=p.id;await ulTessReady();
+    const {data}=await (await ulTessReady()).recognize(p.blob);
     const lines=(data.lines||[]).map(l=>(l.words||[]).map(w=>w.confidence<55?"[?]":w.text).join(" ").replace(/(\[\?\]\s*){2,}/g,"[?] ").trim()).filter(Boolean);
     p.text=(lines.length?lines.join("\n"):String(data.text||"")).trim();p.status=p.text?"done":"empty";
-  }catch(e){p.status="error";p.err=navigator.onLine?"Couldn't read this photo. Tap Retry or type the text.":"The text reader downloads once (about 7 MB). Connect to the internet for your first photo."}
+  }catch(e){p.status="error";p.err=navigator.onLine?"Couldn't read this photo. Tap Retry or type the text.":"The photo reader needs internet the first time. Connect and tap Retry, or type/paste the text instead."}
   renderLearn();
 }
 function ulPairLines(text){
@@ -1310,14 +1564,16 @@ function ulImport(file){
 }
 /* ---------- Learn view ---------- */
 let W=null,ulShowFilter="all";
-function ulNewWizard(){W={step:1,mode:"text",text:store.get("ul:draft",""),fileName:"",photos:[],name:"",topic:S.topic==="fire"?"fire":"emt",topicLabel:"",cards:[],left:[],addDeck:true,editSet:null,splitting:false}}
+function ulNewWizard(){W={step:1,mode:"text",text:store.get("ul:draft",""),fileName:"",photos:[],name:"",topic:S.topic==="fire"?"fire":"emt",topicLabel:"",cards:[],left:[],addDeck:true,editSet:null,splitting:false,focus:true}}
 function ulEdit(id){const set=ulSet(id);if(!set)return;W={step:3,editSet:id,name:set.name,topic:set.topic,topicLabel:set.topicLabel||"",cards:set.cards.map(c=>({...c})),left:[],sources:set.sources,addDeck:false};show("learn")}
 function renderLearn(){
   const el=$("#learn");
   if(W)return renderWizard(el);
   const due=ulDue(),weak=ulWeak(),next=ulNextDue();
   el.innerHTML=`<h1 class="vh">Upload & Learn</h1><p class="sub">Import a Quizlet set or snap photos of your notes. You get clips, captions, narration and quizzes made only from what you upload.</p>
-   <button class="btn" id="ulNew">+ New upload</button>
+   <div class="card stack"><span class="lbl" style="margin:0">3 easy steps</span><ol class="steps" style="margin:0"><li><b>Upload</b> a Quizlet export, pasted notes, a .txt/.csv file or photos.</li><li><b>Check</b> the cards. Fix anything marked ⚠️.</li><li><b>Study</b>: your For You feed shows only that upload, and quizzes use it.</li></ol>
+   <button class="btn" id="ulNew">+ New upload</button></div>
+   <div class="card stack" style="margin-top:12px"><span class="lbl" style="margin:0">Your For You feed right now</span><div>${focusOn()?`🎯 <b>Focused</b> on ${esc(focusLabel())}`:"🔀 <b>Mixed</b>: EMT/Fire lessons plus all your uploads"}</div><button class="btn ghost" id="ulFocusBtn">🎯 Choose what my feed shows</button></div>
    ${UL.length?`<div class="card stack" style="margin-top:14px"><span class="lbl">Reinforce</span>
      <div class="row2"><div><div class="score" style="font-size:40px">${due.length}</div><div class="note">due for spaced review${!due.length&&next<Infinity?` · next ${ulWhen(next)}`:""}</div></div>
      <div><div class="score" style="font-size:40px">${weak.length}</div><div class="note">weak spots (missed more than right)</div></div></div>
@@ -1331,7 +1587,7 @@ function renderLearn(){
       return`<div class="card stack ulset"><div style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start"><div style="min-width:0"><b>${esc(set.name)}</b><div class="note">${esc(ulTopicLabel(set))} · ${set.cards.length} cards · ${clips.length} clips · ${(set.sources||[]).map(s=>s.kind==="photo"?"📷":"📄").join("")}</div></div><span class="tagchip">${esc(ulTopicLabel(set))}</span></div>
         <div class="bar3" title="mastered / seen / total"><i style="width:${e.length?m/e.length*100:0}%"></i><i class="b" style="width:${e.length?Math.max(0,seen-m)/e.length*100:0}%"></i></div>
         <div class="note">${m} mastered · ${seen} watched · ${r+w?Math.round(r/(r+w)*100)+"% right":"no quiz answers yet"}${nr.length?` · <b class="warn">⚠️ ${nr.length} need review</b>`:""}</div>
-        <div class="chips"><button class="chip" data-play="${esc(set.id)}">▶ Play clips</button><button class="chip" data-quiz="${esc(set.id)}">🧠 Quiz set</button><button class="chip" data-edit="${esc(set.id)}">${nr.length?"⚠️ Review & edit":"✎ Edit cards"}</button><button class="chip" data-share="${esc(set.id)}">↗️ Send to a friend</button><button class="chip" data-del="${esc(set.id)}">Delete</button></div></div>`}).join("")}</div>`
+        <div class="chips"><button class="chip" data-focus="${esc(set.id)}" ${S.feedMode==="focused"&&FOCUS.sets.includes(set.id)?'aria-pressed="true"':""}>${S.feedMode==="focused"&&FOCUS.sets.includes(set.id)?"✓ In my feed":"🎯 Study only this"}</button><button class="chip" data-play="${esc(set.id)}">▶ Play clips</button><button class="chip" data-quiz="${esc(set.id)}">🧠 Quiz set</button><button class="chip" data-edit="${esc(set.id)}">${nr.length?"⚠️ Review & edit":"✎ Edit cards"}</button><button class="chip" data-share="${esc(set.id)}">↗️ Send to a friend</button><button class="chip" data-del="${esc(set.id)}">Delete</button></div></div>`}).join("")}</div>`
    :`<div class="empty"><div class="big">📥</div>No uploads yet. Tap “New upload” to import a Quizlet set or photos.</div>`}
    <div class="card stack" style="margin-top:14px"><span class="lbl">Backup & share</span>
      <p class="note" style="margin:0">Move your uploads, decks, clips and progress between your iPhone, Mac and the claude.ai version, or send a set to a friend. Videos stay on the device they were made on.</p>
@@ -1348,16 +1604,20 @@ function renderLearn(){
   {const imp=$("#ulImportFile");if(imp)imp.onchange=e=>{const f=e.target.files[0];if(f)ulImport(f);e.target.value=""}}
   el.onclick=e=>{const b=e.target.closest("button");if(!b)return;
     if(b.id==="ulNew"){ulNewWizard();renderLearn();return}
+    if(b.id==="ulFocusBtn"){openFocusSheet();return}
+    if(b.dataset.focus){const id=b.dataset.focus,on=S.feedMode==="focused"&&FOCUS.sets.includes(id);
+      if(on){FOCUS.sets=FOCUS.sets.filter(x=>x!==id);if(!FOCUS.sets.length&&!FOCUS.topics.length)S.feedMode="mixed"}else{FOCUS.sets=[id];FOCUS.topics=[];S.feedMode="focused"}
+      S.feedFilter=null;saveFocus();$("#feed").innerHTML="";renderLearn();toast(on?(S.feedMode==="mixed"?"For You is back to Mixed":"Removed from your feed"):"For You now shows only this upload");return}
     if(b.id==="ulExportAll"){ulExport("backup");return}
     if(b.dataset.share){ulExport("set",b.dataset.share);return}
     if(b.id==="ulDueBtn"){startCustomQuiz(ulQuizItems(ulDue()));return}
     if(b.id==="ulFixBtn"){ulVideos();ulPlay(["ul-fix"],"Fix-it clip");return}
     if(b.dataset.srcSet){ulSourcesSheet([{set:b.dataset.srcSet,card:b.dataset.srcCard}]);return}
     if(b.dataset.play){const set=ulSet(b.dataset.play);ulPlay(ulVideos().filter(v=>v.ulSet===set.id).map(v=>v.id),set.name);return}
-    if(b.dataset.quiz){const set=ulSet(b.dataset.quiz);startCustomQuiz(ulQuizItems(ulEligible(set).map(c=>({set,c}))));return}
+    if(b.dataset.quiz){const set=ulSet(b.dataset.quiz);const f=quizFacts().filter(x=>x.src&&x.src.set===set.id);startBuilt(f,Math.min(QMAX,Math.max(5,f.length*2)),set.name);return}
     if(b.dataset.edit){ulEdit(b.dataset.edit);return}
     if(b.dataset.del){if(b.dataset.armed!=="1"){b.dataset.armed="1";b.textContent="Tap again to delete";return}
-      const id=b.dataset.del;UL=UL.filter(s=>s.id!==id);ULD.push(id);Object.keys(ULS).forEach(k=>{if(k.startsWith(id+":"))delete ULS[k]});ulSave();ulSaveStats();toast("Upload deleted. Its flashcard deck stays in Study cards.");renderLearn()}
+      const id=b.dataset.del;UL=UL.filter(s=>s.id!==id);ULD.push(id);FOCUS.sets=FOCUS.sets.filter(x=>x!==id);if(!FOCUS.sets.length&&!FOCUS.topics.length)S.feedMode="mixed";saveFocus();$("#feed").innerHTML="";Object.keys(ULS).forEach(k=>{if(k.startsWith(id+":"))delete ULS[k]});ulSave();ulSaveStats();toast("Upload deleted. Its flashcard deck stays in Study cards.");renderLearn()}
   };
 }
 function renderWizard(el){
@@ -1375,9 +1635,12 @@ function renderWizard(el){
     :`<div class="card stack">
       ${window.SR_STANDALONE&&!(S.sample&&imgOk)?`<p class="note"><b>Photos are read on this device.</b> Works offline after your first photo (one-time 7 MB download). Printed notes and screenshots read best; check handwriting carefully.</p>`:!S.sample||!imgOk?`<p class="note"><b>Photo reading uses Claude.</b> ${!S.sample?"Open this app on claude.ai while signed in, and allow Claude when it asks.":"This view can't send images to Claude (try the claude.ai website in Chrome, Edge or Safari)."} You can still type or paste the text using Quizlet / text.</p>`:""}
       <div class="row2"><label class="btn ${ulCanPhotos()?"":"ghost"}" for="ulPhotos" style="cursor:pointer">📷 Take or add photos</label><input id="ulPhotos" type="file" accept="image/*" multiple hidden><span class="note">Up to 8 photos or screenshots. Hold the page flat in good light.</span></div>
+      <details class="note"><summary><b>Handwritten notes? Use your phone's text reader</b> (much more accurate)</summary><ol class="steps"><li><b>iPhone:</b> open the photo in Photos, tap the Live Text button (lines in a box), then Copy All.</li><li><b>Android:</b> open the photo, tap Lens (or Google Lens), choose Text, then Copy.</li><li>Come back, switch to <b>📄 Quizlet / text</b> and paste. You can also tap the 🎤 on your keyboard and read your notes aloud.</li></ol></details>
+      ${window.SR_STANDALONE?`<p class="note" id="ocrState">${ulTessWorker?(ulTessWorker.local?"✓ Photo reader built in. Works offline.":"✓ Photo reader ready."):"Getting the photo reader ready…"}</p>`:""}
       <div class="photos">${W.photos.map((p,i)=>`<div class="ph"><img src="${esc(p.thumb)}" alt="Photo ${i+1}"><button class="chip" data-rmp="${i}" aria-label="Remove photo ${i+1}">✕</button></div>`).join("")}</div>
     </div>`}
     <div class="row2"><button class="btn ghost" id="ulCancel">Cancel</button><button class="btn" id="ulNext1">Next: check text</button></div>`;
+    if(window.SR_STANDALONE&&W.mode==="photo"&&!ulTessWorker)ulTessReady().then(w=>{const o=$("#ocrState");if(o)o.textContent=w.local?"✓ Photo reader built in. Works offline.":"✓ Photo reader ready."}).catch(()=>{const o=$("#ocrState");if(o)o.textContent="Couldn't get the photo reader. You can still type or paste text."});
     $("#ulMode").onclick=e=>{const b=e.target.closest("[data-m]");if(b){W.mode=b.dataset.m;renderLearn()}};
     $("#ulCancel").onclick=()=>{W=null;renderLearn()};
     const t=$("#ulText");if(t){const cnt=()=>{const r=ulParse(t.value);$("#ulCount").textContent=t.value.trim()?`${r.cards.length} cards found${r.left.length?` · ${r.left.length} lines without a separator`:""}`:""};cnt();t.oninput=()=>{W.text=t.value;store.set("ul:draft",W.text);cnt()};
@@ -1433,7 +1696,8 @@ function renderCardsStep(el,head){
      <div><label class="lbl" for="ulName">Name</label><input id="ulName" maxlength="60" value="${esc(W.name)}"></div>
      <div class="row2"><div><label class="lbl" for="ulTopic">Topic</label><select id="ulTopic"><option value="emt">EMT</option><option value="fire">Fire</option><option value="custom">Other topic…</option></select></div>
      <div ${W.topic==="custom"?"":"hidden"} id="ulTopicWrap"><label class="lbl" for="ulTopicLabel">Topic name</label><input id="ulTopicLabel" maxlength="30" placeholder="Pharmacology" value="${esc(W.topicLabel)}"></div></div>
-     ${W.editSet?"":`<label class="note" style="display:flex;gap:8px;align-items:center"><input type="checkbox" id="ulDeck" style="width:auto" ${W.addDeck?"checked":""}> Also add as a flashcard deck in Create → Study cards</label>`}
+     ${W.editSet?"":`<label class="note" style="display:flex;gap:8px;align-items:center"><input type="checkbox" id="ulDeck" style="width:auto" ${W.addDeck?"checked":""}> Also add as a flashcard deck in Create → Study cards</label>
+     <label class="focuschk"><input type="checkbox" id="ulFocus" style="width:auto;margin-top:3px" ${W.focus!==false?"checked":""}><span>🎯 <b>Only show this on my For You feed</b><span class="note" style="display:block">Home will show just these clips (plus app clips that match your notes) so you study only what you need. Switch back anytime with the 🎯 Focused button on Home.</span></span></label>`}
    </div>
    <div class="card stack" style="margin-top:12px">
      <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap"><span class="lbl" style="margin:0">${ok} cards ready${nr?` · <span class="warn">⚠️ ${nr} need review</span>`:""}</span>
@@ -1455,6 +1719,7 @@ function renderCardsStep(el,head){
   $("#ulTopic").onchange=e=>{W.topic=e.target.value;$("#ulTopicWrap").hidden=W.topic!=="custom";ulFlag(W);renderLearn()};
   const tl=$("#ulTopicLabel");if(tl)tl.oninput=e=>W.topicLabel=e.target.value;
   const dk=$("#ulDeck");if(dk)dk.onchange=e=>W.addDeck=e.target.checked;
+  const fk=$("#ulFocus");if(fk)fk.onchange=e=>W.focus=e.target.checked;
   el.querySelectorAll("[data-show]").forEach(b=>b.onclick=()=>{ulShowFilter=b.dataset.show;renderLearn()});
   const box=$("#ulCards");
   box.oninput=e=>{const row=e.target.closest(".ulc");if(!row||!e.target.dataset.f)return;const c=W.cards[+row.dataset.i];c[e.target.dataset.f]=e.target.value;c.edited=true};
@@ -1476,14 +1741,15 @@ function renderCardsStep(el,head){
       sources:W.sources.map(s=>{if(s.thumb)store.set("ul:thumb:"+s.id,s.thumb);return{id:s.id,kind:s.kind,name:s.name,text:s.text}}),cards:W.cards};UL.push(set)}
     set.cards.forEach(c=>delete c.edited);ulFlag(set);ulSave();
     if(W.addDeck&&!W.editSet){const cards=ulEligible(set).map(c=>({front:c.front.slice(0,120),back:c.back.slice(0,200)}));if(cards.length>=2){decks.unshift({id:"deck-ul-"+set.id,name:set.name.slice(0,50),topic:set.topic,cards});saveDecks()}}
-    const clips=ulVideos().filter(v=>v.ulSet===set.id),qs=clips.reduce((a,v)=>a+v.quiz.length,0),wasEdit=!!W.editSet;
+    const clips=ulVideos().filter(v=>v.ulSet===set.id),qs=clips.reduce((a,v)=>a+v.quiz.length,0),wasEdit=!!W.editSet,focused=!wasEdit&&W.focus!==false;
+    if(focused){FOCUS.sets=[...new Set([...(S.feedMode==="focused"?FOCUS.sets:[]),set.id])];S.feedMode="focused";S.feedFilter=null;saveFocus();$("#feed").innerHTML=""}
     W=null;
     if(S.view==="feed"||$("#feed").children.length)renderFeed();
     renderLearn();
     const nr2=ulNeedsReview(set).length;
     sheet(`<h3>${wasEdit?"Saved":"Ready to learn"}</h3><p class="sub" style="margin:0">${clips.length} clips and ${qs} quiz questions from ${ulEligible(set).length} cards in “${esc(set.name)}”.${nr2?` ${nr2} cards still need review and were left out.`:""}</p>
-      <p class="note">Turn on 🔊 Sound in Home for narration. Finish a clip and its questions unlock in Quiz.</p>
-      <button class="btn" id="ulGo">▶ Play now</button><button class="btn ghost" data-close>Later</button>`,s=>{s.querySelector("#ulGo").onclick=()=>{s.remove();ulPlay(clips.map(v=>v.id),set.name)}});
+      ${focused?`<p class="note">🎯 <b>Your For You feed now shows only this upload</b>${FOCUS.related?" plus app clips that match it":""}. Tap 🎯 Focused on Home to change it.</p>`:""}<p class="note">Turn on 🔊 Sound in Home for narration. Finish a clip and its questions unlock in Quiz.</p>
+      <button class="btn" id="ulGo">▶ Play now</button><button class="btn ghost" data-close>Later</button>`,s=>{s.querySelector("#ulGo").onclick=()=>{s.remove();if(focused)show("feed");else ulPlay(clips.map(v=>v.id),set.name)}});
   };
 }
 
@@ -1491,6 +1757,25 @@ function renderCardsStep(el,head){
 let sqTab="chat";
 function renderSquad(){
   const el=$("#squad");
+  if(window.SR_STANDALONE&&!S.db){const h=store.get("qhist",[]),tot=h.reduce((a,x)=>a+x.total,0),cor=h.reduce((a,x)=>a+x.score,0),pct=tot?Math.round(cor/tot*100):0,me=store.get("myName","");
+    const crew=store.get("crew",{}),rows=Object.values(crew).concat(me&&tot?[{n:me+" (you)",c:cor,t:tot,at:Date.now(),me:true}]:[]).sort((a,b)=>b.c/b.t-a.c/a.t||b.c-a.c);
+    el.innerHTML=`<h1 class="vh">Squad</h1><p class="sub">Race your crew without accounts: send your score link, they open it and send theirs back. Everyone's board updates on their own phone.</p>
+    <div class="card stack"><label class="lbl" for="sqName" style="margin:0">Your name on the board</label><input id="sqName" maxlength="30" placeholder="e.g. Sam" value="${esc(me)}">
+      <div class="row2"><div><div class="score" style="font-size:40px">${h.length}</div><div class="note">quizzes taken</div></div><div><div class="score" style="font-size:40px">${pct}%</div><div class="note">${cor}/${tot} correct</div></div></div>
+      <button class="btn" id="sqChallenge">🏆 Send my score to the crew</button></div>
+    <div class="card stack" style="margin-top:12px"><span class="lbl" style="margin:0">Crew leaderboard</span>
+      ${rows.length?`<ul class="board">${rows.map((r,i)=>`<li><span>${i+1}. ${esc(r.n)}${r.me?"":` <span class="note">· ${ago(r.at)}</span>`}</span><span class="pts">${Math.round(r.c/r.t*100)}% · ${r.c}/${r.t}</span></li>`).join("")}</ul>`:`<p class="note" style="margin:0">Empty so far. Send your score link; when a friend opens theirs, they join your board.</p>`}</div>
+    <div class="card stack" style="margin-top:12px"><span class="lbl" style="margin:0">Crew chat</span><p class="note" style="margin:0">Chat in the group text you already use. Tap below to send a message with the app link.</p>
+      <button class="btn ghost" id="sqMsg">💬 Message my crew</button></div>
+    <div class="card stack" style="margin-top:12px"><span class="lbl" style="margin:0">Share study material</span>
+      <p class="note" style="margin:0">• ↗️ Share on any clip sends it.<br>• In Learn, “Send to a friend” on an upload makes a file they open in Learn → Import file.<br>• 💬 on a clip keeps your own notes.</p></div>`;
+    $("#sqName").onchange=e=>{store.set("myName",e.target.value.trim().slice(0,30));renderSquad()};
+    $("#sqChallenge").onclick=()=>{const n=($("#sqName").value||"").trim().slice(0,30);if(!n){toast("Add your name first");$("#sqName").focus();return}store.set("myName",n);
+      if(!tot){toast("Take a quiz first so you have a score");return}
+      const link=location.origin+location.pathname+"#ch="+encodeURIComponent(JSON.stringify({n,c:cor,t:tot,at:Date.now()}));
+      shareText("Shift Ready challenge",`${n} has ${cor}/${tot} (${pct}%) on Shift Ready. Open this to add me to your board, then send yours back: ${link}`)};
+    $("#sqMsg").onclick=()=>shareText("Shift Ready","Studying on Shift Ready, join me: "+location.origin+location.pathname);
+    return}
   const people=new Set([...S.chat.map(m=>m.author),...S.creations.map(c=>c.authorId),...S.scores.map(s=>s.id),...S.comments.map(c=>c.author)].filter(Boolean));
   if(S.myId)people.delete(S.myId);
   el.innerHTML=`<h1 class="vh">Squad</h1><p class="sub">Everyone who opens this app link studies together here: chat, share clips, and race the leaderboard.</p>
@@ -1551,8 +1836,14 @@ function subscribe(){
 function boot(){
   VDB.all().then(m=>{let n=0;for(const k in m){if(S.localCreations.some(c=>c.id===k)&&!LOCAL_VIDEO[k]){LOCAL_VIDEO[k]=URL.createObjectURL(m[k]);n++}}if(n&&S.view==="feed"&&$("#feed").scrollTop<10)renderFeed()}).catch(()=>{});
   const t=store.get("topic","emt");S.topic=t;document.documentElement.dataset.topic=t;$("#tEmt").setAttribute("aria-pressed",t==="emt");$("#tFire").setAttribute("aria-pressed",t==="fire");
+  $("#soundBtn").textContent=S.sound?"🔊 Sound":"🔇 Sound";$("#soundBtn").setAttribute("aria-pressed",S.sound);
+  if(S.sound){const u=document.createElement("button");u.id="unmute";u.className="pill";u.textContent="🔊 Tap to start sound";u.style.cssText="position:absolute;z-index:30;top:50%;left:50%;transform:translate(-50%,-50%);font-size:15px;padding:12px 18px";
+    u.onclick=()=>{S.unlocked=true;u.remove();if(P.el&&!P.paused)speakScene(P.idx)};$("main").appendChild(u);document.addEventListener("keydown",()=>{S.unlocked=true;u.remove()},{once:true})}
   renderFeed();updateCounts();
+  {const m=location.hash.match(/^#ch=(.+)$/);if(m){try{const o=JSON.parse(decodeURIComponent(m[1]));const n=String(o.n||"").trim().slice(0,30),c=Math.floor(+o.c),t=Math.floor(+o.t),at=Math.min(Date.now(),+o.at||Date.now());
+    if(n&&t>0&&t<=100000&&c>=0&&c<=t){const crew=store.get("crew",{});crew[n.toLowerCase()]={n,c,t,at};store.set("crew",crew);setTimeout(()=>{show("squad");toast(`Added ${n} to your crew board`)},300)}}catch(e){}history.replaceState(null,"",location.pathname+location.search)}}
   const h=location.hash.match(/^#v-([\w-]+)$/);if(h&&byId(h[1]))openVideo(h[1]);
+  if(window.SR_STANDALONE){S.names.me="You";S.comments=store.get("localComments",[]).filter(c=>c&&c.videoId&&c.text)}
   if(window.claude&&window.claude.use){
     claude.use("user").then(async u=>{S.user=u;if(u){try{S.myId=await u.id()}catch(e){}ulRemote();await resolveNames();rerenderSoft()}}).catch(()=>{});
     claude.use("db").then(db=>{S.db=db;if(db){subscribe();ulRemote()}else{S.dbState="off"}rerenderSoft();if(S.view==="create")renderCreate()}).catch(()=>{S.dbState="off";rerenderSoft()});

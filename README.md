@@ -7,13 +7,14 @@ It is a Progressive Web App: one static site that installs on iPhone and Mac, ru
 ## Features
 
 - **Home**: vertical clip feed with an EMT / Fire switch. Each clip plays as one continuous video: a single timeline with elapsed and total time, crossfading scenes, drag or arrow keys to seek, tap to pause, and read-aloud narration (🔊 Sound). A clip counts as watched, and unlocks its quiz, only when every scene has played through.
-- **Quiz**: questions only from clips you finished since opening the app.
+- **Quiz**: builder that defaults to what you've been studying, or up to 20 typed topics; 5 to 120 questions mixing multiple choice, matching and typed answers. Progress separates watched from proven (answered correctly).
+- **Focused feed**: Home's Mixed/Focused button narrows For You to typed topics or chosen uploads. Tune on each clip: more, less, already know, review later.
 - **Search**: by title, hashtag, term or text.
 - **Create**: turn a flashcard deck into a teaching clip (narration, captions, visual suggestions), edit it, add a recorded or uploaded video, and post it. Videos are stored on the device. Also includes a free-form scene editor and flip-card study for every deck.
 - **Learn (Upload & Learn)**: import a Quizlet export or pasted notes, or photos and screenshots read by the on-device text reader. Check the text, review flagged cards (unreadable, conflicting, or different from the built-in deck), pick EMT, Fire or your own topic, and get clips and quizzes built only from your material. Progress is tracked per card, missed cards come back sooner (10 min, 1, 3, 7, 21 days), and the Fix-it clip covers your weak spots. Every clip and question links back to its source.
 - **Backup & share**: export everything to a file and import it on another device, or send one set to a friend.
 - **Built-in content**: 24 handcrafted clips, plus 753 NREMT flashcards in 25 decks, which also feed 192 clips.
-- **Squad** (chat, shared posts, leaderboard), Claude script drafting and Claude photo reading need the claude.ai runtime. They are hidden or replaced in this installed version.
+- **Squad**: on claude.ai, live chat and leaderboard. In this installed version: a crew leaderboard built from score links friends send each other, group-text messaging, and private notes on clips. Sharing falls back to text, email or copy when the phone has no share menu.
 
 ## Repository layout
 
