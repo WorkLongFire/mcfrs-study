@@ -10,7 +10,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 OUT = ROOT
 BUILD = time.strftime("%Y%m%d%H%M%S")
-SITE = "https://worklongfire.github.io/shift-ready/"  # link previews need the full address
+SITE = "https://worklongfire.github.io/mcfrs-study/"  # link previews need the full address
 
 os.makedirs(os.path.join(OUT, "icons"), exist_ok=True)
 src = open(os.path.join(ROOT, "source", "shift-ready.artifact.html"), encoding="utf-8").read()

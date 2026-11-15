@@ -40,7 +40,7 @@ Then open http://localhost:8765/. Service workers need `localhost` or HTTPS; ope
 
 1. In the repository on GitHub, open **Settings → Pages**.
 2. Under **Build and deployment**, choose **Deploy from a branch**, then branch **main** and folder **/ (root)**, then **Save**.
-3. After about a minute the app is live at `https://worklongfire.github.io/shift-ready/`.
+3. After about a minute the app is live at `https://worklongfire.github.io/mcfrs-study/`.
 
 Every push to `main` redeploys automatically.
 
