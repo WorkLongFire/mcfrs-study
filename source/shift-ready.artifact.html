@@ -657,7 +657,7 @@ $("#feed").addEventListener("click",e=>{
   if(e.target.closest(".tl"))return;
   const btn=e.target.closest("button[data-act]");const clip=e.target.closest(".clip");if(!clip)return;
   const v=byId(clip.dataset.id);
-  if(!btn){if(!S.unlocked&&S.sound&&P.el===clip&&!P.paused){S.unlocked=true;$("#unmute")?.remove();speakScene(P.idx);return}togglePause(clip);return}
+  if(!btn){if(!S.unlocked&&S.sound){S.unlocked=true;$("#unmute")?.remove();if(P.el!==clip||P.paused)startPlayer(clip);else speakScene(P.idx);return}togglePause(clip);return}
   const a=btn.dataset.act;
   if(a==="like"){if(S.liked.has(v.id))S.liked.delete(v.id);else S.liked.add(v.id);store.set("liked",[...S.liked]);btn.classList.toggle("on");btn.lastChild.textContent=fmt((v.likes||0)+(S.liked.has(v.id)?1:0))}
   if(a==="comments")openComments(v);
@@ -1491,7 +1491,7 @@ function ulTessReady(){
   return ulTessLoading||(ulTessLoading=(async()=>{
     const log=m=>{if(m.status==="recognizing text"){const el=document.querySelector(`[data-prog="${ulTessP}"]`);if(el)el.textContent=Math.round(m.progress*100)+"%"}};
     let local=true;try{if(!window.Tesseract)await ulLoadScript("vendor/tesseract/tesseract.min.js")}catch(e){local=false;await ulLoadScript("https://cdn.jsdelivr.net/npm/tesseract.js@5.1.1/dist/tesseract.min.js")}
-    ulTessWorker=await Tesseract.createWorker("eng",1,local?{workerPath:"vendor/tesseract/worker.min.js",corePath:"vendor/tesseract/core",langPath:"vendor/tesseract/lang",gzip:true,logger:log}:{logger:log});
+    ulTessWorker=await Tesseract.createWorker("eng",1,local?{workerPath:"vendor/tesseract/worker.min.js",corePath:"vendor/tesseract/core",langPath:"vendor/tesseract/lang",gzip:true,workerBlobURL:false,logger:log}:{logger:log});
     ulTessWorker.local=local;return ulTessWorker})().catch(e=>{ulTessLoading=null;throw e}));
 }
 const ulCanPhotos=()=>!!((S.sample&&S.ulImgCaps)||window.SR_STANDALONE);

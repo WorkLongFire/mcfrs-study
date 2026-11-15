@@ -6,6 +6,17 @@
 <title>Shift Ready</title>
 <meta name="description" content="TikTok-style EMT and firefighter study app.">
 <meta name="theme-color" content="#000000">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Shift Ready">
+<meta property="og:title" content="Shift Ready: EMT &amp; Fire study">
+<meta property="og:description" content="Swipe short EMS and firefighter lessons, then quiz yourself. Free, works offline.">
+<meta property="og:url" content="https://worklongfire.github.io/shift-ready/">
+<meta property="og:image" content="https://worklongfire.github.io/shift-ready/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Shift Ready: blue medical cross with a heartbeat line">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://worklongfire.github.io/shift-ready/og-image.png">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icons/icon-192.png" type="image/png">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
@@ -20,7 +31,7 @@ img{max-width:100%}
 [hidden]{display:none!important}
 #updateBar{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(76px + env(safe-area-inset-bottom,0px));z-index:100;background:#fff;color:#000;font-weight:700;border:0;border-radius:999px;padding:11px 16px;box-shadow:0 6px 24px rgba(0,0,0,.5);font-size:14px}
 </style>
-<script>window.SR_STANDALONE=true;window.SR_BUILD="20261115070259";</script>
+<script>window.SR_STANDALONE=true;window.SR_BUILD="20261115071429";</script>
 </head>
 <body>
 
@@ -682,7 +693,7 @@ $("#feed").addEventListener("click",e=>{
   if(e.target.closest(".tl"))return;
   const btn=e.target.closest("button[data-act]");const clip=e.target.closest(".clip");if(!clip)return;
   const v=byId(clip.dataset.id);
-  if(!btn){if(!S.unlocked&&S.sound&&P.el===clip&&!P.paused){S.unlocked=true;$("#unmute")?.remove();speakScene(P.idx);return}togglePause(clip);return}
+  if(!btn){if(!S.unlocked&&S.sound){S.unlocked=true;$("#unmute")?.remove();if(P.el!==clip||P.paused)startPlayer(clip);else speakScene(P.idx);return}togglePause(clip);return}
   const a=btn.dataset.act;
   if(a==="like"){if(S.liked.has(v.id))S.liked.delete(v.id);else S.liked.add(v.id);store.set("liked",[...S.liked]);btn.classList.toggle("on");btn.lastChild.textContent=fmt((v.likes||0)+(S.liked.has(v.id)?1:0))}
   if(a==="comments")openComments(v);
@@ -1516,7 +1527,7 @@ function ulTessReady(){
   return ulTessLoading||(ulTessLoading=(async()=>{
     const log=m=>{if(m.status==="recognizing text"){const el=document.querySelector(`[data-prog="${ulTessP}"]`);if(el)el.textContent=Math.round(m.progress*100)+"%"}};
     let local=true;try{if(!window.Tesseract)await ulLoadScript("vendor/tesseract/tesseract.min.js")}catch(e){local=false;await ulLoadScript("https://cdn.jsdelivr.net/npm/tesseract.js@5.1.1/dist/tesseract.min.js")}
-    ulTessWorker=await Tesseract.createWorker("eng",1,local?{workerPath:"vendor/tesseract/worker.min.js",corePath:"vendor/tesseract/core",langPath:"vendor/tesseract/lang",gzip:true,logger:log}:{logger:log});
+    ulTessWorker=await Tesseract.createWorker("eng",1,local?{workerPath:"vendor/tesseract/worker.min.js",corePath:"vendor/tesseract/core",langPath:"vendor/tesseract/lang",gzip:true,workerBlobURL:false,logger:log}:{logger:log});
     ulTessWorker.local=local;return ulTessWorker})().catch(e=>{ulTessLoading=null;throw e}));
 }
 const ulCanPhotos=()=>!!((S.sample&&S.ulImgCaps)||window.SR_STANDALONE);

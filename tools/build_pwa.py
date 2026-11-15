@@ -4,12 +4,13 @@ Run from anywhere:  python3 tools/build_pwa.py
 Writes index.html, sw.js, manifest.webmanifest, version.json and icons/ at the repo root.
 vendor/tesseract/ (the on-device photo reader) is committed and left as is."""
 import os, re, json, time, shutil
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFont
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 OUT = ROOT
 BUILD = time.strftime("%Y%m%d%H%M%S")
+SITE = "https://worklongfire.github.io/shift-ready/"  # link previews need the full address
 
 os.makedirs(os.path.join(OUT, "icons"), exist_ok=True)
 src = open(os.path.join(ROOT, "source", "shift-ready.artifact.html"), encoding="utf-8").read()
@@ -38,6 +39,17 @@ head = f"""<!doctype html>
 <title>{title}</title>
 <meta name="description" content="TikTok-style EMT and firefighter study app.">
 <meta name="theme-color" content="#000000">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Shift Ready">
+<meta property="og:title" content="Shift Ready: EMT &amp; Fire study">
+<meta property="og:description" content="Swipe short EMS and firefighter lessons, then quiz yourself. Free, works offline.">
+<meta property="og:url" content="{SITE}">
+<meta property="og:image" content="{SITE}og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Shift Ready: blue medical cross with a heartbeat line">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{SITE}og-image.png">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icons/icon-192.png" type="image/png">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
@@ -140,5 +152,34 @@ icon(192).save(os.path.join(OUT, "icons/icon-192.png"))
 icon(512).save(os.path.join(OUT, "icons/icon-512.png"))
 icon(512, pad=0.1).save(os.path.join(OUT, "icons/icon-maskable-512.png"))
 icon(180).save(os.path.join(OUT, "icons/apple-touch-icon.png"))
+
+# link preview picture (iMessage, WhatsApp, etc.): EMS cross + heartbeat on night-shift navy
+def font(size):
+    for f in ("arialbd.ttf", "Arial Bold.ttf", "DejaVuSans-Bold.ttf", "Helvetica.ttc"):
+        try: return ImageFont.truetype(f, size)
+        except OSError: pass
+    return ImageFont.load_default(size)
+def og_image():
+    W, H = 1200, 630
+    im = Image.new("RGB", (W, H))
+    d = ImageDraw.Draw(im)
+    for y in range(H):
+        t = y / H
+        d.line([(0, y), (W, y)], fill=(int(10 + 9 * t), int(26 + 10 * t), int(66 - 40 * t)))
+    cx, cy, a, b = 270, 300, 75, 210  # medical cross: two bars
+    d.rounded_rectangle([cx - a, cy - b, cx + a, cy + b], 24, fill=(61, 139, 255))
+    d.rounded_rectangle([cx - b, cy - a, cx + b, cy + a], 24, fill=(61, 139, 255))
+    pts = [(cx - 160, cy), (cx - 60, cy), (cx - 35, cy - 70), (cx - 5, cy + 80), (cx + 25, cy - 120), (cx + 55, cy + 40), (cx + 75, cy), (cx + 160, cy)]
+    d.line(pts, fill="white", width=16, joint="curve")
+    d.text((556, 196), "SHIFT READY", font=font(84), fill="white")
+    d.text((564, 310), "EMT & Fire study", font=font(52), fill=(154, 190, 255))
+    d.text((564, 390), "Short lessons · quizzes · NREMT prep", font=font(34), fill=(205, 214, 230))
+    ecg = [(0, 560), (520, 560), (560, 560), (585, 520), (615, 600), (645, 490), (675, 575), (700, 560), (W, 560)]
+    for i in range(len(ecg) - 1):
+        t = i / (len(ecg) - 2)
+        col = tuple(int(x + (y - x) * t) for x, y in zip((61, 139, 255), (255, 90, 31)))
+        d.line([ecg[i], ecg[i + 1]], fill=col, width=8)
+    im.save(os.path.join(OUT, "og-image.png"))
+og_image()
 
 print("built", BUILD, os.path.getsize(os.path.join(OUT, "index.html")) // 1024, "KB")
